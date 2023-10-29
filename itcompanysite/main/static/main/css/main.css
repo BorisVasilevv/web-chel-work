@@ -1,0 +1,42 @@
+.navigation {
+    background: #2F0571;
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+
+}
+
+.navigation-elem{
+    margin-right: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation-elem a{
+    text-decoration: none;
+    color: #A69400;
+}
+
+.navigation-header{
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    color: #8BA100;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.company{
+    display: flex;
+    justify-content: space-around;
+
+
+}
+.company img {
+    float: left;
+}
+
+ul{
+    list-style: none;
+}

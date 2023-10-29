@@ -1,8 +1,26 @@
-{%extends 'main/layout.html'%}
 
+{%extends 'main/layout.html'%}
+{% load static %}
 {%block title%}Компании{%endblock%}
 
-{%block body%}
+{%block content%}
     <h1>Компании</h1>
     <p>Компании</p>
+    <ul>
+        <li>
+
+            <div class="company">
+                <div class="company-name">
+                    <h3>Napoleon IT</h3>
+                </div>
+                <div class="company-logo">
+                    <img src="{% static 'main/img/napoleonIt.png'%}" height="100px" width="100px">
+                </div>
+                <div class="company-info">
+
+                    (Napoleon IT — один из крупнейших AI-разработчиков программного обеспечения. Разработчик программного обеспечения. Мы предлагаем готовые решения в области бизнес-аналитики, предиктивной аналитики, компьютерного зрения, высоконагруженных систем и мобильной разработки)</div>
+            </div>
+        </li>
+    </ul>
+
 {%endblock%}
