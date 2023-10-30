@@ -30,11 +30,38 @@
 .company{
     display: flex;
     justify-content: space-around;
-
-
+    flex-direction: column;
+    width: 400px;
 }
 .company img {
     float: left;
+}
+.company img:hover {
+    transform: scale(1.2);
+}
+
+.company a {
+    text-decoration: none;
+}
+
+.company-info {
+    height:100px;
+}
+
+.company-info-text {
+    color: black;
+    -webkit-line-clamp: 4; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+}
+
+.company-info-text:hover {
+    text-decoration: underline;
+}
+
+.company-name{
+    height: 50%;
 }
 
 ul{

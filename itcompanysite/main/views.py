@@ -4,5 +4,10 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'main/index.html')
 
-def about(request):
+def companies(request):
     return render(request, 'main/companies.html')
+
+def napoleonit(request):
+    return render(request, 'main/napoleonit.html')
+
+
