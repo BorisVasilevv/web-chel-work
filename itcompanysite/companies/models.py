@@ -7,6 +7,9 @@ class Company(models.Model):
     logotype = models.ImageField('logotype', upload_to='companies/static/companies/img')
     short_description = models.TextField('short_description')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Company'
         verbose_name_plural = 'Companies'
