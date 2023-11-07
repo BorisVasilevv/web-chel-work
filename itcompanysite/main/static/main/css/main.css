@@ -1,3 +1,21 @@
+.item{
+    max-width: 376px;
+    margin: auto;
+    background-color: #272727;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    padding: 32px;
+}
+
+.item_part{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
 .navigation {
     background: #2F0571;
     display: flex;
