@@ -6,7 +6,6 @@ import sys
 
 
 def main():
-    print("Borya rya rya")
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'itcompanysite.settings')
     try:
