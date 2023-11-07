@@ -4,8 +4,9 @@ import os
 import sys
 """улюлю"""
 
+
 def main():
-    print("Borya lox")
+    print("Borya rya rya")
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'itcompanysite.settings')
     try:
