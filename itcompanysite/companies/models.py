@@ -4,7 +4,7 @@ from django.db import models
 
 class Company(models.Model):
     name = models.CharField('name', max_length=150)
-    logotype = models.ImageField('logotype', upload_to='main/static/main/img')
+    logotype = models.ImageField('logotype', upload_to='companies/static/companies/img')
     short_description = models.TextField('short_description')
 
     class Meta:
