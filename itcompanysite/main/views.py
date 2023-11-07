@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Company
 # Create your views here.
 def index(request):
-    return render(request, 'main/index.html')
+    all_companies = Company.objects.all()
+    return render(request, 'main/index.html', {'all_companies': all_companies})
 
 def companies(request):
     return render(request, 'main/companies.html')
