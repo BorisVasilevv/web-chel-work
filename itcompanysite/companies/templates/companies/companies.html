@@ -1,36 +1,40 @@
 
 {%extends 'main/layout.html'%}
 {% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'companies/css/companies.css'%}">
+{% endblock %}
+
 {%block title%}Компании{%endblock%}
 
 {%block content%}
-    <h1>Компании</h1>
-    <p>Компании</p>
 
-     {% for company in companies %}
+
+<!--     {% for company in companies %}-->
+<!--            <div class="company">-->
+<!--                    <div class="company-name">-->
+<!--                        <h3>{{ company.name }}</h3>-->
+<!--                    </div>-->
+<!--                <a href ="{%url 'napoleonit'%}">-->
+<!--                    <div class="company-info">-->
+<!--                        <img class="company-info-logo" src="{{company.logotype.url}}" height="100px" width="100px">-->
+<!--                        <p class="company-info-text">-->
+<!--                            {{company.short_description}}-->
+<!--                        </p>-->
+
+<!--                    </div>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--    {% endfor%}-->
+    <div class="companies_container">
+        {% for company in companies %}
             <div class="company">
-                    <div class="company-name">
-                        <h3>{{ company.name }}</h3>
-                    </div>
-                <a href ="{%url 'napoleonit'%}">
-                    <div class="company-info">
-                        <img class="company-info-logo" src="{{company.logotype.url}}" height="100px" width="100px">
-                        <p class="company-info-text">
-                            {{company.short_description}}
-                        </p>
-
-                    </div>
+                <a class="company_card" href="{%url 'napoleonit'%}">
+                    <span class="company_card_header">{{ company.name }}</span>
+                    <img src="{{company.logotype.url}}"/>
+                    <span class="company_card_text">{{company.short_description}}</span>
                 </a>
             </div>
-    {% endfor%}
-    <div class="item">
-
-
-        <span class="item_part">Имя компании</span>
-        <img class="item_part" src="https://sun9-44.userapi.com/impg/TgqPZMPmEuN8jUJ6OXRfW2VvRd-XxonMlmwMWA/mPL3SfJkH74.jpg?size=564x563&quality=96&sign=1ed8f2dbbbd47606aab33109af255fcf&type=album"/>
-        <span class="item_part">Описание компании</span>
-        <span class="item_part">cсылка компании</span>
-
+        {% endfor%}
     </div>
-
 {%endblock%}
