@@ -1,29 +1,26 @@
 
 {%extends 'main/layout.html'%}
-{% load static %}
+<!--{% load static %}-->
 {%block title%}Компании{%endblock%}
 
 {%block content%}
     <h1>Компании</h1>
     <p>Компании</p>
-    <ul>
-        <li>
 
+     {% for company in companies %}
             <div class="company">
-
                     <div class="company-name">
-                        <h3>Napoleon IT</h3>
+                        <h3>{{ company.name }}</h3>
                     </div>
                 <a href ="{%url 'napoleonit'%}">
                     <div class="company-info">
-                        <img class="company-info-logo" src="{% static 'companies/img/napoleonIt.png'%}" height="100px" width="100px">
+                        <img class="company-info-logo" src="{{company.logotype.url}}" height="100px" width="100px">
                         <p class="company-info-text">
-                             Napoleon IT — один из крупнейших AI-разработчиков программного обеспечения. Разработчик программного обеспечения. Мы предлагаем готовые решения в области бизнес-аналитики, предиктивной аналитики, компьютерного зрения, высоконагруженных систем и мобильной разработки
+                            {{company.short_description}}
                         </p>
                     </div>
                 </a>
             </div>
-        </li>
-    </ul>
+    {% endfor%}
 
 {%endblock%}
