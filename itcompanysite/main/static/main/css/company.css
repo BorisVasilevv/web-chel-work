@@ -1,0 +1,103 @@
+.company-sheet{
+    max-width: 1960px;
+    margin: auto;
+}
+
+.section-hp{
+    background-color: #272727;
+
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+    padding: 70px 320px;
+}
+
+.section-hp_images{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.section-hp_images-logos{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: center;
+}
+
+.section-hp_info{
+    padding: 50px;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: 1px solid #FCD54C;
+}
+
+.section-hp_info-title{
+    font-family: Gilroy;
+    color:#FCD54C;
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.section-hp_info-specification{
+    font-family: Gilroy;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.section-hp_info-description{
+    font-family: WorkSans;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-hp_info-item{
+    display: flex;
+    gap: 10px;
+    height: 32px;
+}
+
+.section-hp_info-img{
+
+    width: 32px;
+    hight: 32px;
+}
+
+.section-hp_info-text{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.section-hp_more-button{
+    align-self: flex-start;
+    align-items: center;
+    background-color: #272727;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+
+    height: 59px;
+    line-height: 21px;
+    padding: 15px ;
+    margin-top: 15px;
+    cursor: pointer;
+}

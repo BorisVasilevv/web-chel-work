@@ -2,5 +2,42 @@
 {% load static %}
 {%block title%}NapoleonIt{%endblock%}
 {%block content%}
-    <img src="{% static 'companies/img/napoleon.jpg'%}">
+   <!-- <img src="{% static 'companies/img/napoleon.jpg'%}"> -->
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/styles/font.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="company-sheet">
+        <div class="hp section-hp">
+            <div class="section-hp_images">
+                <img class="section-hp_img" src="{% static 'companies/img/intersvyaz.png'%}">
+
+            </div>
+            <div class="section-hp_info">
+                <span class="section-hp_info-title">Интерсвязь</span>
+                <span class="section-hp_info-specification">собственное мобильное приложение, собственный домофон & “умный двор”
+                </span>
+                <span class="section-hp_info-specification">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».
+                </span>
+                <div class="section-hp_info-description">
+                    <div class="section-hp_info-item">
+                        <img class="section-hp_info-img" src="{% static 'companies/logos/url.svg'%}">
+                        <a class="section-hp_info-text" href="https://www.is74.ru/oldsite/company/about/">Интерсвязь</a>
+                    </div>
+                </div>
+                <button class="section-hp_more-button">
+                    <img class="section-hp_info-img" src="{% static 'companies/logos/heart.svg'%}">
+                        <span>Избранное</span>
+                </button>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
 {%endblock%}
