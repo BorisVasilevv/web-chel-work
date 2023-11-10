@@ -14,16 +14,21 @@
 
         <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'home'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/home.svg'%}">Главная</a></div>
         <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'companies'%}"> <img class="navigation-elem-icon" src="{% static 'main/icons/companies.svg'%}">Компании</a></div>
-        <div class="navigation-elem"><a class="navigation-elem-link" href=""><img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Мой профиль</a></div>
+        <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'registration'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Регистрация</a></div>
+        <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'login'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Вход</a></div>
+
+<!--Мой профиль-->
     </div>
 
 
 
 
-    {% block content %}
-    <main>
 
-    </main>
+
+    {% block content %}
+
     {% endblock %}
+
+
 </body>
 </html>

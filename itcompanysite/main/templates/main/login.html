@@ -1,0 +1,32 @@
+{%extends 'main/layout.html'%}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{%static 'main/css/registration.css'%}">
+{% endblock %}
+{% block title %}Вход{%endblock%}
+
+
+{% block content %}
+
+<main class="registration-container">
+    <span class="registration-header"> Вход </span>
+    <form method="post" class="registration-form">
+        {% block fields%}{% endblock %}
+        <span class="registration-help-info">Введите имя пользователя</span>
+        <input class="input-field" type="text">
+<!--        <span class="registration-help-info">Введите адрес электронной почты</span>-->
+<!--        <input class="input-field" type="email">-->
+        <span class="registration-help-info">Введите пароль</span>
+        <input class="input-field" type="password">
+<!--        <span class="registration-help-info">Подтвердите пароль</span>-->
+<!--        <input class="input-field" type="password">-->
+        <button class="submit-button" type="submit">Подтвердить</button>
+    </form>
+</main>
+
+
+
+{% endblock %}
+
+

@@ -8,24 +8,6 @@
 {%block title%}Компании{%endblock%}
 
 {%block content%}
-
-
-<!--     {% for company in companies %}-->
-<!--            <div class="company">-->
-<!--                    <div class="company-name">-->
-<!--                        <h3>{{ company.name }}</h3>-->
-<!--                    </div>-->
-<!--                <a href ="{%url 'napoleonit'%}">-->
-<!--                    <div class="company-info">-->
-<!--                        <img class="company-info-logo" src="{{company.logotype.url}}" height="100px" width="100px">-->
-<!--                        <p class="company-info-text">-->
-<!--                            {{company.short_description}}-->
-<!--                        </p>-->
-
-<!--                    </div>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--    {% endfor%}-->
     <div class="companies_container">
         {% for company in companies %}
             <div class="company">
