@@ -1,0 +1,36 @@
+{%extends 'main/layout.html'%}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{%static 'account/css/registration.css'%}">
+{% endblock %}
+{% block title %}Вход{%endblock%}
+
+
+{% block content %}
+
+<main class="registration-container">
+    <span class="registration-header"> Вход </span>
+
+    {% if form.errors %}
+        <span>{{form.errors.error}}</span>
+    {% endif %}
+    <form action="{% url 'login' %}" method="post" class="registration-form">
+        {% csrf_token %}
+        {% for f in form %}
+            {{f|add_label_class:"registration-help-info"}}
+            {%render_field f class+="input-field"%}
+
+
+        {% endfor %}
+
+        <button class="submit-button" type="submit">Войти</button>
+    </form>
+</main>
+
+
+
+{% endblock %}
+
+

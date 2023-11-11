@@ -4,10 +4,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
     path('', views.index, name='home'),
-    path('companies/', include('companies.url')),
-    path('login/', views.login, name='login'),
-    path('registration/', views.registration, name='registration')
+    path('companies/', include('companies.urls')),
 
+    path('accounts/', include('accounts.urls'))
 ]
 
 if settings.DEBUG:
