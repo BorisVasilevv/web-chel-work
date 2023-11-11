@@ -1,40 +1,64 @@
-
 {%extends 'main/layout.html'%}
 {% load static %}
 {%block title%}Компании{%endblock%}
-
 {%block content%}
-    <h1>Компании</h1>
-    <p>Компании</p>
-    <ul>
-        <li>
-
-            <div class="company">
-
-                    <div class="company-name">
-                        <h3>Napoleon IT</h3>
-                    </div>
-                <a href ="{%url 'napoleonit'%}">
-                    <div class="company-info">
-                        <img class="company-info-logo" src="{% static 'companies/img/napoleonIt.png'%}" height="100px" width="100px">
-                        <p class="company-info-text">
-                             Napoleon IT — один из крупнейших AI-разработчиков программного обеспечения. Разработчик программного обеспечения. Мы предлагаем готовые решения в области бизнес-аналитики, предиктивной аналитики, компьютерного зрения, высоконагруженных систем и мобильной разработки
-                        </p>
-
-                    </div>
-                </a>
+   <!-- <img src="{% static 'companies/img/napoleon.jpg'%}"> -->
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/styles/font.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="companies">
+        <div class="companies-item company">
+            <img class="companies-item_img" src="{% static 'companies/img/intersvyas.png'%}">
+            <span class="companies-item-title">Интерсвязь</span>
+            <div class="companies-item-tags">
+                <span class="companies-item-tag">Frontend</span>
+                <span class="companies-item-tag">1C</span>
+                <span class="companies-item-tag">BI</span>
+                <span class="companies-item-tag">Android</span>
             </div>
+            <span class="companies-item_description">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».
+            </span>
+            <span class="companies-item_specification">собственное мобильное приложение, собственный домофон & “умный двор”
+            </span>
+            <div class="companies-item_link">
+                <img class="companies-item_link-icon" src="{% static 'companies/logos/url.svg'%}">
+                <a class="companies-item_link-text" href="https://www.is74.ru/oldsite/company/about/">Интерсвязь</a>
+            </div>
+            <button class="companies-item_fav-button">
+                <img class="fav-button_icon" src="{% static 'companies/logos/heart.svg'%}">
+                <span>Избранное</span>
+            </button>
+        </div>
 
-        </li>
-    </ul>
-    <div class="item">
-
-        <span class="item_part item_part-name">Интерсвязь</span>
-        <img class="item_part" src="https://sun9-44.userapi.com/impg/TgqPZMPmEuN8jUJ6OXRfW2VvRd-XxonMlmwMWA/mPL3SfJkH74.jpg?size=564x563&quality=96&sign=1ed8f2dbbbd47606aab33109af255fcf&type=album"/>
-        <span class="item_part">собственное мобильное приложение, собственный домофон & “умный двор”</span>
-        <span class="item_part">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».</span>
-        <a class="item_part">https://www.is74.ru/oldsite/company/about/</a>
-
-    </div>
-
+        <div class="companies-item company">
+            <img class="companies-item_img" src="{% static 'companies/img/inovations_for_kids.png'%}">
+            <span class="companies-item-title">Инновации детям</span>
+            <div class="companies-item-tags">
+                <span class="companies-item-tag">Frontend</span>
+                <span class="companies-item-tag">1C</span>
+                <span class="companies-item-tag">BI</span>
+                <span class="companies-item-tag">Android</span>
+            </div>
+            <span class="companies-item_description">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».
+            </span>
+            <span class="companies-item_specification">собственное мобильное приложение, собственный домофон & “умный двор”
+            </span>
+            <div class="companies-item_link">
+                <img class="companies-item_link-icon" src="{% static 'companies/logos/url.svg'%}">
+                <a class="companies-item_link-text" href="https://www.is74.ru/oldsite/company/about/">Интерсвязь</a>
+            </div>
+            <button class="companies-item_fav-button">
+                <img class="fav-button_icon" src="{% static 'companies/logos/heart.svg'%}">
+                <span>Избранное</span>
+            </button>
+        </div>
+    </main>
+</body>
+</html>
 {%endblock%}

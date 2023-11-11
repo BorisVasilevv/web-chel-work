@@ -27,7 +27,7 @@ body{
 }
 
 .navigation {
-    background: #FCD54C;
+    background: #272727;
     display: flex;
     justify-content: flex-end;
     height: 10vh;
@@ -43,7 +43,7 @@ body{
 
 .navigation-elem a{
     text-decoration: none;
-    color: #272727;
+    color: #FFFFFF;
 }
 
 .navigation-header{
@@ -55,7 +55,7 @@ body{
     font-weight: bold;
 }
 
-.company{
+/*.company{
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -79,10 +79,10 @@ body{
 .company-info-text {
     color: black;
     -webkit-line-clamp: 4; /* Число отображаемых строк */
-    display: -webkit-box; /* Включаем флексбоксы */
-    -webkit-box-orient: vertical; /* Вертикальная ориентация */
-    overflow: hidden; /* Обрезаем всё за пределами блока */
-}
+   /* display: -webkit-box; /* Включаем флексбоксы */
+   /* -webkit-box-orient: vertical; /* Вертикальная ориентация */
+  /*  overflow: hidden; /* Обрезаем всё за пределами блока */
+/*}
 
 .company-info-text:hover {
     text-decoration: underline;
@@ -94,4 +94,4 @@ body{
 
 ul{
     list-style: none;
-}
+}*/

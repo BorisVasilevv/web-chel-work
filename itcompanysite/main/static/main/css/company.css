@@ -1,50 +1,58 @@
-.company-sheet{
+.companies{
     max-width: 1960px;
     margin: auto;
-}
-
-.section-hp{
-    background-color: #272727;
-
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 32px;
     justify-content: center;
-    padding: 70px 320px;
+
 }
 
-.section-hp_images{
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-}
 
-.section-hp_images-logos{
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    justify-content: center;
-}
-
-.section-hp_info{
+.companies-item{
     padding: 50px;
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     gap: 25px;
     border: 1px solid #FCD54C;
+    border-radius: 10px;
+    width: 500px;
 }
 
-.section-hp_info-title{
+.companies-item_img{
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.companies-item-tags{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.companies-item-tag{
     font-family: Gilroy;
     color:#FCD54C;
-    font-size: 62px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
 
-.section-hp_info-specification{
+.companies-item-title{
+    font-family: Gilroy;
+    color:#FFFFFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.companies-item_specification{
     font-family: Gilroy;
     color: #FFFFFF;
     font-size: 18px;
@@ -53,27 +61,32 @@
     line-height: 34px;
 }
 
-.section-hp_info-description{
+.companies-item_description{
     font-family: WorkSans;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
 }
 
-.section-hp_info-item{
+.companies-item_link{
     display: flex;
     gap: 10px;
     height: 32px;
 }
 
-.section-hp_info-img{
+.companies-item_link-icon{
 
-    width: 32px;
-    hight: 32px;
+    max-width: 32px;
+    max-hight: 32px;
 }
 
-.section-hp_info-text{
+.companies-item_link-text{
     text-decoration: none;
     color: #FFFFFF;
     font-family: Gilroy;
@@ -83,12 +96,17 @@
     line-height: normal;
 }
 
+.fav-button_icon{
+    height: 32px;
+    width: 32px;
+}
 
-.section-hp_more-button{
+.companies-item_fav-button{
     align-self: flex-start;
     align-items: center;
     background-color: #272727;
     border: 1px solid #FFFFFF;
+    border-radius: 10px;
     color: #FFFFFF;
     display: flex;
     flex-direction: row;

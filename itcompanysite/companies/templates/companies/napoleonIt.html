@@ -12,30 +12,39 @@
     <title>Document</title>
 </head>
 <body>
-    <main class="company-sheet">
-        <div class="hp section-hp">
-            <div class="section-hp_images">
-                <img class="section-hp_img" src="{% static 'companies/img/intersvyaz.png'%}">
-
+    <main class="companies">
+        <div class="companies-item company">
+            <img class="companies-item_img" src="{% static 'companies/img/img.png'%}">
+            <span class="companies-item-title">Интерсвязь</span>
+            <span class="companies-item_specification">собственное мобильное приложение, собственный домофон & “умный двор”
+            </span>
+            <span class="companies-item_description">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».
+            </span>
+            <div class="companies-item_link">
+                <img class="companies-item_link-icon" src="{% static 'companies/logos/url.svg'%}">
+                <a class="companies-item_link-text" href="https://www.is74.ru/oldsite/company/about/">Интерсвязь</a>
             </div>
-            <div class="section-hp_info">
-                <span class="section-hp_info-title">Интерсвязь</span>
-                <span class="section-hp_info-specification">собственное мобильное приложение, собственный домофон & “умный двор”
-                </span>
-                <span class="section-hp_info-specification">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».
-                </span>
-                <div class="section-hp_info-description">
-                    <div class="section-hp_info-item">
-                        <img class="section-hp_info-img" src="{% static 'companies/logos/url.svg'%}">
-                        <a class="section-hp_info-text" href="https://www.is74.ru/oldsite/company/about/">Интерсвязь</a>
-                    </div>
-                </div>
-                <button class="section-hp_more-button">
-                    <img class="section-hp_info-img" src="{% static 'companies/logos/heart.svg'%}">
-                        <span>Избранное</span>
-                </button>
-            </div>
+            <button class="companies-item_fav-button">
+                <img class="fav-button_icon" src="{% static 'companies/logos/heart.svg'%}">
+                <span>Избранное</span>
+            </button>
+        </div>
 
+        <div class="companies-item company">
+            <img class="companies-item_img" src="{% static 'companies/img/img.png'%}">
+            <span class="companies-item-title">Интерсвязь</span>
+            <span class="companies-item_specification">собственное мобильное приложение, собственный домофон & “умный двор”
+            </span>
+            <span class="companies-item_description">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».
+            </span>
+            <div class="companies-item_link">
+                <img class="companies-item_link-icon" src="{% static 'companies/logos/url.svg'%}">
+                <a class="companies-item_link-text" href="https://www.is74.ru/oldsite/company/about/">Интерсвязь</a>
+            </div>
+            <button class="companies-item_fav-button">
+                <img class="fav-button_icon" src="{% static 'companies/logos/heart.svg'%}">
+                <span>Избранное</span>
+            </button>
         </div>
     </main>
 </body>
