@@ -18,7 +18,6 @@ def registration (request):
             # new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()
             return render(request, 'main/index.html', {'new_user': new_user})
-        user_reg_form = UserRegistrationForm()
         return render(request, 'main/registration.html', {'user_form': user_reg_form})
     else:
         user_reg_form = UserRegistrationForm()

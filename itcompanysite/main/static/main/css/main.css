@@ -30,3 +30,8 @@ body {
     height: 24px;
     width: 24px;
 }
+
+
+.errorlist li{
+    color: red;
+}
