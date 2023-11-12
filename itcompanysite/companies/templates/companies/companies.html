@@ -1,4 +1,3 @@
-
 {%extends 'main/layout.html'%}
 {% load static %}
 {% block head %}
@@ -6,8 +5,52 @@
 {% endblock %}
 
 {%block title%}Компании{%endblock%}
-
 {%block content%}
+   <!-- <img src="{% static 'companies/img/napoleon.jpg'%}"> -->
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/styles/font.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="companies">
+        {% for company in companies %}
+        <div class="companies-item company">
+            <img class="companies-item_img" src="{{ company.logotype.url }}">
+            <div class="companies-item_description">
+                <span class="companies-item-title">{{ company.name }}</span>
+                <div class="companies-item-tags">
+                    <span class="companies-item-tag">Frontend</span>
+                    <span class="companies-item-tag">1C</span>
+                    <span class="companies-item-tag">BI</span>
+                    <span class="companies-item-tag">Android</span>
+                </div>
+                <span class="companies-item_about-company">{{company.short_description}}</span>
+                <span class="companies-item_specification">собственное мобильное приложение, собственный домофон & “умный двор”
+                </span>
+                <div class="companies-item_link">
+                    <img class="companies-item_link-icon" src="{% static 'companies/logos/url.svg'%}">
+                    <a class="companies-item_link-text" href="{{company.url}}">{{ company.name }}</a>
+                </div>
+                <button class="companies-item_fav-button">
+                    <img class="fav-button_icon" src="{% static 'companies/logos/heart.svg'%}">
+                    <span>Избранное</span>
+                </button>
+            </div>
+        </div>
+        {% endfor%}
+
+        <div class="companies-item company">
+            <img class="companies-item_img" src="{% static 'companies/img/inovations_for_kids.png'%}">
+            <span class="companies-item-title">Инновации детям</span>
+            <div class="companies-item-tags">
+                <span class="companies-item-tag">Frontend</span>
+                <span class="companies-item-tag">1C</span>
+                <span class="companies-item-tag">BI</span>
+                <span class="companies-item-tag">Android</span>
     <div class="companies_container">
         {% for company in companies %}
             <div class="company">

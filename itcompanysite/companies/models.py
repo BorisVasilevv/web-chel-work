@@ -2,10 +2,12 @@ from django.db import models
 
 # Create your models here.
 
+
 class Company(models.Model):
     name = models.CharField('name', max_length=150)
     logotype = models.ImageField('logotype', upload_to='companies/logo/img')
     short_description = models.TextField('short_description')
+    url = models.CharField('url', max_length=500)
 
     def __str__(self):
         return self.name

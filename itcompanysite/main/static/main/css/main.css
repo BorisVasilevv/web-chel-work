@@ -1,4 +1,16 @@
-body {
+body{
+    background-color: #272727;
+}
+
+.item_part-name{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.item{
+    max-width: 376px;
+    margin: auto;
     background-color: #272727;
 }
 
@@ -31,3 +43,27 @@ body {
     width: 24px;
 }
 
+
+.company-info {
+    height:100px;
+}
+
+.company-info-text {
+    color: black;
+    -webkit-line-clamp: 4; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+}
+
+.company-info-text:hover {
+    text-decoration: underline;
+}
+
+.company-name{
+    height: 50%;
+}
+
+ul{
+    list-style: none;
+}

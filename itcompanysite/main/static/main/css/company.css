@@ -1,0 +1,130 @@
+.companies{
+    max-width: 1960px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+
+}
+
+
+.companies-item{
+    padding: 50px;
+    align-items: center;
+
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    border: 1px solid #FCD54C;
+    border-radius: 10px;
+    height: 500px;
+    width: 1000px;
+}
+
+
+.companies-item_img{
+    border-radius: 20px;
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+}
+
+.companies-item-tags{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.companies-item-tag{
+    font-family: Gilroy;
+    color:#FCD54C;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.companies-item_description{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.companies-item-title{
+    font-family: Gilroy;
+    color:#FFFFFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.companies-item_specification{
+    font-family: Gilroy;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.companies-item_about-company{
+    font-family: WorkSans;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: Gilroy;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+}
+
+.companies-item_link{
+    display: flex;
+    gap: 10px;
+    height: 32px;
+}
+
+.companies-item_link-icon{
+
+    max-width: 32px;
+    max-hight: 32px;
+}
+
+.companies-item_link-text{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: Gilroy;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.fav-button_icon{
+    height: 32px;
+    width: 32px;
+}
+
+.companies-item_fav-button{
+    align-self: flex-start;
+    align-items: center;
+    background-color: #272727;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+
+    height: 59px;
+    line-height: 21px;
+    padding: 15px ;
+    margin-top: 15px;
+    cursor: pointer;
+}
