@@ -12,19 +12,22 @@
 
 .companies-item{
     padding: 50px;
-    align-items: flex-start;
+    align-items: center;
+
     display: flex;
-    flex-direction: column;
-    gap: 25px;
+    flex-direction: row;
+    gap: 35px;
     border: 1px solid #FCD54C;
     border-radius: 10px;
-    width: 500px;
+    height: 500px;
+    width: 1000px;
 }
 
+
 .companies-item_img{
-    border-radius: 10px;
-    height: 300px;
-    width: 300px;
+    border-radius: 20px;
+    height: 350px;
+    width: 350px;
     object-fit: cover;
 }
 
@@ -43,6 +46,12 @@
     line-height: normal;
 }
 
+.companies-item_description{
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .companies-item-title{
     font-family: Gilroy;
     color:#FFFFFF;
@@ -55,20 +64,20 @@
 .companies-item_specification{
     font-family: Gilroy;
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 34px;
 }
 
-.companies-item_description{
+.companies-item_about-company{
     font-family: WorkSans;
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     gap: 15px;
     font-family: Gilroy;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 34px;

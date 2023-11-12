@@ -13,28 +13,31 @@
 </head>
 <body>
     <main class="companies">
+        {% for company in companies %}
         <div class="companies-item company">
-            <img class="companies-item_img" src="{% static 'companies/img/intersvyas.png'%}">
-            <span class="companies-item-title">Интерсвязь</span>
-            <div class="companies-item-tags">
-                <span class="companies-item-tag">Frontend</span>
-                <span class="companies-item-tag">1C</span>
-                <span class="companies-item-tag">BI</span>
-                <span class="companies-item-tag">Android</span>
+            <img class="companies-item_img" src="{{ company.logotype.url }}">
+            <div class="companies-item_description">
+                <span class="companies-item-title">{{ company.name }}</span>
+                <div class="companies-item-tags">
+                    <span class="companies-item-tag">Frontend</span>
+                    <span class="companies-item-tag">1C</span>
+                    <span class="companies-item-tag">BI</span>
+                    <span class="companies-item-tag">Android</span>
+                </div>
+                <span class="companies-item_about-company">{{company.short_description}}</span>
+                <span class="companies-item_specification">собственное мобильное приложение, собственный домофон & “умный двор”
+                </span>
+                <div class="companies-item_link">
+                    <img class="companies-item_link-icon" src="{% static 'companies/logos/url.svg'%}">
+                    <a class="companies-item_link-text" href="{{company.url}}">{{ company.name }}</a>
+                </div>
+                <button class="companies-item_fav-button">
+                    <img class="fav-button_icon" src="{% static 'companies/logos/heart.svg'%}">
+                    <span>Избранное</span>
+                </button>
             </div>
-            <span class="companies-item_description">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».
-            </span>
-            <span class="companies-item_specification">собственное мобильное приложение, собственный домофон & “умный двор”
-            </span>
-            <div class="companies-item_link">
-                <img class="companies-item_link-icon" src="{% static 'companies/logos/url.svg'%}">
-                <a class="companies-item_link-text" href="https://www.is74.ru/oldsite/company/about/">Интерсвязь</a>
-            </div>
-            <button class="companies-item_fav-button">
-                <img class="fav-button_icon" src="{% static 'companies/logos/heart.svg'%}">
-                <span>Избранное</span>
-            </button>
         </div>
+        {% endfor%}
 
         <div class="companies-item company">
             <img class="companies-item_img" src="{% static 'companies/img/inovations_for_kids.png'%}">
@@ -45,13 +48,14 @@
                 <span class="companies-item-tag">BI</span>
                 <span class="companies-item-tag">Android</span>
             </div>
-            <span class="companies-item_description">Компания «Интерсвязь» – лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».
+            <span class="companies-item_description">Инновации детям - интерактивные предметы для развития детей
+Разрабатываем программное обеспечение для развития и обучения детей, используемое как вместе с интерактивными комплексами нашей собственной разработки, так и отдельно. (Интерактивная песочница + интерактивный стол, Интерактивный скалодром, Интерактивный пол Magium)
             </span>
             <span class="companies-item_specification">собственное мобильное приложение, собственный домофон & “умный двор”
             </span>
             <div class="companies-item_link">
                 <img class="companies-item_link-icon" src="{% static 'companies/logos/url.svg'%}">
-                <a class="companies-item_link-text" href="https://www.is74.ru/oldsite/company/about/">Интерсвязь</a>
+                <a class="companies-item_link-text" href="https://playstand.ru">Иновации детям</a>
             </div>
             <button class="companies-item_fav-button">
                 <img class="fav-button_icon" src="{% static 'companies/logos/heart.svg'%}">
