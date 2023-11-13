@@ -28,24 +28,15 @@
                     <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
                     <a class="companies-item_link-text" href="{{company.url}}">{{ company.name }}</a>
                 </div>
-                <button class="companies-item_fav-button">
-                    <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
-                    <span>Избранное</span>
-                </button>
+                {% if user.is_authenticated %}
+                    <button class="companies-item_fav-button">
+                        <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
+                        <span>Избранное</span>
+                    </button>
+                {% endif %}
             </div>
         </div>
     {% endfor%}
 </main>
 
-<!--    <div class="companies_container">-->
-<!--        {% for company in companies %}-->
-<!--            <div class="company">-->
-<!--                <a class="company_card" href="{%url 'napoleonit'%}">-->
-<!--                    <span class="company_card_header">{{ company.name }}</span>-->
-<!--                    <img src="{{company.logotype.url}}"/>-->
-<!--                    <span class="company_card_text">{{company.short_description}}</span>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        {% endfor%}-->
-<!--    </div>-->
 {%endblock%}

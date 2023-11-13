@@ -14,6 +14,10 @@
 <body>
 {{user}}
     <div class="navigation">
+        <form action="{% url 'search'%}" method="get" class="search-container">
+             <input class="search-row" placeholder="Введите название компании..." type="search" name="q" required="">
+            <button class="search-button" type="submit">XXX</button>
+        </form>
 
         <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'home'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/home.svg'%}">Главная</a></div>
         <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'companies'%}"> <img class="navigation-elem-icon" src="{% static 'main/icons/companies.svg'%}">Компании</a></div>
