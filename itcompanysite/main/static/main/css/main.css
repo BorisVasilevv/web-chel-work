@@ -1,5 +1,6 @@
 body{
     background-color: #272727;
+    font-family: Gilroy;
 }
 
 .item_part-name{
@@ -31,7 +32,7 @@ body{
 
 .navigation-elem-link{
     text-decoration: none;
-    color:  #FCD54C;
+    color:  #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
