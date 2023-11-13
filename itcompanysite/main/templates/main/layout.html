@@ -21,8 +21,14 @@
             <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'logout'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Выйти</a></div>
 
         {% else %}
-            <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'registration'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Регистрация</a></div>
-            <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'login'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Вход</a></div>
+            <div class="navigation-elem">
+                <a class="navigation-elem-link" href="{%url 'registration'%}">
+                    <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Регистрация</a>
+            </div>
+            <div class="navigation-elem">
+                <a class="navigation-elem-link" href="{%url 'login'%}">
+                    <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Вход</a>
+            </div>
         {% endif %}
     </div>
 

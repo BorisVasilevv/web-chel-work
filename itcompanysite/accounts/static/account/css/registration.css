@@ -20,13 +20,11 @@
 
     width: 420px;
     gap: 10px;
-
-
-
 }
 
 .input-field{
     background-color: #302D2D;
+    color: #FFFFFF;
     border: 0;
     height: 30px;
     border-radius: 2%;
@@ -34,7 +32,7 @@
 }
 
 .registration-help-info{
-    color: #FCD54C;
+    color: #FFFFFF;
     font-size: 20px;
     line-height: 22px;
     font-weight: 500;
@@ -51,6 +49,8 @@
 .submit-button:hover{
     cursor: pointer;
 }
+
+
 
 /*error style*/
 
