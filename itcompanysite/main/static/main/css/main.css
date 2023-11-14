@@ -47,7 +47,7 @@ body{
 
 .navigation-elem-link{
     text-decoration: none;
-    color:  #FCD54C;
+    color:  #faf446;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,16 +76,17 @@ ul{
 
 .search-row{
      background-color: #302D2D;
-     border: solid 1px #FCD54C;
+     border: solid 1px #faf446;
      height:30px;
      width:500px;
      color: white;
 
+
 }
 
 .search-button{
-    background-color: #FCD54C;
-    border-color:  #FCD54C;
+    background-color: #faf446;
+    border-color:  #faf446;
     height:30px;
     width:30px;
     display: flex;
