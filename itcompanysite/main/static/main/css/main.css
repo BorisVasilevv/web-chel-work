@@ -1,5 +1,6 @@
 body{
     background-color: #272727;
+    font-family: Gilroy;
 }
 
 .main-header{
@@ -30,6 +31,8 @@ body{
     height: 10vh;
     gap: 15px;
     margin-right: 5%;
+    margin: 0 0 50px 0;
+
 }
 
 .navigation-elem{
@@ -42,7 +45,7 @@ body{
 
 .navigation-elem-link{
     text-decoration: none;
-    color:  #FCD54C;
+    color:  #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,6 +53,7 @@ body{
 }
 
 .navigation-elem-icon{
+
     height: 24px;
     width: 24px;
 }
