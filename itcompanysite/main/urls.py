@@ -6,7 +6,7 @@ from django.conf import settings
 urlpatterns = [
     path('', views.index, name='home'),
     path('companies/', include('companies.urls')),
-
+    path('map/', views.map, name='map'),
     path('accounts/', include('accounts.urls'))
 ]
 

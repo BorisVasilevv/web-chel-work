@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
+    
         <script>
             L_NO_TOUCH = false;
             L_DISABLE_3D = false;
         </script>
-
+    
     <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
     <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script>
+        Content-Security-Policy "frame-ancestors 'self' http://127.0.0.1:8000/";
+    </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-
+    
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_39f882880ab691a9b4a5bc0ec01b90e1 {
+                #map_8651d9ba7b5f4861bdb2c442b445b5b9 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -34,19 +37,19 @@
                 }
                 .leaflet-container { font-size: 1rem; }
             </style>
-
+        
 </head>
 <body>
-
-
-            <div class="folium-map" id="map_39f882880ab691a9b4a5bc0ec01b90e1" ></div>
-
+    
+    
+            <div class="folium-map" id="map_8651d9ba7b5f4861bdb2c442b445b5b9" ></div>
+        
 </body>
 <script>
-
-
-            var map_39f882880ab691a9b4a5bc0ec01b90e1 = L.map(
-                "map_39f882880ab691a9b4a5bc0ec01b90e1",
+    
+    
+            var map_8651d9ba7b5f4861bdb2c442b445b5b9 = L.map(
+                "map_8651d9ba7b5f4861bdb2c442b445b5b9",
                 {
                     center: [55.16523510061088, 61.427102328027054],
                     crs: L.CRS.EPSG3857,
@@ -56,891 +59,891 @@
                 }
             );
 
+            
 
-
-
-
-            var tile_layer_de2083bb02f4de73ee0abb152f1e8b93 = L.tileLayer(
+        
+    
+            var tile_layer_5b8a0751eec5fa45f8df21d318da99f7 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
             );
-
-
-                tile_layer_de2083bb02f4de73ee0abb152f1e8b93.addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-            var marker_d45adf3d2d25fc22b67dd9c269154299 = L.marker(
+        
+    
+                tile_layer_5b8a0751eec5fa45f8df21d318da99f7.addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+    
+            var marker_341dadce5a4d59532f1ad3bf1a6f5985 = L.marker(
                 [55.17810281780689, 61.31967807545179],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_c8a2b04ce633d649bde8c444cf8f97a6 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_1b6e8002dba4bba06770856ad8efdf8e = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
             );
-            marker_d45adf3d2d25fc22b67dd9c269154299.setIcon(icon_c8a2b04ce633d649bde8c444cf8f97a6);
+            marker_341dadce5a4d59532f1ad3bf1a6f5985.setIcon(icon_1b6e8002dba4bba06770856ad8efdf8e);
+        
+    
+        var popup_be770810de31078a702b715357cb14c0 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_8e1697500d9dc3d48af860d5343e2e06 = $(`<div id="html_8e1697500d9dc3d48af860d5343e2e06" style="width: 100.0%; height: 100.0%;">ЧелГУ</div>`)[0];
+                popup_be770810de31078a702b715357cb14c0.setContent(html_8e1697500d9dc3d48af860d5343e2e06);
+            
+        
 
-        var popup_1609c60d31358b554874490e699c3967 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_e4998209bcfa948799a45ef5c6db1e16 = $(`<div id="html_e4998209bcfa948799a45ef5c6db1e16" style="width: 100.0%; height: 100.0%;">ЧелГУ</div>`)[0];
-                popup_1609c60d31358b554874490e699c3967.setContent(html_e4998209bcfa948799a45ef5c6db1e16);
-
-
-
-        marker_d45adf3d2d25fc22b67dd9c269154299.bindPopup(popup_1609c60d31358b554874490e699c3967)
+        marker_341dadce5a4d59532f1ad3bf1a6f5985.bindPopup(popup_be770810de31078a702b715357cb14c0)
         ;
 
-
-
-
-            marker_d45adf3d2d25fc22b67dd9c269154299.bindTooltip(
+        
+    
+    
+            marker_341dadce5a4d59532f1ad3bf1a6f5985.bindTooltip(
                 `<div>
                      IT компания
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_e6ef1524d2075b72d9c44f49189f1fb1 = L.marker(
+        
+    
+            var marker_755cbd8382e0aa2633a89d236c034874 = L.marker(
                 [55.162322563924604, 61.37485434686038],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_873150c3d30b232f964114c931202da9 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_233f297191f2fd4ec6afc5417e4c3f76 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_e6ef1524d2075b72d9c44f49189f1fb1.setIcon(icon_873150c3d30b232f964114c931202da9);
+            marker_755cbd8382e0aa2633a89d236c034874.setIcon(icon_233f297191f2fd4ec6afc5417e4c3f76);
+        
+    
+        var popup_0863fabe5eee3c436e2ed9a8dba2db27 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_8ad4ad9339f3f82b2c44e96c4ce1e932 = $(`<div id="html_8ad4ad9339f3f82b2c44e96c4ce1e932" style="width: 100.0%; height: 100.0%;">ИТ Энигма</div>`)[0];
+                popup_0863fabe5eee3c436e2ed9a8dba2db27.setContent(html_8ad4ad9339f3f82b2c44e96c4ce1e932);
+            
+        
 
-        var popup_c7bbee5bce032ba9cf2013d697f81c74 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_83781946d36ae93e24566bfa5748155c = $(`<div id="html_83781946d36ae93e24566bfa5748155c" style="width: 100.0%; height: 100.0%;">ИТ Энигма</div>`)[0];
-                popup_c7bbee5bce032ba9cf2013d697f81c74.setContent(html_83781946d36ae93e24566bfa5748155c);
-
-
-
-        marker_e6ef1524d2075b72d9c44f49189f1fb1.bindPopup(popup_c7bbee5bce032ba9cf2013d697f81c74)
+        marker_755cbd8382e0aa2633a89d236c034874.bindPopup(popup_0863fabe5eee3c436e2ed9a8dba2db27)
         ;
 
-
-
-
-            marker_e6ef1524d2075b72d9c44f49189f1fb1.bindTooltip(
+        
+    
+    
+            marker_755cbd8382e0aa2633a89d236c034874.bindTooltip(
                 `<div>
                      Кибербезопасность
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_dc8b75d599c6331cc1072d3168afcc7e = L.marker(
+        
+    
+            var marker_10c7df5d0a113dab107245c2cd8e9072 = L.marker(
                 [55.156877627170346, 61.30099144042235],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_24b6e0f5efc5b31ed8dbdbf40d89abd5 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_459549ae5000af8e36bd2b97e7e39db7 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_dc8b75d599c6331cc1072d3168afcc7e.setIcon(icon_24b6e0f5efc5b31ed8dbdbf40d89abd5);
+            marker_10c7df5d0a113dab107245c2cd8e9072.setIcon(icon_459549ae5000af8e36bd2b97e7e39db7);
+        
+    
+        var popup_92697813c6ac02c8d15d95444d060cd3 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_98cb59c01925b40725f2f68cd6012f20 = $(`<div id="html_98cb59c01925b40725f2f68cd6012f20" style="width: 100.0%; height: 100.0%;">F-LAB</div>`)[0];
+                popup_92697813c6ac02c8d15d95444d060cd3.setContent(html_98cb59c01925b40725f2f68cd6012f20);
+            
+        
 
-        var popup_c17e917c9dc1398ffa7353416f7be106 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_fd9d3ce989771d4c82a682f3a1d252db = $(`<div id="html_fd9d3ce989771d4c82a682f3a1d252db" style="width: 100.0%; height: 100.0%;">F-LAB</div>`)[0];
-                popup_c17e917c9dc1398ffa7353416f7be106.setContent(html_fd9d3ce989771d4c82a682f3a1d252db);
-
-
-
-        marker_dc8b75d599c6331cc1072d3168afcc7e.bindPopup(popup_c17e917c9dc1398ffa7353416f7be106)
+        marker_10c7df5d0a113dab107245c2cd8e9072.bindPopup(popup_92697813c6ac02c8d15d95444d060cd3)
         ;
 
-
-
-
-            marker_dc8b75d599c6331cc1072d3168afcc7e.bindTooltip(
+        
+    
+    
+            marker_10c7df5d0a113dab107245c2cd8e9072.bindTooltip(
                 `<div>
                      Кибербезопасность
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_0032539a943bb638aca9708d7bab1b1a = L.marker(
+        
+    
+            var marker_543d798b9ca34c605bbd0970fb3aa115 = L.marker(
                 [55.17315000190367, 61.365313565575164],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_17fdab04cf181e69b43abc8077a6f183 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_6ce00fde35838dc1b894e53c2ec98840 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
             );
-            marker_0032539a943bb638aca9708d7bab1b1a.setIcon(icon_17fdab04cf181e69b43abc8077a6f183);
+            marker_543d798b9ca34c605bbd0970fb3aa115.setIcon(icon_6ce00fde35838dc1b894e53c2ec98840);
+        
+    
+        var popup_59e6a97dba20182a54de20da09590618 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_7a6af9b94f5fd0bd000dbe16fadf924e = $(`<div id="html_7a6af9b94f5fd0bd000dbe16fadf924e" style="width: 100.0%; height: 100.0%;">Интерсвязь</div>`)[0];
+                popup_59e6a97dba20182a54de20da09590618.setContent(html_7a6af9b94f5fd0bd000dbe16fadf924e);
+            
+        
 
-        var popup_bff9e07d32da33cbe21c87f938c4843a = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_29f9a0988e97e8d5296dda1a290d3908 = $(`<div id="html_29f9a0988e97e8d5296dda1a290d3908" style="width: 100.0%; height: 100.0%;">Интерсвязь</div>`)[0];
-                popup_bff9e07d32da33cbe21c87f938c4843a.setContent(html_29f9a0988e97e8d5296dda1a290d3908);
-
-
-
-        marker_0032539a943bb638aca9708d7bab1b1a.bindPopup(popup_bff9e07d32da33cbe21c87f938c4843a)
+        marker_543d798b9ca34c605bbd0970fb3aa115.bindPopup(popup_59e6a97dba20182a54de20da09590618)
         ;
 
-
-
-
-            marker_0032539a943bb638aca9708d7bab1b1a.bindTooltip(
+        
+    
+    
+            marker_543d798b9ca34c605bbd0970fb3aa115.bindTooltip(
                 `<div>
                      Собственная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_44c908e410f95e61ff3bd1cab857514b = L.marker(
+        
+    
+            var marker_161b362398d0c1487dc01727bb64fa9a = L.marker(
                 [55.15493100593255, 61.40023052271539],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_8cfee0224aa877008b8dfc6cdff6edfb = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_921aeb7ecad1f8dbe6e970dda0dfabb8 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
             );
-            marker_44c908e410f95e61ff3bd1cab857514b.setIcon(icon_8cfee0224aa877008b8dfc6cdff6edfb);
+            marker_161b362398d0c1487dc01727bb64fa9a.setIcon(icon_921aeb7ecad1f8dbe6e970dda0dfabb8);
+        
+    
+        var popup_bd01b2de15786e16e986466bbb0b3f1d = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_7fb85d02f562e58eccc03720245fd157 = $(`<div id="html_7fb85d02f562e58eccc03720245fd157" style="width: 100.0%; height: 100.0%;">Инновации детям</div>`)[0];
+                popup_bd01b2de15786e16e986466bbb0b3f1d.setContent(html_7fb85d02f562e58eccc03720245fd157);
+            
+        
 
-        var popup_b8ae51818624e36914452ec356278eee = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_56191061112832a9ca1e2dc9729f1352 = $(`<div id="html_56191061112832a9ca1e2dc9729f1352" style="width: 100.0%; height: 100.0%;">Инновации детям</div>`)[0];
-                popup_b8ae51818624e36914452ec356278eee.setContent(html_56191061112832a9ca1e2dc9729f1352);
-
-
-
-        marker_44c908e410f95e61ff3bd1cab857514b.bindPopup(popup_b8ae51818624e36914452ec356278eee)
+        marker_161b362398d0c1487dc01727bb64fa9a.bindPopup(popup_bd01b2de15786e16e986466bbb0b3f1d)
         ;
 
-
-
-
-            marker_44c908e410f95e61ff3bd1cab857514b.bindTooltip(
+        
+    
+    
+            marker_161b362398d0c1487dc01727bb64fa9a.bindTooltip(
                 `<div>
                      Собственная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_71b3f56078b7950009fda4802339b35c = L.marker(
+        
+    
+            var marker_d6c4b759c67b6b172fdb6cbb2bc61dcb = L.marker(
                 [55.16207655138783, 61.43051607119092],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_fc4facd818a6ffc427b974bd9d9b6a29 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_d8a20f280da549e032c26fba83c5f2ac = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_71b3f56078b7950009fda4802339b35c.setIcon(icon_fc4facd818a6ffc427b974bd9d9b6a29);
+            marker_d6c4b759c67b6b172fdb6cbb2bc61dcb.setIcon(icon_d8a20f280da549e032c26fba83c5f2ac);
+        
+    
+        var popup_70d270090151b76363246130b6c97d53 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_989ee6e8e44dcefe571d8dfae6d49613 = $(`<div id="html_989ee6e8e44dcefe571d8dfae6d49613" style="width: 100.0%; height: 100.0%;">Nova Games</div>`)[0];
+                popup_70d270090151b76363246130b6c97d53.setContent(html_989ee6e8e44dcefe571d8dfae6d49613);
+            
+        
 
-        var popup_c1001e3941f9de7a6a208671498efe2e = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_5cc254623b159c9f150d6073c1021bda = $(`<div id="html_5cc254623b159c9f150d6073c1021bda" style="width: 100.0%; height: 100.0%;">Nova Games</div>`)[0];
-                popup_c1001e3941f9de7a6a208671498efe2e.setContent(html_5cc254623b159c9f150d6073c1021bda);
-
-
-
-        marker_71b3f56078b7950009fda4802339b35c.bindPopup(popup_c1001e3941f9de7a6a208671498efe2e)
+        marker_d6c4b759c67b6b172fdb6cbb2bc61dcb.bindPopup(popup_70d270090151b76363246130b6c97d53)
         ;
 
-
-
-
-            marker_71b3f56078b7950009fda4802339b35c.bindTooltip(
+        
+    
+    
+            marker_d6c4b759c67b6b172fdb6cbb2bc61dcb.bindTooltip(
                 `<div>
                      GameDev
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_5691fca8aae0fa949cfd436803cf0e24 = L.marker(
+        
+    
+            var marker_13b95c6971c116f9094493443b8c975d = L.marker(
                 [55.164874685353645, 61.401122082826944],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_9114672f5e7e837d32c7d15ce6f36a9e = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_a718df7323eb99caeb9912b927d86869 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_5691fca8aae0fa949cfd436803cf0e24.setIcon(icon_9114672f5e7e837d32c7d15ce6f36a9e);
+            marker_13b95c6971c116f9094493443b8c975d.setIcon(icon_a718df7323eb99caeb9912b927d86869);
+        
+    
+        var popup_9edde095ea7e7165064d9dedbc9c4b3c = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_e8a51b5823ea9ff6f6b12fb47ead8260 = $(`<div id="html_e8a51b5823ea9ff6f6b12fb47ead8260" style="width: 100.0%; height: 100.0%;">TAPCLAP</div>`)[0];
+                popup_9edde095ea7e7165064d9dedbc9c4b3c.setContent(html_e8a51b5823ea9ff6f6b12fb47ead8260);
+            
+        
 
-        var popup_b0353958993be887c28cdcbaf619e034 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_71c44ccb22269e0b2e12967582324e0d = $(`<div id="html_71c44ccb22269e0b2e12967582324e0d" style="width: 100.0%; height: 100.0%;">TAPCLAP</div>`)[0];
-                popup_b0353958993be887c28cdcbaf619e034.setContent(html_71c44ccb22269e0b2e12967582324e0d);
-
-
-
-        marker_5691fca8aae0fa949cfd436803cf0e24.bindPopup(popup_b0353958993be887c28cdcbaf619e034)
+        marker_13b95c6971c116f9094493443b8c975d.bindPopup(popup_9edde095ea7e7165064d9dedbc9c4b3c)
         ;
 
-
-
-
-            marker_5691fca8aae0fa949cfd436803cf0e24.bindTooltip(
+        
+    
+    
+            marker_13b95c6971c116f9094493443b8c975d.bindTooltip(
                 `<div>
                      GameDev
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_fdda1334e8bdd6caacf092deba94d964 = L.marker(
+        
+    
+            var marker_1fc88bac62585b64e98cc3f52be5e19a = L.marker(
                 [55.170745197135254, 61.413583227009354],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_a0bd7ccd2e9a9f7318cf0e831a231e8a = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_9dc8f02422834e39a261ae0f34941d90 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_fdda1334e8bdd6caacf092deba94d964.setIcon(icon_a0bd7ccd2e9a9f7318cf0e831a231e8a);
+            marker_1fc88bac62585b64e98cc3f52be5e19a.setIcon(icon_9dc8f02422834e39a261ae0f34941d90);
+        
+    
+        var popup_5b705ed2ca77b477b9cd48a1ff44a48f = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_27b9226134e812e4d266f75c0ccf8ad0 = $(`<div id="html_27b9226134e812e4d266f75c0ccf8ad0" style="width: 100.0%; height: 100.0%;">Playrix</div>`)[0];
+                popup_5b705ed2ca77b477b9cd48a1ff44a48f.setContent(html_27b9226134e812e4d266f75c0ccf8ad0);
+            
+        
 
-        var popup_257e36d39be65ca3bdefce033bd5316f = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_dc750cb963803d91fa8ea5ddfe43811e = $(`<div id="html_dc750cb963803d91fa8ea5ddfe43811e" style="width: 100.0%; height: 100.0%;">Playrix</div>`)[0];
-                popup_257e36d39be65ca3bdefce033bd5316f.setContent(html_dc750cb963803d91fa8ea5ddfe43811e);
-
-
-
-        marker_fdda1334e8bdd6caacf092deba94d964.bindPopup(popup_257e36d39be65ca3bdefce033bd5316f)
+        marker_1fc88bac62585b64e98cc3f52be5e19a.bindPopup(popup_5b705ed2ca77b477b9cd48a1ff44a48f)
         ;
 
-
-
-
-            marker_fdda1334e8bdd6caacf092deba94d964.bindTooltip(
+        
+    
+    
+            marker_1fc88bac62585b64e98cc3f52be5e19a.bindTooltip(
                 `<div>
                      GameDev
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_2e3e81ffd0c3ee985d8e10c2702090b6 = L.marker(
+        
+    
+            var marker_45bfd4d561c02df01bc5b15b65e63fdd = L.marker(
                 [55.169148746093036, 61.378706984682104],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_d383e159372eb98debceeee55ee2f969 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_67131c063dacea19cba0aa3701a6eda9 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
             );
-            marker_2e3e81ffd0c3ee985d8e10c2702090b6.setIcon(icon_d383e159372eb98debceeee55ee2f969);
+            marker_45bfd4d561c02df01bc5b15b65e63fdd.setIcon(icon_67131c063dacea19cba0aa3701a6eda9);
+        
+    
+        var popup_4105b8e6e881a8685ec0d139037e1a50 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_14847311e4df8f284037ff6df55d2d68 = $(`<div id="html_14847311e4df8f284037ff6df55d2d68" style="width: 100.0%; height: 100.0%;">Odin Games</div>`)[0];
+                popup_4105b8e6e881a8685ec0d139037e1a50.setContent(html_14847311e4df8f284037ff6df55d2d68);
+            
+        
 
-        var popup_3b100bc8c2dcde06775589f292b35b2f = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_4247bedde676117fc5854ee28b8873e9 = $(`<div id="html_4247bedde676117fc5854ee28b8873e9" style="width: 100.0%; height: 100.0%;">Odin Games</div>`)[0];
-                popup_3b100bc8c2dcde06775589f292b35b2f.setContent(html_4247bedde676117fc5854ee28b8873e9);
-
-
-
-        marker_2e3e81ffd0c3ee985d8e10c2702090b6.bindPopup(popup_3b100bc8c2dcde06775589f292b35b2f)
+        marker_45bfd4d561c02df01bc5b15b65e63fdd.bindPopup(popup_4105b8e6e881a8685ec0d139037e1a50)
         ;
 
-
-
-
-            marker_2e3e81ffd0c3ee985d8e10c2702090b6.bindTooltip(
+        
+    
+    
+            marker_45bfd4d561c02df01bc5b15b65e63fdd.bindTooltip(
                 `<div>
                      GameDev
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_101be3327b42d35c127391d4ec15908d = L.marker(
+        
+    
+            var marker_91b915471438a538756b9d46055ddf41 = L.marker(
                 [55.16480844266152, 61.401059942354664],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_412e201a3c65893678527238e51cbad9 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_f500a9d612fccb896c853b530a72d9fc = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
             );
-            marker_101be3327b42d35c127391d4ec15908d.setIcon(icon_412e201a3c65893678527238e51cbad9);
+            marker_91b915471438a538756b9d46055ddf41.setIcon(icon_f500a9d612fccb896c853b530a72d9fc);
+        
+    
+        var popup_b7acdbf1d7b06345527c4ccc4d4f8807 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_87916c5efca3aef462f3f3f33d1d57a7 = $(`<div id="html_87916c5efca3aef462f3f3f33d1d57a7" style="width: 100.0%; height: 100.0%;">3 Divi</div>`)[0];
+                popup_b7acdbf1d7b06345527c4ccc4d4f8807.setContent(html_87916c5efca3aef462f3f3f33d1d57a7);
+            
+        
 
-        var popup_70544295c33fb2c9e640f27c135894b2 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_13f3b27b62e2a8ba1cad45941a0f5f90 = $(`<div id="html_13f3b27b62e2a8ba1cad45941a0f5f90" style="width: 100.0%; height: 100.0%;">3 Divi</div>`)[0];
-                popup_70544295c33fb2c9e640f27c135894b2.setContent(html_13f3b27b62e2a8ba1cad45941a0f5f90);
-
-
-
-        marker_101be3327b42d35c127391d4ec15908d.bindPopup(popup_70544295c33fb2c9e640f27c135894b2)
+        marker_91b915471438a538756b9d46055ddf41.bindPopup(popup_b7acdbf1d7b06345527c4ccc4d4f8807)
         ;
 
-
-
-
-            marker_101be3327b42d35c127391d4ec15908d.bindTooltip(
+        
+    
+    
+            marker_91b915471438a538756b9d46055ddf41.bindTooltip(
                 `<div>
                      IT-Стартап
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_faa6a057e051551fdc696a8b5e41926b = L.marker(
+        
+    
+            var marker_8c15429a13ada05c64167bd66b73155f = L.marker(
                 [55.15576413484781, 61.370867812263874],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_27432355dfc4a314c4fe3390ae9edf61 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_b493341f381b6e7d4f067d97fb1966c1 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
             );
-            marker_faa6a057e051551fdc696a8b5e41926b.setIcon(icon_27432355dfc4a314c4fe3390ae9edf61);
+            marker_8c15429a13ada05c64167bd66b73155f.setIcon(icon_b493341f381b6e7d4f067d97fb1966c1);
+        
+    
+        var popup_a84935687dcdd2fcbdbf3820160cd93c = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_96844702dde2a4b09c3b5cc86b0ae708 = $(`<div id="html_96844702dde2a4b09c3b5cc86b0ae708" style="width: 100.0%; height: 100.0%;">СКБ-Контур</div>`)[0];
+                popup_a84935687dcdd2fcbdbf3820160cd93c.setContent(html_96844702dde2a4b09c3b5cc86b0ae708);
+            
+        
 
-        var popup_1d715a9629438a0f57cc2b0207158f1e = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_7eab559ef2d4638d84298d46df19ef1d = $(`<div id="html_7eab559ef2d4638d84298d46df19ef1d" style="width: 100.0%; height: 100.0%;">СКБ-Контур</div>`)[0];
-                popup_1d715a9629438a0f57cc2b0207158f1e.setContent(html_7eab559ef2d4638d84298d46df19ef1d);
-
-
-
-        marker_faa6a057e051551fdc696a8b5e41926b.bindPopup(popup_1d715a9629438a0f57cc2b0207158f1e)
+        marker_8c15429a13ada05c64167bd66b73155f.bindPopup(popup_a84935687dcdd2fcbdbf3820160cd93c)
         ;
 
-
-
-
-            marker_faa6a057e051551fdc696a8b5e41926b.bindTooltip(
+        
+    
+    
+            marker_8c15429a13ada05c64167bd66b73155f.bindTooltip(
                 `<div>
                      IT-Стартап
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_51417a739102087ba1e81c3e30afe90c = L.marker(
+        
+    
+            var marker_1535a218a9679788bd5c230590298cde = L.marker(
                 [55.190730814944175, 61.33353100555804],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_702bed4607ba3aa5ff1b051b91cb82a1 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_f3b1ad877b51387b3fff0a8752b09774 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_51417a739102087ba1e81c3e30afe90c.setIcon(icon_702bed4607ba3aa5ff1b051b91cb82a1);
+            marker_1535a218a9679788bd5c230590298cde.setIcon(icon_f3b1ad877b51387b3fff0a8752b09774);
+        
+    
+        var popup_724150802bb9d3dc8b7b08ac82638335 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_7f867ac05dd582248c62534a994aeb21 = $(`<div id="html_7f867ac05dd582248c62534a994aeb21" style="width: 100.0%; height: 100.0%;">АСПРО</div>`)[0];
+                popup_724150802bb9d3dc8b7b08ac82638335.setContent(html_7f867ac05dd582248c62534a994aeb21);
+            
+        
 
-        var popup_4e89fef3bd006c5b38e7902d69363a14 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_bbfd5490e0ee9d647a6c5a4692926b12 = $(`<div id="html_bbfd5490e0ee9d647a6c5a4692926b12" style="width: 100.0%; height: 100.0%;">АСПРО</div>`)[0];
-                popup_4e89fef3bd006c5b38e7902d69363a14.setContent(html_bbfd5490e0ee9d647a6c5a4692926b12);
-
-
-
-        marker_51417a739102087ba1e81c3e30afe90c.bindPopup(popup_4e89fef3bd006c5b38e7902d69363a14)
+        marker_1535a218a9679788bd5c230590298cde.bindPopup(popup_724150802bb9d3dc8b7b08ac82638335)
         ;
 
-
-
-
-            marker_51417a739102087ba1e81c3e30afe90c.bindTooltip(
+        
+    
+    
+            marker_1535a218a9679788bd5c230590298cde.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_080abbdaa5e633726420d99c724fb7b5 = L.marker(
+        
+    
+            var marker_a9b91fab16cb3f3fc69213f439b7f005 = L.marker(
                 [55.14926455931064, 61.385146816169396],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_694a0afdd7e96096fade7a32a5175a7d = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_f1eda3a6c352e889f1a71485554c8b79 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_080abbdaa5e633726420d99c724fb7b5.setIcon(icon_694a0afdd7e96096fade7a32a5175a7d);
+            marker_a9b91fab16cb3f3fc69213f439b7f005.setIcon(icon_f1eda3a6c352e889f1a71485554c8b79);
+        
+    
+        var popup_9e78aca1deb01bb973ae5fe147fd2519 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_00857a98e53c95e91fc6fc3bcee297f6 = $(`<div id="html_00857a98e53c95e91fc6fc3bcee297f6" style="width: 100.0%; height: 100.0%;">Dextra</div>`)[0];
+                popup_9e78aca1deb01bb973ae5fe147fd2519.setContent(html_00857a98e53c95e91fc6fc3bcee297f6);
+            
+        
 
-        var popup_48eb651fd21ffbf88d37da15f0bb8620 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_f6d1b555b4fc3cf1b9705ddefad2dc82 = $(`<div id="html_f6d1b555b4fc3cf1b9705ddefad2dc82" style="width: 100.0%; height: 100.0%;">Dextra</div>`)[0];
-                popup_48eb651fd21ffbf88d37da15f0bb8620.setContent(html_f6d1b555b4fc3cf1b9705ddefad2dc82);
-
-
-
-        marker_080abbdaa5e633726420d99c724fb7b5.bindPopup(popup_48eb651fd21ffbf88d37da15f0bb8620)
+        marker_a9b91fab16cb3f3fc69213f439b7f005.bindPopup(popup_9e78aca1deb01bb973ae5fe147fd2519)
         ;
 
-
-
-
-            marker_080abbdaa5e633726420d99c724fb7b5.bindTooltip(
+        
+    
+    
+            marker_a9b91fab16cb3f3fc69213f439b7f005.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_5fbaf5d0db22e3fac3973f1977e44ca0 = L.marker(
+        
+    
+            var marker_d119cb62be21860f237b8d880d1b5236 = L.marker(
                 [55.16501443448449, 61.37425512082958],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_c8681cf77f447b95c74931121bd13d04 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_69e1668a7f7ced2321bf8e2945d1f49f = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_5fbaf5d0db22e3fac3973f1977e44ca0.setIcon(icon_c8681cf77f447b95c74931121bd13d04);
+            marker_d119cb62be21860f237b8d880d1b5236.setIcon(icon_69e1668a7f7ced2321bf8e2945d1f49f);
+        
+    
+        var popup_5d66452a3e0e0cc2b32510f8d0543be7 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_320b6d5322e7949b84f8d6c83420be71 = $(`<div id="html_320b6d5322e7949b84f8d6c83420be71" style="width: 100.0%; height: 100.0%;">Цифровой элемент</div>`)[0];
+                popup_5d66452a3e0e0cc2b32510f8d0543be7.setContent(html_320b6d5322e7949b84f8d6c83420be71);
+            
+        
 
-        var popup_eaafc9c13bfdb8b40f15a4747c6be0b8 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_bd8e54a1ce442d54cf29199bad60c7ac = $(`<div id="html_bd8e54a1ce442d54cf29199bad60c7ac" style="width: 100.0%; height: 100.0%;">Цифровой элемент</div>`)[0];
-                popup_eaafc9c13bfdb8b40f15a4747c6be0b8.setContent(html_bd8e54a1ce442d54cf29199bad60c7ac);
-
-
-
-        marker_5fbaf5d0db22e3fac3973f1977e44ca0.bindPopup(popup_eaafc9c13bfdb8b40f15a4747c6be0b8)
+        marker_d119cb62be21860f237b8d880d1b5236.bindPopup(popup_5d66452a3e0e0cc2b32510f8d0543be7)
         ;
 
-
-
-
-            marker_5fbaf5d0db22e3fac3973f1977e44ca0.bindTooltip(
+        
+    
+    
+            marker_d119cb62be21860f237b8d880d1b5236.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_f70503bf7be613c953b831f3c2b46a55 = L.marker(
+        
+    
+            var marker_0f6fc769cd04a0488d546394ae060cd8 = L.marker(
                 [55.162085806673836, 61.397694811663214],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_ec306b9eb990defa939cfca70e17a828 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_a50bc19a67181a68b7520c25e6f87288 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_f70503bf7be613c953b831f3c2b46a55.setIcon(icon_ec306b9eb990defa939cfca70e17a828);
+            marker_0f6fc769cd04a0488d546394ae060cd8.setIcon(icon_a50bc19a67181a68b7520c25e6f87288);
+        
+    
+        var popup_bcfdf0c75689eda7ed013fc8c86bdc52 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_293e932ed43ddf435e3d008dfeb85c27 = $(`<div id="html_293e932ed43ddf435e3d008dfeb85c27" style="width: 100.0%; height: 100.0%;">Napoleon IT</div>`)[0];
+                popup_bcfdf0c75689eda7ed013fc8c86bdc52.setContent(html_293e932ed43ddf435e3d008dfeb85c27);
+            
+        
 
-        var popup_e11443f25171a80ed6fea9c51e66b989 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_2ea868ef1adea792215ea765002d0fa8 = $(`<div id="html_2ea868ef1adea792215ea765002d0fa8" style="width: 100.0%; height: 100.0%;">Napoleon IT</div>`)[0];
-                popup_e11443f25171a80ed6fea9c51e66b989.setContent(html_2ea868ef1adea792215ea765002d0fa8);
-
-
-
-        marker_f70503bf7be613c953b831f3c2b46a55.bindPopup(popup_e11443f25171a80ed6fea9c51e66b989)
+        marker_0f6fc769cd04a0488d546394ae060cd8.bindPopup(popup_bcfdf0c75689eda7ed013fc8c86bdc52)
         ;
 
-
-
-
-            marker_f70503bf7be613c953b831f3c2b46a55.bindTooltip(
+        
+    
+    
+            marker_0f6fc769cd04a0488d546394ae060cd8.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_25d52d0109bc889118452be52539f8bc = L.marker(
+        
+    
+            var marker_b3fd014a32a7b4eda2730e9b1e1f5d62 = L.marker(
                 [55.15688962758773, 61.302039981860936],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_64839a36c96d887eee9fdb85517c2731 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_f5451da374bee534e5a08564b19af767 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_25d52d0109bc889118452be52539f8bc.setIcon(icon_64839a36c96d887eee9fdb85517c2731);
+            marker_b3fd014a32a7b4eda2730e9b1e1f5d62.setIcon(icon_f5451da374bee534e5a08564b19af767);
+        
+    
+        var popup_7c7d60c41afa52693454955f1a8025aa = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_7fa6184c4233048da10191e094d030dc = $(`<div id="html_7fa6184c4233048da10191e094d030dc" style="width: 100.0%; height: 100.0%;">Unit6</div>`)[0];
+                popup_7c7d60c41afa52693454955f1a8025aa.setContent(html_7fa6184c4233048da10191e094d030dc);
+            
+        
 
-        var popup_95a12a605b9a5693450d4b1588cbc539 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_170408f1f6c0ae9ed320fb966048c16a = $(`<div id="html_170408f1f6c0ae9ed320fb966048c16a" style="width: 100.0%; height: 100.0%;">Unit6</div>`)[0];
-                popup_95a12a605b9a5693450d4b1588cbc539.setContent(html_170408f1f6c0ae9ed320fb966048c16a);
-
-
-
-        marker_25d52d0109bc889118452be52539f8bc.bindPopup(popup_95a12a605b9a5693450d4b1588cbc539)
+        marker_b3fd014a32a7b4eda2730e9b1e1f5d62.bindPopup(popup_7c7d60c41afa52693454955f1a8025aa)
         ;
 
-
-
-
-            marker_25d52d0109bc889118452be52539f8bc.bindTooltip(
+        
+    
+    
+            marker_b3fd014a32a7b4eda2730e9b1e1f5d62.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_fe801dece69068574437f36755743dc6 = L.marker(
+        
+    
+            var marker_173f1569321fcf6ed56ad391b41b1e9d = L.marker(
                 [55.16849278757826, 61.40638978282713],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_df959f28f2fc0c550c119a0bbbcb4021 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_2db8231d7d8fd1941228acbf7545661f = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_fe801dece69068574437f36755743dc6.setIcon(icon_df959f28f2fc0c550c119a0bbbcb4021);
+            marker_173f1569321fcf6ed56ad391b41b1e9d.setIcon(icon_2db8231d7d8fd1941228acbf7545661f);
+        
+    
+        var popup_67725346b88155bb839bf083c567a79f = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_33222293ff2485a07ff36d5dd6be5ded = $(`<div id="html_33222293ff2485a07ff36d5dd6be5ded" style="width: 100.0%; height: 100.0%;">Byndyusoft</div>`)[0];
+                popup_67725346b88155bb839bf083c567a79f.setContent(html_33222293ff2485a07ff36d5dd6be5ded);
+            
+        
 
-        var popup_6b6fb06df33fc39ea31a3cb13b461c40 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_034a936b5cfcea15083d4e0bbc60def8 = $(`<div id="html_034a936b5cfcea15083d4e0bbc60def8" style="width: 100.0%; height: 100.0%;">Byndyusoft</div>`)[0];
-                popup_6b6fb06df33fc39ea31a3cb13b461c40.setContent(html_034a936b5cfcea15083d4e0bbc60def8);
-
-
-
-        marker_fe801dece69068574437f36755743dc6.bindPopup(popup_6b6fb06df33fc39ea31a3cb13b461c40)
+        marker_173f1569321fcf6ed56ad391b41b1e9d.bindPopup(popup_67725346b88155bb839bf083c567a79f)
         ;
 
-
-
-
-            marker_fe801dece69068574437f36755743dc6.bindTooltip(
+        
+    
+    
+            marker_173f1569321fcf6ed56ad391b41b1e9d.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_d5aabb86996794f3ff617576c43c8ca4 = L.marker(
+        
+    
+            var marker_8325b8b30daf30fbfea0f44b4a8d0ab3 = L.marker(
                 [55.15369593760404, 61.364913353990026],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_41e296c97dc7785e4d46b069ee6dd665 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_b1039bcc7fad42762d46c478d74a4682 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_d5aabb86996794f3ff617576c43c8ca4.setIcon(icon_41e296c97dc7785e4d46b069ee6dd665);
+            marker_8325b8b30daf30fbfea0f44b4a8d0ab3.setIcon(icon_b1039bcc7fad42762d46c478d74a4682);
+        
+    
+        var popup_71a5dd58ec1831de0ca6f499debd7fb5 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_a8484c4f4e1d1d9bf527a0da2f8bc801 = $(`<div id="html_a8484c4f4e1d1d9bf527a0da2f8bc801" style="width: 100.0%; height: 100.0%;">Xpage</div>`)[0];
+                popup_71a5dd58ec1831de0ca6f499debd7fb5.setContent(html_a8484c4f4e1d1d9bf527a0da2f8bc801);
+            
+        
 
-        var popup_7e061e6f19baba9e16eac2430ee043ba = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_ccbafc634c3c4928ff8935beebe0ee92 = $(`<div id="html_ccbafc634c3c4928ff8935beebe0ee92" style="width: 100.0%; height: 100.0%;">Xpage</div>`)[0];
-                popup_7e061e6f19baba9e16eac2430ee043ba.setContent(html_ccbafc634c3c4928ff8935beebe0ee92);
-
-
-
-        marker_d5aabb86996794f3ff617576c43c8ca4.bindPopup(popup_7e061e6f19baba9e16eac2430ee043ba)
+        marker_8325b8b30daf30fbfea0f44b4a8d0ab3.bindPopup(popup_71a5dd58ec1831de0ca6f499debd7fb5)
         ;
 
-
-
-
-            marker_d5aabb86996794f3ff617576c43c8ca4.bindTooltip(
+        
+    
+    
+            marker_8325b8b30daf30fbfea0f44b4a8d0ab3.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_0c1912a372e4f03fc73fe20da87f0cdb = L.marker(
+        
+    
+            var marker_37a0b7383e2c05c6c7b56eb735d3c62e = L.marker(
                 [55.164439229950894, 61.30143849817261],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_24746704594f42ba86ce25c240efb274 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_7da881b27bdbe014edce25abbf103369 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_0c1912a372e4f03fc73fe20da87f0cdb.setIcon(icon_24746704594f42ba86ce25c240efb274);
+            marker_37a0b7383e2c05c6c7b56eb735d3c62e.setIcon(icon_7da881b27bdbe014edce25abbf103369);
+        
+    
+        var popup_6e7247be168f97110115c1608114601f = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_0b3c222809a733efb106d384c0eb00f8 = $(`<div id="html_0b3c222809a733efb106d384c0eb00f8" style="width: 100.0%; height: 100.0%;">fuse8</div>`)[0];
+                popup_6e7247be168f97110115c1608114601f.setContent(html_0b3c222809a733efb106d384c0eb00f8);
+            
+        
 
-        var popup_9eabeb144a7e8519ec7acfe9e56f6632 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_fa099cc117f9946b79f7e11af7c29204 = $(`<div id="html_fa099cc117f9946b79f7e11af7c29204" style="width: 100.0%; height: 100.0%;">fuse8</div>`)[0];
-                popup_9eabeb144a7e8519ec7acfe9e56f6632.setContent(html_fa099cc117f9946b79f7e11af7c29204);
-
-
-
-        marker_0c1912a372e4f03fc73fe20da87f0cdb.bindPopup(popup_9eabeb144a7e8519ec7acfe9e56f6632)
+        marker_37a0b7383e2c05c6c7b56eb735d3c62e.bindPopup(popup_6e7247be168f97110115c1608114601f)
         ;
 
-
-
-
-            marker_0c1912a372e4f03fc73fe20da87f0cdb.bindTooltip(
+        
+    
+    
+            marker_37a0b7383e2c05c6c7b56eb735d3c62e.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_9580241354223fae8aa6572104f251e3 = L.marker(
+        
+    
+            var marker_a2ef2512e64c38c3426bd550cd2f9b01 = L.marker(
                 [55.191764377931044, 61.35612132701031],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_912bec99aa9f7524b753482a27ea1968 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_d922813e2b9672b7df47e21a9a23c66d = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_9580241354223fae8aa6572104f251e3.setIcon(icon_912bec99aa9f7524b753482a27ea1968);
+            marker_a2ef2512e64c38c3426bd550cd2f9b01.setIcon(icon_d922813e2b9672b7df47e21a9a23c66d);
+        
+    
+        var popup_8abe5980687e2dd629c61ad009b46ea8 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_d61b1c99b1535caa73b0a609f8df6a9f = $(`<div id="html_d61b1c99b1535caa73b0a609f8df6a9f" style="width: 100.0%; height: 100.0%;">Прикладные технологии</div>`)[0];
+                popup_8abe5980687e2dd629c61ad009b46ea8.setContent(html_d61b1c99b1535caa73b0a609f8df6a9f);
+            
+        
 
-        var popup_0a89e2e078e57a8dcc6203bbae47186a = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_b67b35659a2519eb41d947c5625bf6e8 = $(`<div id="html_b67b35659a2519eb41d947c5625bf6e8" style="width: 100.0%; height: 100.0%;">Прикладные технологии</div>`)[0];
-                popup_0a89e2e078e57a8dcc6203bbae47186a.setContent(html_b67b35659a2519eb41d947c5625bf6e8);
-
-
-
-        marker_9580241354223fae8aa6572104f251e3.bindPopup(popup_0a89e2e078e57a8dcc6203bbae47186a)
+        marker_a2ef2512e64c38c3426bd550cd2f9b01.bindPopup(popup_8abe5980687e2dd629c61ad009b46ea8)
         ;
 
-
-
-
-            marker_9580241354223fae8aa6572104f251e3.bindTooltip(
+        
+    
+    
+            marker_a2ef2512e64c38c3426bd550cd2f9b01.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_98891362a36f43c522c59964cf281af4 = L.marker(
+        
+    
+            var marker_eb8b8aa2bee0f545b2660a8f0804ae2f = L.marker(
                 [55.17738374482536, 61.40015691351884],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_0c482543344fb301b97f3ddaa1657f04 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_13853361696e2132c2f6e67305c9bc56 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_98891362a36f43c522c59964cf281af4.setIcon(icon_0c482543344fb301b97f3ddaa1657f04);
+            marker_eb8b8aa2bee0f545b2660a8f0804ae2f.setIcon(icon_13853361696e2132c2f6e67305c9bc56);
+        
+    
+        var popup_4ce77b25cb0fbcfbc9503bac1b415409 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_00a1a7999190b8b47ca76f6930a5b7e9 = $(`<div id="html_00a1a7999190b8b47ca76f6930a5b7e9" style="width: 100.0%; height: 100.0%;">ID Scan</div>`)[0];
+                popup_4ce77b25cb0fbcfbc9503bac1b415409.setContent(html_00a1a7999190b8b47ca76f6930a5b7e9);
+            
+        
 
-        var popup_fbc960795f5fcc24d716bd728e0615b5 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_4c6e3c79f1e1a4924a8ae3246bc504d6 = $(`<div id="html_4c6e3c79f1e1a4924a8ae3246bc504d6" style="width: 100.0%; height: 100.0%;">ID Scan</div>`)[0];
-                popup_fbc960795f5fcc24d716bd728e0615b5.setContent(html_4c6e3c79f1e1a4924a8ae3246bc504d6);
-
-
-
-        marker_98891362a36f43c522c59964cf281af4.bindPopup(popup_fbc960795f5fcc24d716bd728e0615b5)
+        marker_eb8b8aa2bee0f545b2660a8f0804ae2f.bindPopup(popup_4ce77b25cb0fbcfbc9503bac1b415409)
         ;
 
-
-
-
-            marker_98891362a36f43c522c59964cf281af4.bindTooltip(
+        
+    
+    
+            marker_eb8b8aa2bee0f545b2660a8f0804ae2f.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_871dcae3737ae78ba6f472e5c0507c82 = L.marker(
+        
+    
+            var marker_e55fad0d50abbb9524e8e2f4114ddab4 = L.marker(
                 [55.16584563980339, 61.4095245116634],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_1cd196e0d669bc8ba602988900400f8c = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_b537f0e17a6a2cd2eb696d799dbea881 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_871dcae3737ae78ba6f472e5c0507c82.setIcon(icon_1cd196e0d669bc8ba602988900400f8c);
+            marker_e55fad0d50abbb9524e8e2f4114ddab4.setIcon(icon_b537f0e17a6a2cd2eb696d799dbea881);
+        
+    
+        var popup_17f8b104bbf1e02559edf5fa2beab997 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_ecd6cf204a6d3c74952f4fb80ca5e324 = $(`<div id="html_ecd6cf204a6d3c74952f4fb80ca5e324" style="width: 100.0%; height: 100.0%;">Antida software</div>`)[0];
+                popup_17f8b104bbf1e02559edf5fa2beab997.setContent(html_ecd6cf204a6d3c74952f4fb80ca5e324);
+            
+        
 
-        var popup_b472694fd84f54fcea4321b30239088b = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_e72697d3f566ec763ad1b3c68a676683 = $(`<div id="html_e72697d3f566ec763ad1b3c68a676683" style="width: 100.0%; height: 100.0%;">Antida software</div>`)[0];
-                popup_b472694fd84f54fcea4321b30239088b.setContent(html_e72697d3f566ec763ad1b3c68a676683);
-
-
-
-        marker_871dcae3737ae78ba6f472e5c0507c82.bindPopup(popup_b472694fd84f54fcea4321b30239088b)
+        marker_e55fad0d50abbb9524e8e2f4114ddab4.bindPopup(popup_17f8b104bbf1e02559edf5fa2beab997)
         ;
 
-
-
-
-            marker_871dcae3737ae78ba6f472e5c0507c82.bindTooltip(
+        
+    
+    
+            marker_e55fad0d50abbb9524e8e2f4114ddab4.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_347412cd0b459fc07cf05aa5d3523770 = L.marker(
+        
+    
+            var marker_cdd57bdd22072c4dac4488c7fec56394 = L.marker(
                 [55.1645905438025, 61.40106692329928],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_4298029bac4f76dac645aca08bac0cb7 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_ac293b533f78b0ea226556edf5b448a0 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_347412cd0b459fc07cf05aa5d3523770.setIcon(icon_4298029bac4f76dac645aca08bac0cb7);
+            marker_cdd57bdd22072c4dac4488c7fec56394.setIcon(icon_ac293b533f78b0ea226556edf5b448a0);
+        
+    
+        var popup_83e35eb640850187352a3c1374b7734e = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_fa19670c270ea32d78e6251281b1aac8 = $(`<div id="html_fa19670c270ea32d78e6251281b1aac8" style="width: 100.0%; height: 100.0%;">Ланит</div>`)[0];
+                popup_83e35eb640850187352a3c1374b7734e.setContent(html_fa19670c270ea32d78e6251281b1aac8);
+            
+        
 
-        var popup_5a19f6968debd2d2452d2b2a1cc18928 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_31b7bb9aa6b92b8b6edaec7f9186ce9e = $(`<div id="html_31b7bb9aa6b92b8b6edaec7f9186ce9e" style="width: 100.0%; height: 100.0%;">Ланит</div>`)[0];
-                popup_5a19f6968debd2d2452d2b2a1cc18928.setContent(html_31b7bb9aa6b92b8b6edaec7f9186ce9e);
-
-
-
-        marker_347412cd0b459fc07cf05aa5d3523770.bindPopup(popup_5a19f6968debd2d2452d2b2a1cc18928)
+        marker_cdd57bdd22072c4dac4488c7fec56394.bindPopup(popup_83e35eb640850187352a3c1374b7734e)
         ;
 
-
-
-
-            marker_347412cd0b459fc07cf05aa5d3523770.bindTooltip(
+        
+    
+    
+            marker_cdd57bdd22072c4dac4488c7fec56394.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_a49690468ffa3b1cb9193135bb073c2e = L.marker(
+        
+    
+            var marker_24500404893e027870bae252155f2c3b = L.marker(
                 [55.15672528689525, 61.30157939817233],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_4082091af31debf1d16aa0b01163a4f9 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_52f3585f96eb8884499ca1cb0c35ef0a = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_a49690468ffa3b1cb9193135bb073c2e.setIcon(icon_4082091af31debf1d16aa0b01163a4f9);
+            marker_24500404893e027870bae252155f2c3b.setIcon(icon_52f3585f96eb8884499ca1cb0c35ef0a);
+        
+    
+        var popup_505063bc03a38065803969a338a2a126 = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_46da4988917591e806d2d10e2023e9d9 = $(`<div id="html_46da4988917591e806d2d10e2023e9d9" style="width: 100.0%; height: 100.0%;">Инфиннити</div>`)[0];
+                popup_505063bc03a38065803969a338a2a126.setContent(html_46da4988917591e806d2d10e2023e9d9);
+            
+        
 
-        var popup_dc1323b4637658c5075d5282575d73f3 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_7e43b697e8f14e28801ade4fe2caf3b7 = $(`<div id="html_7e43b697e8f14e28801ade4fe2caf3b7" style="width: 100.0%; height: 100.0%;">Инфиннити</div>`)[0];
-                popup_dc1323b4637658c5075d5282575d73f3.setContent(html_7e43b697e8f14e28801ade4fe2caf3b7);
-
-
-
-        marker_a49690468ffa3b1cb9193135bb073c2e.bindPopup(popup_dc1323b4637658c5075d5282575d73f3)
+        marker_24500404893e027870bae252155f2c3b.bindPopup(popup_505063bc03a38065803969a338a2a126)
         ;
 
-
-
-
-            marker_a49690468ffa3b1cb9193135bb073c2e.bindTooltip(
+        
+    
+    
+            marker_24500404893e027870bae252155f2c3b.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
-
-            var marker_311a08077326644d405324bbb52c32a0 = L.marker(
+        
+    
+            var marker_2392fdbcb14a24691c4fa4d4658e335f = L.marker(
                 [53.35964069213474, 58.97011004310974],
                 {}
-            ).addTo(map_39f882880ab691a9b4a5bc0ec01b90e1);
-
-
-            var icon_17ceeebda149ec825053a7fa33064706 = L.AwesomeMarkers.icon(
+            ).addTo(map_8651d9ba7b5f4861bdb2c442b445b5b9);
+        
+    
+            var icon_2dd812e69cf2838e126e20fd5fd0c075 = L.AwesomeMarkers.icon(
                 {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
             );
-            marker_311a08077326644d405324bbb52c32a0.setIcon(icon_17ceeebda149ec825053a7fa33064706);
+            marker_2392fdbcb14a24691c4fa4d4658e335f.setIcon(icon_2dd812e69cf2838e126e20fd5fd0c075);
+        
+    
+        var popup_04ec4eca74a1da0c8041d31f702b926e = L.popup({"maxWidth": "100%"});
 
+        
+            
+                var html_094721ff037ec05cde0c7f4aec2caef0 = $(`<div id="html_094721ff037ec05cde0c7f4aec2caef0" style="width: 100.0%; height: 100.0%;">Консом СКС</div>`)[0];
+                popup_04ec4eca74a1da0c8041d31f702b926e.setContent(html_094721ff037ec05cde0c7f4aec2caef0);
+            
+        
 
-        var popup_a61582e8a2ce22b50e4e5d7f76e33893 = L.popup({"maxWidth": "100%"});
-
-
-
-                var html_0f4c15bef1702691608401e4f6887a7b = $(`<div id="html_0f4c15bef1702691608401e4f6887a7b" style="width: 100.0%; height: 100.0%;">Консом СКС</div>`)[0];
-                popup_a61582e8a2ce22b50e4e5d7f76e33893.setContent(html_0f4c15bef1702691608401e4f6887a7b);
-
-
-
-        marker_311a08077326644d405324bbb52c32a0.bindPopup(popup_a61582e8a2ce22b50e4e5d7f76e33893)
+        marker_2392fdbcb14a24691c4fa4d4658e335f.bindPopup(popup_04ec4eca74a1da0c8041d31f702b926e)
         ;
 
-
-
-
-            marker_311a08077326644d405324bbb52c32a0.bindTooltip(
+        
+    
+    
+            marker_2392fdbcb14a24691c4fa4d4658e335f.bindTooltip(
                 `<div>
                      Заказная разработка
                  </div>`,
                 {"sticky": true}
             );
-
+        
 </script>
 </html>

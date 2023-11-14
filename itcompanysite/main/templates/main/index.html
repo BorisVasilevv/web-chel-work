@@ -1,8 +1,14 @@
 {%extends 'main/layout.html'%}
+{% load static %}
 
+
+{% block head %}
+    <script src=" {% static 'main/js/scripts.js' %}"></script>
+{% endblock %}
 {%block title%}Главная страниц{%endblock%}
 
 {%block content%}
+
     <h1>Категории</h1>
 
     <h2>Заказная разработка</h2>
