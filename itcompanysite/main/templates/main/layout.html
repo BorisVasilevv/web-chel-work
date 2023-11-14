@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css"  href="{% static 'main/css/reset.css'%}">
+    <link rel="stylesheet" type="text/css"  href="{% static 'main/css/font.css'%}">
     <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
 
     {% block head %} {% endblock %}
@@ -20,39 +21,40 @@
              <input class="search-row" placeholder="Введите название компании..." type="search" name="q" required="">
             <button class="search-button" type="submit"><img class="search-button-image" src="{% static 'main/icons/search.svg' %}"></button>
         </form>
-        <div class="navigation">
-            <div class="navigation-elem">
-                <a class="navigation-elem-link" href="{%url 'home'%}">
-                    <img class="navigation-elem-icon" src="{% static 'main/icons/home.svg'%}">Главная</a>
-            </div>
-            <div class="navigation-elem">
-                <a class="navigation-elem-link" href="{%url 'companies'%}">
-                    <img class="navigation-elem-icon" src="{% static 'main/icons/companies.svg'%}">Компании</a>
-            </div>
-            {% if user.is_authenticated %}
-                <div class="navigation-elem">
-                    <a class="navigation-elem-link" href="">
-                        <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Мой профиль</a>
-                </div>
-                <div class="navigation-elem">
-                    <a class="navigation-elem-link" href="{%url 'logout'%}">
-                        <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Выйти</a>
-                </div>
 
-        <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'home'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/home.svg'%}">Главная</a></div>
-        <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'companies'%}"> <img class="navigation-elem-icon" src="{% static 'main/icons/companies.svg'%}">Компании</a></div>
+
+        <div class="navigation-elem">
+            <a class="navigation-elem-link" href="{%url 'home'%}">
+                <img class="navigation-elem-icon" src="{% static 'main/icons/home.svg'%}">Главная
+            </a>
+        </div>
+        <div class="navigation-elem">
+            <a class="navigation-elem-link" href="{%url 'companies'%}">
+                <img class="navigation-elem-icon" src="{% static 'main/icons/companies.svg'%}">Компании
+            </a>
+        </div>
         {% if user.is_authenticated %}
-            <div class="navigation-elem"><a class="navigation-elem-link" href=""><img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Мой профиль</a></div>
-            <div class="navigation-elem"><a class="navigation-elem-link" href="{%url 'logout'%}"><img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Выйти</a></div>
+            <div class="navigation-elem">
+                <a class="navigation-elem-link" href="">
+                    <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Мой профиль
+                </a>
+            </div>
+            <div class="navigation-elem">
+                <a class="navigation-elem-link" href="{%url 'logout'%}">
+                    <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Выйти
+                </a>
+            </div>
 
         {% else %}
             <div class="navigation-elem">
                 <a class="navigation-elem-link" href="{%url 'registration'%}">
-                    <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Регистрация</a>
+                    <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Регистрация
+                </a>
             </div>
             <div class="navigation-elem">
                 <a class="navigation-elem-link" href="{%url 'login'%}">
-                    <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Вход</a>
+                    <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Вход
+                </a>
             </div>
         {% endif %}
     </div>

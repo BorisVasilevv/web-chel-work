@@ -35,21 +35,19 @@
 
 
             <div class="companies-item_extra">
-                <button class="companies-item_fav-button">
-                    <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
-                    <span>Избранное</span>
-                </button>
-
-                <a class="companies-item_link" href="{{company.url}}">
-                    <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
-                    <span class="companies-item_link-text">{{ company.name }}</span>
-                </a>
                 {% if user.is_authenticated %}
                     <button class="companies-item_fav-button">
                         <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
                         <span>Избранное</span>
                     </button>
                 {% endif %}
+                <a class="companies-item_link" href="{{company.url}}">
+                    <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
+                    <span class="companies-item_link-text">{{ company.name }}</span>
+                </a>
+
+
+
             </div>
         </div>
     {% endfor%}

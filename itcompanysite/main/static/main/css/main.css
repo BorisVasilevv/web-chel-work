@@ -6,6 +6,8 @@ body{
 .main-header{
     display: flex;
     justify-content: space-between;
+    gap:15px;
+    padding: 0 15px 0 0;
 
 }
 
@@ -24,16 +26,16 @@ body{
     margin-left: auto;
 }
 
-.navigation {
-/*    background: #2F0571;*/
+/*.navigation {
+    background: #2F0571;
     display: flex;
     justify-content: flex-end;
     height: 10vh;
-    gap: 15px;
+
     margin-right: 5%;
     margin: 0 0 50px 0;
 
-}
+}*/
 
 .navigation-elem{
 
@@ -45,7 +47,7 @@ body{
 
 .navigation-elem-link{
     text-decoration: none;
-    color:  #FFFFFF;
+    color:  #FCD54C;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,9 +73,6 @@ body{
 ul{
     list-style: none;
 }
-
-
-
 
 .search-row{
      background-color: #302D2D;
