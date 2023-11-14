@@ -8,7 +8,9 @@ class CompanyType(models.Model):
         ('заказная разработка', 'Заказная разработка'),
         ('собственный IT-продукт', 'Собственный IT-продукт'),
         ('госструктуры', 'Госструктуры'),
+        ('gamedev', 'GameDev'),
         ('неопределенный', 'Неопределенный')
+
     )
     type_name = models.CharField('type_name', max_length=100, choices=TYPE_NAME)
     description = models.CharField('description', max_length=350, default="")

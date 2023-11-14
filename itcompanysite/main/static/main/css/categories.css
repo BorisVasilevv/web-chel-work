@@ -15,6 +15,7 @@
     gap: 35px;
     border-radius: 10px;
     padding: 10px;
+    align-items: flex-start;
 }
 
 .categories-item{
@@ -24,18 +25,19 @@
     gap: 15px;
     border-radius: 10px;
     padding: 10px;
+    width: 250px;
 }
 
 .сustomDev{
-    border: 1px solid #94D377;
+    border: 2px solid #94D377;
 }
 
 .selfProducts{
-    border: 1px solid #ff0495;
+    border: 2px solid #ff0495;
 }
 
 .B2G{
-    border: 1px solid #66ddee;
+    border: 2px solid #66ddee;
 }
 
 .categories_title{
