@@ -16,3 +16,6 @@
 *.pyc
 
 itcompanysite/db.sqlite3
+.project
+.dbeaver/project-settings.json
+.dbeaver/data-sources.json

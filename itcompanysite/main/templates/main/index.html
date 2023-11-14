@@ -3,10 +3,29 @@
 {%block title%}Главная страниц{%endblock%}
 
 {%block content%}
-    <h1>Главная страница</h1>
+    <h1>Категории</h1>
+
+    <h2>Заказная разработка</h2>
+    <button id="buttonCustomDev" onclick="window.location.href = '{% url 'companies_per_type' 'CustomDev' %}'">Перейти</button>
+    <details>
+        <summary>Описание</summary>
+        <p>Проекты приходят и быстро уходят. Студия, которая клепает проект на заказ</p>
+    </details>
 
 
+    <h3>Собственный IT-продукт</h3>
+    <button id="buttonSelfProducts" onclick="window.location.href = '{% url 'companies_per_type' 'SelfProducts' %}'">Перейти</button>
+    <details>
+        <summary>Описание</summary>
+        <p>Компания, у которой есть собственный продукт. Стоит узнать о том что это за продукт, потому что тебе придется работать над ним вплоть до увольнения</p>
+    </details>
 
+    <h4>Госструктуры</h4>
+    <button id="buttonB2G" onclick="window.location.href = '{% url 'companies_per_type' 'B2G' %}'">Перейти</button>
+    <details>
+        <summary>Описание</summary>
+        <p>Компания, которая финансируется государством, проекты тут делают тяп-ляп, по принципу лишь бы работало</p>
+    </details>
 
 {%endblock%}
 
