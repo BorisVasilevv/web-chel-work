@@ -3,29 +3,62 @@
 {%block title%}Главная страниц{%endblock%}
 
 {%block content%}
-    <h1>Категории</h1>
+    <div class="categories">
 
-    <h2>Заказная разработка</h2>
-    <button id="buttonCustomDev" onclick="window.location.href = '{% url 'companies_per_type' 'CustomDev' %}'">Перейти</button>
-    <details>
-        <summary>Описание</summary>
-        <p>Проекты приходят и быстро уходят. Студия, которая клепает проект на заказ</p>
-    </details>
+        <span class="categories_title">Категории</span>
+
+        <div class="categories-items">
+
+            <div class="categories-item сustomDev">
+                <h2 class="categories-item_title ">Заказная разработка</h2>
+                <details>
+                <summary class="categories-item_summary">Описание</summary>
+                <span class="categories-item_description">Проекты приходят и быстро уходят. Студия, которая клепает проект на заказ</span>
+                </details>
+                <button class="categories-item_button" id="buttonCustomDev" onclick="window.location.href = '{% url 'companies_per_type' 'CustomDev' %}'">Перейти</button>
+
+            </div>
 
 
-    <h3>Собственный IT-продукт</h3>
-    <button id="buttonSelfProducts" onclick="window.location.href = '{% url 'companies_per_type' 'SelfProducts' %}'">Перейти</button>
-    <details>
-        <summary>Описание</summary>
-        <p>Компания, у которой есть собственный продукт. Стоит узнать о том что это за продукт, потому что тебе придется работать над ним вплоть до увольнения</p>
-    </details>
+            <div class="categories-item selfProducts">
+                <h2 class="categories-item_title">Собственный IT-продукт</h2>
+                <details>
+                <summary class="categories-item_summary">Описание</summary>
+                <span class="categories-item_description">Компания, у которой есть собственный продукт. Стоит узнать о том что это за продукт, потому что тебе придется работать над ним вплоть до увольнения</span>
+                </details>
+                <button class="categories-item_button" id="buttonSelfProducts" onclick="window.location.href = '{% url 'companies_per_type' 'SelfProducts' %}'">Перейти</button>
 
-    <h4>Госструктуры</h4>
-    <button id="buttonB2G" onclick="window.location.href = '{% url 'companies_per_type' 'B2G' %}'">Перейти</button>
-    <details>
-        <summary>Описание</summary>
-        <p>Компания, которая финансируется государством, проекты тут делают тяп-ляп, по принципу лишь бы работало</p>
-    </details>
+            </div>
+
+            <div class="categories-item B2G">
+                <h2 class="categories-item_title">Госструктуры</h2>
+                <details>
+                <summary class="categories-item_summary">Описание</summary>
+                <span class="categories-item_description">Компания, которая финансируется государством, проекты тут делают тяп-ляп, по принципу лишь бы работало</span>
+                </details>
+                <button class="categories-item_button" id="buttonB2G" onclick="window.location.href = '{% url 'companies_per_type' 'B2G' %}'">Перейти</button>
+
+            </div>
+
+        </div>
+
+
+      <!--  <h3>Собственный IT-продукт</h3>
+        <button id="buttonSelfProducts" onclick="window.location.href = '{% url 'companies_per_type' 'SelfProducts' %}'">Перейти</button>
+        <details>
+            <summary>Описание</summary>
+            <p>Компания, у которой есть собственный продукт. Стоит узнать о том что это за продукт, потому что тебе придется работать над ним вплоть до увольнения</p>
+        </details>
+
+        <h4>Госструктуры</h4>
+        <button id="buttonB2G" onclick="window.location.href = '{% url 'companies_per_type' 'B2G' %}'">Перейти</button>
+        <details>
+            <summary>Описание</summary>
+            <p>Компания, которая финансируется государством, проекты тут делают тяп-ляп, по принципу лишь бы работало</p>
+        </details> -->
+
+    </div>
+
 
 {%endblock%}
 
