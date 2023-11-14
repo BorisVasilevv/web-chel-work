@@ -9,6 +9,6 @@ def companies(request):
 
 
 def search(request):
-    companies = Company.objects.all()
+    companies = Company.objects.filter(name__contains=request.GET.get("q"))
     return render(request, 'companies/companies.html', {'companies': companies})
 

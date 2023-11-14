@@ -2,16 +2,25 @@ body{
     background-color: #272727;
 }
 
-.item_part-name{
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 150%;
+.main-header{
+    display: flex;
+    justify-content: space-between;
+
 }
 
-.item{
-    max-width: 376px;
-    margin: auto;
-    background-color: #272727;
+.main-logo{
+    display: block;
+    max-width: 71px;
+    width: auto;
+    height: auto;
+    padding: 5px 0 0 10px;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .navigation {
@@ -19,14 +28,16 @@ body{
     display: flex;
     justify-content: flex-end;
     height: 10vh;
-
+    gap: 15px;
+    margin-right: 5%;
 }
 
 .navigation-elem{
-    margin-right: 3%;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .navigation-elem-link{
@@ -48,17 +59,6 @@ body{
     height:100px;
 }
 
-.company-info-text {
-    color: black;
-    -webkit-line-clamp: 4; /* Число отображаемых строк */
-    display: -webkit-box; /* Включаем флексбоксы */
-    -webkit-box-orient: vertical; /* Вертикальная ориентация */
-    overflow: hidden; /* Обрезаем всё за пределами блока */
-}
-
-.company-info-text:hover {
-    text-decoration: underline;
-}
 
 .company-name{
     height: 50%;
@@ -66,4 +66,34 @@ body{
 
 ul{
     list-style: none;
+}
+
+
+
+
+.search-row{
+     background-color: #302D2D;
+     border: solid 1px #FCD54C;
+     height:30px;
+     width:500px;
+     color: white;
+
+}
+
+.search-button{
+    background-color: #FCD54C;
+    border-color:  #FCD54C;
+    height:30px;
+    width:30px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-button-image{
+    height:25px;
+    width:25px;
+}
+
+.search-button-image:hover{
+    cursor: pointer;
 }
