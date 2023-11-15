@@ -8,24 +8,25 @@
 {%block title%}Главная страниц{%endblock%}
 
 {%block content%}
-    {{company_types}}
-    <div class="categories">
 
+    <div class="categories">
+        {{company_types}}
         <span class="categories_title">Категории</span>
 
         <div class="categories-container">
 
             {% for company_type in company_types %}
+                <div class="categories-item сustomDev">
+                    <h2 class="categories-item_title ">{{company_type.type_name}}</h2>
+                    <details>
+                    <summary class="categories-item_summary">Описание</summary>
+                    <span class="categories-item_description">{{company_type.description}}</span>
+                    </details>
+                    <button class="categories-item_button" id="buttonCustomDev" onclick="window.location.href = '{% url 'companies_per_type' company_type.type_name %}'">
+                        Перейти
+                    </button>
 
-            <div class="categories-item сustomDev">
-                <h2 class="categories-item_title ">Заказная разработка</h2>
-                <details>
-                <summary class="categories-item_summary">Описание</summary>
-                <span class="categories-item_description">Проекты приходят и быстро уходят. Студия, которая клепает проект на заказ</span>
-                </details>
-                <button class="categories-item_button" id="buttonCustomDev" onclick="window.location.href = '{% url 'companies_per_type' 'CustomDev' %}'">Перейти</button>
-
-            </div>
+                </div>
             {% endfor %}
 
             <div class="categories-item selfProducts">
