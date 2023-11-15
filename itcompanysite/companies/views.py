@@ -7,6 +7,7 @@ def companies(request):
     companies = Company.objects.all()
     return render(request, 'companies/companies.html', {'companies': companies})
 
+
 def companies_per_type(request, category_name):
     # if(category_name == "CustomDev"):
     #     type_id = 2
