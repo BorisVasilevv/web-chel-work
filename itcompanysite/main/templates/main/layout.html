@@ -41,15 +41,15 @@
         </div>
         {% if user.is_authenticated %}
             <div class="navigation-elem">
-                <a class="navigation-elem-link" href="">
+                <a class="navigation-elem-link" href="{%url 'profile'%}">
                     <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Мой профиль
                 </a>
             </div>
-            <div class="navigation-elem">
+          <!--  <div class="navigation-elem">
                 <a class="navigation-elem-link" href="{%url 'logout'%}">
                     <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Выйти
                 </a>
-            </div>
+            </div> -->
 
         {% else %}
            <!-- <div class="navigation-elem">
