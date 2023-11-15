@@ -8,7 +8,7 @@ body{
     justify-content: space-between;
     gap:15px;
     padding: 10px 15px 0 0;
-
+    margin: 0 0 50px 0;
 }
 
 .main-logo{
@@ -86,7 +86,7 @@ ul{
 
 .search-button{
     background-color: #faf446;
-    border-color:  #faf446;
+    border: 1px solid #faf446;
     height:30px;
     width:30px;
     display: flex;

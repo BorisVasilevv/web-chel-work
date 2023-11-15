@@ -1,0 +1,21 @@
+{%extends 'main/layout.html'%}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{%static 'account/css/profile.css'%}">
+
+{% endblock %}
+{% block title %}Мой профиль{%endblock%}
+
+{% block content %}
+
+<main class="profile-container">
+
+
+    <form action="{%url 'logout'%}">
+        <button class="login-button button" type="submit">Выйти</button>
+    </form>
+</main>
+
+{%endblock%}

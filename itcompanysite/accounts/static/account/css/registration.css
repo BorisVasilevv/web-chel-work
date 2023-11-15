@@ -7,14 +7,22 @@
 }
 
 .registration-header{
-    color: #FCD54C;
+    display: flex;
+    flex-direction: row
+}
+
+.registration-header_main{
+    align-self: center;
+    color: #faf446;
     font-size: 30px;
     line-height: 35px;
     font-weight: 700;
+    padding: 0 15px;
+    cursor: default;
 }
 
 .registration-form{
-    padding: 40px 0 0 0;
+    padding: 40px 0 20px 0;
     display: flex;
     flex-direction: column;
 
@@ -39,15 +47,40 @@
     font-weight: 500;
 }
 
-.submit-button{
-    background-color: #FCD54C;
+
+.button{
     border: 0;
-    height: 40px;
     border-radius: 2%;
     font-size: 20px;
+    width: 420px;
+
+    background-color: #272727;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    color: #FFFFFF;
+
+    line-height: 21px;
+    padding: 15px ;
+    cursor: pointer;
 }
 
-.submit-button:hover{
+.button:hover{
+    cursor: pointer;
+    color: #faf446;
+    border-color: #faf446;
+}
+
+.extra-button{
+    background-color: #272727;
+    border: 1px solid #272727;
+    color: #ffffff4f;
+
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 400;
+
+    line-height: 21px;
+    padding: 15px ;
     cursor: pointer;
 }
 

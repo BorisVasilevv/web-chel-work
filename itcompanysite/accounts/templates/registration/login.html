@@ -11,7 +11,15 @@
 {% block content %}
 
 <main class="registration-container">
-    <span class="registration-header"> Вход </span>
+
+    <div class="registration-header">
+        <form action="{%url 'registration'%}">
+            <button class="registration-button extra-button" type="submit">Регистрация</button>
+        </form>
+
+        <span class="registration-header_main"> Вход </span>
+
+    </div>
 
     {% if form.errors %}
         <span>{{form.errors.error}}</span>
@@ -25,8 +33,9 @@
 
         {% endfor %}
 
-        <button class="submit-button" type="submit">Войти</button>
-    </form>
+        <button class="submit-button button" type="submit">Войти</button>
+
+
 </main>
 
 
