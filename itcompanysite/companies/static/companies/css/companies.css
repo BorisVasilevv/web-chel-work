@@ -41,6 +41,8 @@
     object-fit: cover;
 }
 
+
+
 .companies-item_img:hover{
     transform: scale(1.15);
 }
