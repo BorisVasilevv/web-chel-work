@@ -7,10 +7,18 @@
 }
 
 .registration-header{
+    display: flex;
+    flex-direction: row
+}
+
+.registration-header_main{
+    align-self: center;
     color: #faf446;
     font-size: 30px;
     line-height: 35px;
     font-weight: 700;
+    padding: 0 15px;
+    cursor: default;
 }
 
 .registration-form{
@@ -39,6 +47,7 @@
     font-weight: 500;
 }
 
+
 .button{
     border: 0;
     border-radius: 2%;
@@ -59,6 +68,20 @@
     cursor: pointer;
     color: #faf446;
     border-color: #faf446;
+}
+
+.extra-button{
+    background-color: #272727;
+    border: 1px solid #272727;
+    color: #ffffff4f;
+
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 400;
+
+    line-height: 21px;
+    padding: 15px ;
+    cursor: pointer;
 }
 
 

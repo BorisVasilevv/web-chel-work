@@ -13,7 +13,14 @@
 
 <main class="registration-container">
 
-    <span class="registration-header"> Регистрация </span>
+    <div class="registration-header">
+        <span class="registration-header_main"> Регистрация </span>
+    <form action="{%url 'login'%}">
+        <button class="login-button extra-button" type="submit">Вход</button>
+    </form>
+
+    </div>
+
     <form method="post" class="registration-form">
          {% csrf_token %}
 
@@ -31,9 +38,7 @@
 <!--        <input class="input-field" type="password">-->
         <button class="submit-button button" type="submit">Подтвердить</button>
     </form>
-    <form action="{%url 'login'%}">
-        <button class="login-button button" type="submit">Войти</button>
-    </form>
+
 </main>
 
 
