@@ -136,7 +136,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    gap: 140px;
+    gap: 180px;
 }
 
 .companies-item_fav-button{
@@ -160,4 +160,6 @@
 
 .companies-item_fav-button:hover{
     transform: scale(1.2);
+   /* color: #faf446;
+    border-color: #faf446; */
 }

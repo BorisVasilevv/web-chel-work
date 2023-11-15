@@ -25,8 +25,12 @@
 
         {% endfor %}
 
-        <button class="submit-button" type="submit">Войти</button>
+        <button class="submit-button button" type="submit">Войти</button>
     </form>
+    <form action="{%url 'registration'%}">
+        <button class="registration-button button" type="submit">Зарегистрироваться</button>
+    </form>
+
 </main>
 
 

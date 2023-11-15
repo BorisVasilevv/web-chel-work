@@ -28,7 +28,7 @@
     width: 250px;
 }
 
-.сustomDev{
+.customDev{
     border: 2px solid #94D377;
 }
 
@@ -62,20 +62,15 @@
     border: 1px solid #FFFFFF;
     border-radius: 10px;
     color: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-
-    gap: 15px;
-
-
     line-height: 21px;
-    padding: 10px ;
-
+    padding: 10px 15px;
     cursor: pointer;
 }
 
 .categories-item_summary{
+    margin-bottom: 10px;
 }
 
 .categories-item_description{
+
 }
