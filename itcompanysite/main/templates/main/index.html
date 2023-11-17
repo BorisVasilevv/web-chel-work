@@ -10,45 +10,22 @@
 {%block content%}
 
     <div class="categories">
-        {{company_types}}
         <span class="categories_title">Категории</span>
 
         <div class="categories-container">
 
             {% for company_type in company_types %}
-                <div class="categories-item сustomDev">
+                <div class="categories-item {{company_type.style_name}}">
                     <h2 class="categories-item_title ">{{company_type.type_name}}</h2>
                     <details>
-                    <summary class="categories-item_summary">Описание</summary>
-                    <span class="categories-item_description">{{company_type.description}}</span>
+                        <summary class="categories-item_summary">Описание</summary>
+                        <span class="categories-item_description">{{company_type.description}}</span>
                     </details>
                     <button class="categories-item_button" id="buttonCustomDev" onclick="window.location.href = '{% url 'companies_per_type' company_type.type_name %}'">
                         Перейти
                     </button>
-
                 </div>
             {% endfor %}
-
-            <div class="categories-item selfProducts">
-                <h2 class="categories-item_title">Собственный IT-продукт</h2>
-                <details>
-                <summary class="categories-item_summary">Описание</summary>
-                <span class="categories-item_description">Компания, у которой есть собственный продукт. Стоит узнать о том, что это за продукт, потому что тебе придется работать над ним вплоть до увольнения</span>
-                </details>
-                <button class="categories-item_button" id="buttonSelfProducts" onclick="window.location.href = '{% url 'companies_per_type' 'собственный IT-продукт' %}'">Перейти</button>
-
-            </div>
-
-            <div class="categories-item B2G">
-                <h2 class="categories-item_title">Госструктуры</h2>
-                <details>
-                <summary class="categories-item_summary">Описание</summary>
-                <span class="categories-item_description">Компания, которая финансируется государством, проекты тут делают тяп-ляп, по принципу лишь бы работало</span>
-                </details>
-                <button class="categories-item_button" id="buttonB2G" onclick="window.location.href = '{% url 'companies_per_type' 'госструктуры' %}'">Перейти</button>
-
-            </div>
-
         </div>
 
 

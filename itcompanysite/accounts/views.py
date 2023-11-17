@@ -3,7 +3,7 @@ from .forms import UserCreationForm
 from django.contrib.auth import login
 
 
-def registration (request):
+def registration(request):
 
     if request.method == 'POST':
         user_reg_form = UserCreationForm(request.POST)
@@ -13,7 +13,7 @@ def registration (request):
             # new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()
             login(request, new_user)
-            return redirect('/')
+
         context = {'user_form': user_reg_form}
         return render(request, 'account/registration.html', context)
     else:

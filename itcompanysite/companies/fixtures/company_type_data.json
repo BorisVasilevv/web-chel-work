@@ -1,0 +1,83 @@
+[
+  {
+    "model": "companies.CompanyType",
+    "pk": 1,
+    "fields": {
+      "type_name": "Собственный IT-продукт",
+      "style_name": "self_product",
+      "description": "1"
+    }
+  },
+  {
+    "model": "companies.CompanyType",
+    "pk": 2,
+    "fields": {
+      "type_name": "Стартапы с IT решениями",
+      "style_name": "startup",
+      "description": "2"
+    }
+  },
+  {
+    "model": "companies.CompanyType",
+    "pk": 3,
+    "fields": {
+      "type_name": "Сопровождение популярных массовых ИТ продуктов",
+      "style_name": "project_support",
+      "description": "3"
+    }
+  },
+  {
+    "model": "companies.CompanyType",
+    "pk": 4,
+    "fields": {
+      "type_name": "Заказная разработка",
+      "style_name": "custom_dev",
+      "description": "4"
+    }
+  },
+  {
+    "model": "companies.CompanyType",
+    "pk": 5,
+    "fields": {
+      "type_name": "Веб-студии",
+      "style_name": "web_studio",
+      "description": "5"
+    }
+  },
+  {
+    "model": "companies.CompanyType",
+    "pk": 6,
+    "fields": {
+      "type_name": "Большие ИТ - компании",
+      "style_name": "big_it_company",
+      "description": "6"
+    }
+  },
+  {
+    "model": "companies.CompanyType",
+    "pk": 7,
+    "fields": {
+      "type_name": "B2G",
+      "style_name": "b2g",
+      "description": "7"
+    }
+  },
+  {
+    "model": "companies.CompanyType",
+    "pk": 8,
+    "fields": {
+      "type_name": "Разработка игр",
+      "style_name": "game_dev",
+      "description": "8"
+    }
+  },
+  {
+    "model": "companies.CompanyType",
+    "pk": 9,
+    "fields": {
+      "type_name": "Госструктуры",
+      "style_name": "state_structure",
+      "description": "9"
+    }
+  }
+]
