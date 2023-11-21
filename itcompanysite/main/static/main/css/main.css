@@ -75,13 +75,14 @@ ul{
 }
 
 .search-row{
-     background-color: #302D2D;
-     border: solid 1px #faf446;
-     border-radius: 7.5px 0 0 7.5px;
-     height:30px;
-     width:500px;
-     color: white;
-
+    background-color: #302D2D;
+    border: solid 1px #faf446;
+    border-radius: 7.5px 0 0 7.5px;
+    height:38px;
+    width:500px;
+    color: white;
+    font-size: 15px;
+    line-height: 18px;
 
 }
 
@@ -89,8 +90,8 @@ ul{
     background-color: #faf446;
     border: 1px solid #faf446;
     border-radius: 0 7.5px 7.5px 0;
-    height:30px;
-    width:30px;
+    height:38px;
+    width:38px;
     display: flex;
     justify-content: center;
 }
