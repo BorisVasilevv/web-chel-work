@@ -35,9 +35,10 @@
 }
 
 .companies-item_img{
-    border-radius: 20px;
-    height: 250px;
-    width: 250px;
+    border-radius: 15px;
+    height: auto;
+    width: 100%;
+    min-width: 250px;
     object-fit: cover;
 }
 

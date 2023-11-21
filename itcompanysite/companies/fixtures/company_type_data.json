@@ -70,14 +70,5 @@
       "style_name": "game_dev",
       "description": "8"
     }
-  },
-  {
-    "model": "companies.CompanyType",
-    "pk": 9,
-    "fields": {
-      "type_name": "Госструктуры",
-      "style_name": "state_structure",
-      "description": "9"
-    }
   }
 ]
