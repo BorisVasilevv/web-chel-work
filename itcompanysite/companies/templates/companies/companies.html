@@ -16,7 +16,10 @@
 
                 <div class="companies-item_left">
                     <span class="companies-item-title">{{ company.name }}</span>
-                    <img class="companies-item_img" src="{{ company.logotype.url }}">
+                    <a class="companies-item_link" href="{{company.url}}">
+                         <img class="companies-item_link-img" src="{{ company.logotype.url }}">
+                    </a>
+
                 </div>
 
                 <div class="companies-item_description">
@@ -32,8 +35,8 @@
             </div>
 
 
-            <div class="companies-item_extra">
-                <a class="companies-item_link" href="{{company.url}}">
+            <div class="companies-item_footer">
+                <a class="companies-item_footer-link" href="{{company.url}}">
                     <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
                     <span class="companies-item_link-text">{{ company.name }}</span>
                 </a>

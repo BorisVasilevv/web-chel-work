@@ -34,18 +34,12 @@
     gap: 25px;
 }
 
-.companies-item_img{
-    border-radius: 15px;
+.companies-item_link-img{
+    border-radius: 10px;
     height: auto;
     width: 100%;
     min-width: 250px;
     object-fit: cover;
-}
-
-
-
-.companies-item_img:hover{
-    transform: scale(1.15);
 }
 
 .companies-item-tags{
@@ -102,7 +96,7 @@
     line-height: 34px;
 }
 
-.companies-item_link{
+.companies-item_footer-link{
     text-decoration: none;
     display: flex;
     gap: 10px;
@@ -117,7 +111,8 @@
 }
 
 .companies-item_link:hover{
-    transform: scale(1.2);
+    transition-duration: 2s;
+    transform: scale(1.12);
 }
 
 .companies-item_link-text{
@@ -134,7 +129,7 @@
     width: 32px;
 }
 
-.companies-item_extra{
+.companies-item_footer{
     align-self: flex-start;
     align-items: center;
     display: flex;
@@ -162,7 +157,5 @@
 }
 
 .companies-item_fav-button:hover{
-    transform: scale(1.2);
-   /* color: #faf446;
-    border-color: #faf446; */
+    transform: scale(1.015);
 }
