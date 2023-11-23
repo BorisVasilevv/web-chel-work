@@ -12,6 +12,7 @@
 }
 
 .registration-header_main{
+    background: transparent;
     align-self: center;
     color: #faf446;
     font-size: 30px;
@@ -49,12 +50,10 @@
 
 
 .button{
-    border: 0;
-    border-radius: 2%;
     font-size: 20px;
     width: 420px;
+    background: transparent;
 
-    background-color: #272727;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
     color: #FFFFFF;
@@ -74,12 +73,11 @@
     background-color: #272727;
     border: 1px solid #272727;
     color: #ffffff4f;
-
+    text-decoration: none;
     font-size: 30px;
-    line-height: 35px;
     font-weight: 400;
+    line-height: 35px;
 
-    line-height: 21px;
     padding: 15px ;
     cursor: pointer;
 }

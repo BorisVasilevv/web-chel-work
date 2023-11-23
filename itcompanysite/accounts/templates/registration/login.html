@@ -13,10 +13,7 @@
 <main class="registration-container">
 
     <div class="registration-header">
-        <form action="{%url 'registration'%}">
-            <button class="registration-button extra-button" type="submit">Регистрация</button>
-        </form>
-
+        <a class="registration-button extra-button" href="{%url 'registration'%}">Регистрация</a>
         <span class="registration-header_main"> Вход </span>
 
     </div>
@@ -34,7 +31,7 @@
         {% endfor %}
 
         <button class="submit-button button" type="submit">Войти</button>
-
+    </form>
 
 </main>
 
