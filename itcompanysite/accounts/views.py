@@ -13,7 +13,7 @@ def registration(request):
             # new_user.set_password(user_form.cleaned_data['password'])
             new_user.save()
             login(request, new_user)
-
+            return redirect('/accounts/profile/')
         context = {'user_form': user_reg_form}
         return render(request, 'account/registration.html', context)
     else:
