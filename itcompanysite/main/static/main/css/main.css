@@ -94,6 +94,7 @@ ul{
     width:38px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .search-button-image{

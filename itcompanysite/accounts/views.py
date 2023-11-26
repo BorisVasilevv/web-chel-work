@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserCreationForm
 from django.contrib.auth import login
-
+from companies.models import Company
 
 def registration(request):
 
@@ -23,4 +23,7 @@ def registration(request):
 
 
 def profile(request):
-    return render(request, 'account/profile.html')
+    companies = Company.objects.all()
+
+
+    return render(request, 'account/profile.html', {'companies': companies})

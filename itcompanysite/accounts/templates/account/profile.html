@@ -28,28 +28,30 @@
 
     <div class="profile__favourite">
         <span class="favourite-title">Избранное</span>
-        <div class="companies favourite-companies">
+        {% for company in companies %}
+            <div class="companies favourite-companies">
 
                 <div class="companies-item company">
                     <div class="company-item_main">
 
                         <div class="companies-item_left">
-                            <span class="companies-item-title">=^-_-^=</span>
-                            <a class="companies-item_link" href="https://www.google.com/search?q=%D1%81%D0%B0%D0%BC%D0%BE%D0%B5%D0%B4+%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0&sca_esv=584847290&tbm=isch&sxsrf=AM9HkKmv_7FY9LMhi1OlKiuTT2uAHO1seg:1700744077135&source=lnms&sa=X&ved=2ahUKEwiZxsi0ldqCAxXrJxAIHVV1ArMQ_AUoAXoECAUQAw&biw=2133&bih=1034&dpr=0.9#imgrc=fyyt1xLg4TMgKM">
-                                 <img class="companies-item_link-img" src="\media\companies\logo\img\котэ.jpg">
+                            <span class="companies-item-title">{{ company.name }}</span>
+                            <a class="companies-item_link" href="{{company.url}}">
+                                 <img class="companies-item_link-img" src="{{ company.logotype.url }}">
                             </a>
 
                         </div>
 
                         <div class="companies-item_description">
-                            <span class="companies-item_about-company">Мяу епта MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW MEOW</span>
+                            <span class="companies-item_about-company">{{company.short_description}}</span>
+
                         </div>
                     </div>
 
                     <div class="companies-item_footer">
-                        <a class="companies-item_footer-link" href="https://www.google.com/search?q=%D1%81%D0%B0%D0%BC%D0%BE%D0%B5%D0%B4+%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0&sca_esv=584847290&tbm=isch&sxsrf=AM9HkKmv_7FY9LMhi1OlKiuTT2uAHO1seg:1700744077135&source=lnms&sa=X&ved=2ahUKEwiZxsi0ldqCAxXrJxAIHVV1ArMQ_AUoAXoECAUQAw&biw=2133&bih=1034&dpr=0.9#imgrc=fyyt1xLg4TMgKM">
+                        <a class="companies-item_footer-link" href="{{company.url}}">
                             <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
-                            <span class="companies-item_link-text">=^-_-^=</span>
+                            <span class="companies-item_link-text">{{ company.name }}</span>
                         </a>
 
                         <button class="companies-item_fav-button">
@@ -59,8 +61,8 @@
 
                     </div>
                 </div>
-
-        </div>
+            </div>
+        {%endfor%}
     </div>
     <form class="profile-logout" action="{%url 'logout'%}">
         <button class="profile-logout__button button" type="submit">
