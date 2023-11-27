@@ -13,25 +13,27 @@
 <main class="registration-container">
 
     <div class="registration-header">
-        <a class="registration-button extra-button" href="{%url 'registration'%}">Регистрация</a>
+        <form action="{%url 'registration'%}">
+            <button class="registration-button extra-button" type="submit">Регистрация</button>
+        </form>
         <span class="registration-header_main"> Вход </span>
-
     </div>
 
+
     {% if form.errors %}
-        <span>{{form.errors.error}}</span>
+        <p>{{form.errors}}</p>
     {% endif %}
+
     <form action="{% url 'login' %}" method="post" class="registration-form">
         {% csrf_token %}
         {% for f in form %}
             {{f|add_label_class:"registration-help-info"}}
             {%render_field f class+="input-field"%}
-
-
         {% endfor %}
-
-        <button class="submit-button button" type="submit">Войти</button>
+        <button class="submit-button" type="submit">Войти</button>
     </form>
+
+    <a href="{% url 'password_reset' %}">Забыли пароль?</a>
 
 </main>
 

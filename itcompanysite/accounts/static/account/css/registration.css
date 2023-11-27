@@ -63,7 +63,7 @@
     cursor: pointer;
 }
 
-.button:hover{
+.submit-button:hover{
     cursor: pointer;
     color: #faf446;
     border-color: #faf446;
