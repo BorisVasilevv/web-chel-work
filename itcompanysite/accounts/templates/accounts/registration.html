@@ -21,8 +21,7 @@
     </div>
 
     <form method="post" class="registration-form">
-         {% csrf_token %}
-
+        {% csrf_token %}
         {% for f in user_form %}
             {{ f|add_label_class:"registration-help-info"}} <!-- another way <label for="{{f.id_for_label}}" class="registration-help-info">{{f.label}}</label>-->
             {%render_field f class+="input-field"%} <!-- don't know another way-->

@@ -1,0 +1,22 @@
+{%extends 'main/layout.html'%}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block head %}
+{% endblock %}
+{% block title %}Ваша ссылка некорректна{%endblock%}
+
+
+{% block content %}
+
+
+<h2>Что-то пошло не так</h2>
+
+<h5>Ваша ссылка некорректна, возможно время жизни ссылки истекло, попробуйте войти еще раз,</h5>
+
+<a href="{% url 'login' %}">На страницу входа</a>
+
+
+{% endblock %}
+
+
