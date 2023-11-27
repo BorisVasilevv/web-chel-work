@@ -67,6 +67,3 @@ class MyLoginView(LoginView):
     template_name = "accounts/login.html"
     form_class = MyAuthenticationForm
 
-
-
-

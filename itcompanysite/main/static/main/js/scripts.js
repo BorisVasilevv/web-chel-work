@@ -31,3 +31,25 @@
 //    categoriesItem.style.width = "500px"; // показать div при закрытии details
 //    }
 //}
+//$(document).ready(function() {
+//    $( "#main-page-map-container").load( "map/" );
+//});
+<!-- скриптик для карты -->
+ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map ('map', {
+            center: [55.161997, 61.401485], //координаты центра
+            zoom: 15 //уровень приближения
+        });
+
+        /*экземпляр*/
+        var myPlacemark = new ymaps.Placemark([55.161997, 61.401485], {
+            iconContent: 'Чилик', //текст на иконке
+            balloonContent: 'Взрывной город' /*текст появляющийся после нажатия*/
+        }, {
+            preset: 'twirl#blueStretchyIcon' //тип иконки
+        });
+
+        /*добавление кнопочки*/
+        myMap.geoObjects.add(myPlacemark);
+    }

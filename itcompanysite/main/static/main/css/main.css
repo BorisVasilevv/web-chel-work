@@ -105,3 +105,20 @@ ul{
 .search-button-image:hover{
     cursor: pointer;
 }
+
+
+/*--map--*/
+
+.map-page-container{
+    height: 100vh;
+    width: 100vw;
+}
+
+
+.main-page-map-container{
+    height: 500px;
+    width: 75vw;
+    margin-right: auto;
+    margin-left: auto;
+
+}
