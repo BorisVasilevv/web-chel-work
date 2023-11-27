@@ -35,9 +35,7 @@ def registration(request):
 
 def profile(request):
     companies = Company.objects.all()
-
-
-    return render(request, 'account/profile.html', {'companies': companies})
+    return render(request, 'accounts/profile.html', {'companies': companies})
 
 class EmailView(View):
     def get(self, request, uidb64, token):
