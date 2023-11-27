@@ -1,10 +1,11 @@
 from django.contrib.auth import get_user_model, login
 from django.contrib.auth.views import LoginView
 from django.core.exceptions import ValidationError
+from django.db.models import QuerySet
 from django.shortcuts import render, redirect
 from .forms import UserCreationForm
 from django.contrib.auth import login
-from companies.models import Company
+from companies.models import Company, Favorite
 from django.utils.http import urlsafe_base64_decode
 from django.views import View
 from .forms import MyUserCreationForm, MyAuthenticationForm
@@ -34,8 +35,9 @@ def registration(request):
 
 
 def profile(request):
-    companies = Company.objects.all()
-    return render(request, 'accounts/profile.html', {'companies': companies})
+    favorite_entries = Favorite.objects.filter(user_id=request.user.id)
+    companies_for_user = [entry.company for entry in favorite_entries]
+    return render(request, 'accounts/profile.html', {'companies': companies_for_user})
 
 class EmailView(View):
     def get(self, request, uidb64, token):
