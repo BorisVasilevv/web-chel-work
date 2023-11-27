@@ -12,3 +12,6 @@ def index(request):
 def map(request):
 
     return render(request, 'main/map.html')
+
+
+

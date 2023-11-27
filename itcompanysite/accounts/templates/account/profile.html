@@ -28,8 +28,8 @@
 
     <div class="profile__favourite">
         <span class="favourite-title">Избранное</span>
-        {% for company in companies %}
-            <div class="companies favourite-companies">
+        <div class="companies favourite-companies">
+            {% for company in companies %}
 
                 <div class="companies-item company">
                     <div class="company-item_main">
@@ -61,8 +61,8 @@
 
                     </div>
                 </div>
-            </div>
-        {%endfor%}
+            {%endfor%}
+        </div>
     </div>
     <form class="profile-logout" action="{%url 'logout'%}">
         <button class="profile-logout__button button" type="submit">

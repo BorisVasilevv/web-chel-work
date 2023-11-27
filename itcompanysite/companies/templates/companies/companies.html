@@ -2,6 +2,7 @@
 {% load static %}
 {% block head %}
     <link rel="stylesheet" type="text/css" href="{% static 'companies/css/companies.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/categories.css'%}">
 {% endblock %}
 
 {%block title%}Компании{%endblock%}
@@ -11,7 +12,7 @@
 
 <main class="companies">
     {% for company in companies %}
-        <div class="companies-item company">
+        <div class="companies-item company {{company.type_id}}">
             <div class="company-item_main">
 
                 <div class="companies-item_left">

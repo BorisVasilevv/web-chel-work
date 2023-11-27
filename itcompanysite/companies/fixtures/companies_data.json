@@ -26,7 +26,7 @@
     "pk": 3,
     "fields": {
       "name": "Xpage",
-      "logotype": "companies/logo/img/xpage_full.png",
+      "logotype": "companies/logo/img/xpage_cut.png",
       "short_description": "Разрабатываем web- и mobile- продукты для среднего и крупного бизнеса, оптимизируем работы back-office, выстраиваем эффектные маркетинговые компании",
       "url": "https://www.xpage.ru/",
       "type_id": "5"
