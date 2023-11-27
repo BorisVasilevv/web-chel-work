@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+
+    <div id="map" style="width: 700px; height: 700px;"></div>
+
+<!-- скриптик для карты -->
+    <script>
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map ('map', {
+            center: [55.161997, 61.401485], //координаты центра
+            zoom: 15 //уровень приближения
+        });
+
+        /*экземпляр*/
+        var myPlacemark = new ymaps.Placemark([55.161997, 61.401485], {
+            iconContent: 'Чилик', //текст на иконке
+            balloonContent: 'Взрывной город' /*текст появляющийся после нажатия*/
+        }, {
+            preset: 'twirl#blueStretchyIcon' //тип иконки
+        });
+
+        /*добавление кнопочки*/
+        myMap.geoObjects.add(myPlacemark);
+    }
+    </script>
+
+</body>
+</html>
