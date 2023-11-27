@@ -66,7 +66,6 @@
 }
 
 .submit-button:hover{
-    cursor: pointer;
     color: #faf446;
     border-color: #faf446;
 }
@@ -84,7 +83,47 @@
     cursor: pointer;
 }
 
+.help{
+    align-items: center;
+    padding: 50px;
+    display:flex;
+    flex-direction: column;
+    gap: 35px;
+}
 
+h1{
+    color: #FFFFFF;
+    align-self: center;
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 700;
+    padding: 0 15px;
+    cursor: default;
+    letter-spacing: 0.2px;
+}
+
+h2{
+    color: #FFFFFF;
+    font-size: 26px;
+}
+
+h5{
+    align-self: center;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+a{
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.message{
+    display:flex;
+    gap: 5px;
+    justify-content:center;
+    flex-direction: row;
+}
 
 /*error style*/
 
