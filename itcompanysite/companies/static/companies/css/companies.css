@@ -6,7 +6,6 @@
     flex-wrap: wrap;
     gap: 5px;
     justify-content: center;
-
 }
 
 .companies-item{
@@ -53,7 +52,6 @@
     font-family: Gilroy;
     color:#FCD54C;
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
@@ -69,7 +67,6 @@
     font-family: Gilroy;
     color:#FFFFFF;
     font-size: 32px;
-    font-style: normal;
     font-weight: 700;
     line-height: normal;
 }
@@ -78,7 +75,6 @@
     font-family: Gilroy;
     color: #FFFFFF;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 34px;
 }
@@ -92,7 +88,6 @@
     gap: 15px;
     font-family: Gilroy;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: 34px;
 }
@@ -120,7 +115,6 @@
     color: #FFFFFF;
     font-family: Gilroy;
     font-size: 18px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
