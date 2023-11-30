@@ -12,7 +12,8 @@ def index(request):
                                             category.style_name,
                                             category.description)
         categor.subcategories = Subcategory.objects.filter(company_category_id=category.id)
-    return render(request, 'main/index.html', {"categories": categories})
+        categories_with_subcategories.append(categor)
+    return render(request, 'main/index.html', {"categories": categories_with_subcategories})
 
 def map(request):
     return render(request, 'main/map.html')
@@ -26,7 +27,6 @@ class CategoryWithSubcategories:
 
     def __init__(self, categor_id, categor_name, categor_style_name, categor_description):
         self.id = categor_id
-        self.category_name = categor_name,
+        self.category_name = categor_name
         self.style_name = categor_style_name
         self.description = categor_description
-
