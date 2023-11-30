@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserRegistrationForm
-from companies.models import Сategory, Subcategory
+from companies.models import Category, Subcategory
 
 def index(request):
-    categories = Сategory.objects.all()
+    categories = Category.objects.all()
     categories_with_subcategories = []
     for category in categories:
         categor = CategoryWithSubcategories(category.id,
