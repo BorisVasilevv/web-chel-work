@@ -54,7 +54,7 @@
                             <span class="companies-item_link-text">{{ company.name }}</span>
                         </a>
 
-                        <button class="companies-item_fav-button">
+                        <button class="companies-item_fav-button" onclick="removeFromFavorites('{{ company.id }}')">
                             <span>Удалить</span>
                             <img class="fav-button_icon" src="{% static 'account/icons/trash-bin.svg'%}">
                         </button>
@@ -71,5 +71,27 @@
         </button>
     </form>
 </main>
-
+<script>
+    function removeFromFavorites(companyId) {
+        // Отправить запрос на сервер для удаления компании из избранного
+        fetch(`/accounts/remove_from_favorites/${companyId}/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'  // добавьте токен CSRF
+            },
+            body: JSON.stringify({
+                company_id: companyId,
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+                // Обновить страницу или скрыть компанию из избранного без перезагрузки
+                // Например, можно использовать JavaScript для скрытия элемента
+                location.reload();
+            }
+        })
+        .catch(error => console.error('Ошибка:', error));
+    }
+</script>
 {%endblock%}

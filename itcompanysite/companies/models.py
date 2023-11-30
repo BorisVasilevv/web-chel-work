@@ -1,9 +1,11 @@
 from django.db import models
 from .namehelper import CompanyName
+from django.contrib.auth import get_user_model
 
 
 # Create your models here.
 
+User = get_user_model()
 
 class CompanyType(models.Model):
     TYPE_NAME = (
@@ -74,3 +76,11 @@ class Company(models.Model):
     class Meta:
         verbose_name = 'Company'
         verbose_name_plural = 'Companies'
+
+
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    company = models.ForeignKey(Company, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('user', 'company')
