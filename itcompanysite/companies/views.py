@@ -4,7 +4,9 @@ from .models import Company, Category, Subcategory, Favorite, CompanyCategory
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
-
+from django.db.models import Q
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import Http404
 
 # Create your views here.
 
@@ -14,20 +16,24 @@ def companies(request):
     return render(request, 'companies/companies.html', {'companies': all_companies})
 
 
-def companies_per_category(request, category_name):
-    company_category = Category.objects.get(category_name__contains=category_name)
+def companies_per_category_subcategory(request, category_or_subcategory_name):
+    subcategory_list = []
+    try:
+        category = Category.objects.get(Q(category_name=category_or_subcategory_name))
+        subcategory_list = Subcategory.objects.filter(company_category_id=category.id)
+    except ObjectDoesNotExist:
+        try:
+            subcategory = Subcategory.objects.get(Q(subcategory_name=category_or_subcategory_name))
+            subcategory_list.append(subcategory)
+        except ObjectDoesNotExist:
+            raise Http404
 
-    company_categories = CompanyCategory.objects.filter(category_id=company_category.id)
-    companies_some_category = [comp_category.company_id for comp_category in company_categories]
-    return render(request, 'companies/companies.html', {'companies': companies_some_category})
-
-
-def companies_per_subcategory(request, subcategory_name):
-    company_subcategory = Subcategory.objects.get(subcategory_name__contains=subcategory_name)
-    company_categories = CompanyCategory.objects.filter(subcategory_id=company_subcategory.id)
-    companies_some_subcategory = [comp_subcategory.company_id for comp_subcategory in company_categories]
-    return render(request, 'companies/companies.html', {'companies': companies_some_subcategory})
-
+    requested_companies = []
+    for subcategory in subcategory_list:
+        company_categories = CompanyCategory.objects.filter(subcategory_id=subcategory.id)
+        company_of_subcategory = [company_category.company for company_category in company_categories]
+        requested_companies.extend(company_of_subcategory)
+    return render(request, 'companies/companies.html', {'companies': requested_companies})
 
 def search(request):
     query = request.GET.get("q")

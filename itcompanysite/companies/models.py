@@ -105,7 +105,6 @@ class Company(models.Model):
 
 class CompanyCategory(models.Model):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, default='')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
