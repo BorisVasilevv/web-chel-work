@@ -14,7 +14,6 @@
 
             <div id="main-page-map-container" class="main-page-map-container">
                 <div id="map" style="width: 100%; height: 100%;">
-
                 </div>
             </div>
 
@@ -52,97 +51,8 @@
                     </div>
                 </div>
             {% endfor %}
-
-
-<!--            <div class="main-category custom_dev">-->
-<!--                <div class="main-category_header">-->
-<!--                    <div class="main-category_header-upper">-->
-<!--                        <span class="main-category_header-title">Заказная разработка</span>-->
-<!--                        <a class="categories-item_button"  onclick="window.location.href = ">Перейти</a>-->
-<!--                    </div>-->
-
-<!--                    <details class="categories-item_details">-->
-<!--                        <summary  class="categories-item_summary">Описание</summary>-->
-<!--                        <span class="categories-item_description">Компании с заказной разработкой занимаются созданием программного обеспечения на заказ для конкретных клиентов. Они работают над разработкой и внедрением решений, которые отвечают потребностям и требованиям конкретных компаний или организаций. Такие компании могут выполнять проекты по разработке приложений, веб-сайтов, баз данных, систем управления, автоматизации бизнес-процессов и других IT-решений по запросу клиентов. Компании с заказной разработкой обычно работают на основе договоров о предоставлении услуг и выполняют проекты с учетом индивидуальных потребностей заказчиков.</span>-->
-<!--                    </details>-->
-<!--                </div>-->
-
-<!--                <div class="main-category_subcategories">-->
-                    <!--{% for company_type in company_types %}
-                    <div id="categories-item__{{company_type.id}}" class="categories-item {{company_type.style_name}}">
-                        <h2 class="categories-item_title">{{company_type.type_name}}</h2>
-                        <details id="categories-item_details__{{company_type.id}}" class="categories-item_details">
-                            <summary id="categories-item_summary" class="categories-item_summary">Описание</summary>
-                            <span class="categories-item_description">{{company_type.description}}</span>
-                        </details>
-                        <a class="categories-item_button" id="buttonCustomDev" onclick="window.location.href = '{% url 'companies_per_type' company_type.type_name %}'">
-                            Перейти к компаниям
-                        </a>
-                    </div>
-                    {% endfor %}*/ -->
-
-<!--                    <div  class="categories-item web_studio">-->
-<!--                        <h2 class="categories-item_title">Веб-студии</h2>-->
-<!--                        <details class="categories-item_details">-->
-<!--                            <summary class="categories-item_summary">Описание</summary>-->
-<!--                            <span class="categories-item_description">Веб-студия — агентство или компания, которая занимается разработкой и продвижением сайта. Такие компании выполняют полный спектр услуг по созданию сайтов, это основное направление работы.</span>-->
-<!--                        </details>-->
-<!--                        <a class="categories-item_button"  onclick="window.location.href = ">Перейти</a>-->
-<!--                    </div>-->
-
-<!--                     <div  class="categories-item big_it_company">-->
-<!--                        <h2 class="categories-item_title">Большие ИТ - компании</h2>-->
-<!--                        <details class="categories-item_details">-->
-<!--                            <summary class="categories-item_summary">Описание</summary>-->
-<!--                            <span class="categories-item_description">Большие IT-компании — предприятия, чья деятельность сосредоточена на разработке и производстве технологических продуктов или предоставлении технологии как услуги.</span>-->
-<!--                        </details>-->
-<!--                        <a class="categories-item_button"  onclick="window.location.href = ">Перейти</a>-->
-<!--                    </div>-->
-
-<!--                    <div  class="categories-item b2g">-->
-<!--                        <h2 class="categories-item_title">B2G</h2>-->
-<!--                        <details class="categories-item_details">-->
-<!--                            <summary class="categories-item_summary">Описание</summary>-->
-<!--                            <span class="categories-item_description">Сегмент B2g — сокращенно от «business-to-government», что в переводе означает «бизнес для государства», данная модель подразумевает продажу товаров и услуг государственным органам и учреждениям, таким как: армия, полиция, суды, школы, детские сады, вузы, поликлиники, травмпункты, библиотеки, музеи и театры и пр.</span>-->
-<!--                        </details>-->
-<!--                        <a class="categories-item_button"  onclick="window.location.href = ">Перейти</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--             <div class="main-category other">-->
-<!--                <div class="main-category_header">-->
-<!--                    <div class="main-category_header-upper">-->
-<!--                        <span class="main-category_header-title">Другое</span>-->
-<!--                        <a class="categories-item_button"  onclick="window.location.href = 'companies/Собственный%20IT-продукт/'">Перейти</a>-->
-<!--                    </div>-->
-
-<!--                    <details class="categories-item_details">-->
-<!--                        <summary  class="categories-item_summary">Описание</summary>-->
-<!--                        <span class="categories-item_description">Другое</span>-->
-<!--                    </details>-->
-
-
-<!--                </div>-->
-
-<!--                <div class="main-category_subcategories">-->
-
-<!--                    <div  class="categories-item game_dev">-->
-<!--                        <h2 class="categories-item_title">Разработка игр</h2>-->
-<!--                        <details class="categories-item_details">-->
-<!--                            <summary class="categories-item_summary">Описание</summary>-->
-<!--                            <span class="categories-item_description">GameDev компании занимаются разработкой компьютерных игр. Они могут создавать игры для различных платформ, таких как ПК, консоли, мобильные устройства и т. д. GameDev компании обычно имеют специализированных разработчиков, дизайнеров, художников, звукорежиссеров и других специалистов, которые работают вместе над созданием игрового контента. Такие компании могут разрабатывать как собственные игры, так и выполнять заказы на создание игр от других компаний или издателей.</span>-->
-<!--                        </details>-->
-<!--                        <a class="categories-item_button"  onclick="window.location.href = ">Перейти</a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
         </div>
     </section>
-
-
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src=" {% static 'main/js/scripts.js' %}"></script>
 {%endblock%}
-
-
