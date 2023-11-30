@@ -1,4 +1,4 @@
-.categories{
+.section{
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,6 @@
 .main-category_header{
     display: flex;
     flex-direction: column;
-    justify_content:
     gap: 25px;
 }
 
@@ -66,13 +65,13 @@
     border: 2px solid;
 }
 
-.categories_title{
+.section-title{
     font-size: 36px;
     font-weight: 700;
     letter-space: 0.2px;
 }
 
-.categories_subtitle{
+.section-subtitle{
     border-top: 1px solid #FFFFFF;
     padding: 10px;
     font-size: 18px;
@@ -86,6 +85,8 @@
     font-weight: 400;
     letter-spacing: 0.2px;
 }
+
+
 
 .categories-item_button{
     align-self: flex-start;
