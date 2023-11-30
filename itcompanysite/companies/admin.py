@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Company, CompanyType
+from .models import Company, CompanyType, Favorite
 # Register your models here.
 
 
@@ -8,4 +8,5 @@ class MyAdminModel(admin.ModelAdmin):
 
 
 admin.site.register(Company)
+admin.site.register(Favorite)
 admin.site.register(CompanyType, MyAdminModel)
