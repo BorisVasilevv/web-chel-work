@@ -26,4 +26,5 @@ urlpatterns = [
         EmailView.as_view(),
         name="verify_email",
     ),
+    path('remove_from_favorites/<int:company_id>/', views.remove_from_favorites, name='remove_from_favorites'),
 ]
