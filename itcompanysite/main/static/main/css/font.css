@@ -1,11 +1,13 @@
 @font-face {
     font-family: Gilroy;
     font-style: normal;
+    font-weight: 400;
     src: url("../fonts/Gilroy-Light.otf");
 }
 
 @font-face {
-    font-family: WorkSans;
+    font-family: Gilroy;
     font-style: normal;
-    src: url("../fonts/WorkSans-Regular.ttf");
+    font-weight: 700;
+    src: url("../fonts/Gilroy-Regular.ttf");
 }
