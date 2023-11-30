@@ -7,33 +7,61 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-class CompanyType(models.Model):
-    TYPE_NAME = (
+class Category(models.Model):
+    CATEGORY_NAME = (
         (CompanyName.CONST_SELF_PRODUCT, CompanyName.CONST_SELF_PRODUCT),
+        (CompanyName.CONST_CUSTOM_DEV, CompanyName.CONST_CUSTOM_DEV),
+        (CompanyName.CONST_OTHER, CompanyName.CONST_OTHER),
+        (CompanyName.CONST_NONE_TYPE, CompanyName.CONST_NONE_TYPE)
+    )
+
+    category_name = models.CharField('category_name', max_length=100, choices=CATEGORY_NAME)
+    style_name = models.CharField('style_name', max_length=100, default="")
+    description = models.TextField('description', default="")
+
+    def __str__(self):
+        return self.category_name
+
+    def save(self, *args, **kwargs):
+        match self.category_name:
+            case CompanyName.CONST_SELF_PRODUCT:
+                self.style_name = 'self_product'
+            case CompanyName.CONST_CUSTOM_DEV:
+                self.style_name = 'custom_dev'
+            case CompanyName.CONST_OTHER:
+                self.style_name = 'other'
+            case CompanyName.CONST_NONE_TYPE:
+                self.style_name = 'none_type'
+        super(Category, self).save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = 'CompanyCategory'
+        verbose_name_plural = 'CompanyCategories'
+
+
+class Subcategory(models.Model):
+    SUBCATEGORY_NAME = (
+
         (CompanyName.CONST_STARTUP, CompanyName.CONST_STARTUP),
         (CompanyName.CONST_PROJECT_SUPPORT, CompanyName.CONST_PROJECT_SUPPORT),
 
-        (CompanyName.CONST_CUSTOM_DEV, CompanyName.CONST_CUSTOM_DEV),
         (CompanyName.CONST_WEB_STUDIO, CompanyName.CONST_WEB_STUDIO),
         (CompanyName.CONST_IT_COMPANY, CompanyName.CONST_IT_COMPANY),
         (CompanyName.CONST_B2G, CompanyName.CONST_B2G),
 
         (CompanyName.CONST_GAME_DEV, CompanyName.CONST_GAME_DEV),
-
-        (CompanyName.CONST_STATE_STRUCTURE, CompanyName.CONST_STATE_STRUCTURE),
-
         (CompanyName.CONST_NONE_TYPE, CompanyName.CONST_NONE_TYPE)
-
     )
-    type_name = models.CharField('type_name', max_length=100, choices=TYPE_NAME)
+    subcategory_name = models.CharField('subcategory_name', max_length=100, choices=SUBCATEGORY_NAME)
     style_name = models.CharField('style_name', max_length=100, default="")
-    description = models.TextField('description', max_length=350, default="")
+    description = models.TextField('description', default="")
+    company_category = models.ForeignKey(Category, on_delete=models.DO_NOTHING,  default='')
 
     def __str__(self):
-        return self.type_name
+        return self.subcategory_name
 
     def save(self, *args, **kwargs):
-        match self.type_name:
+        match self.subcategory_name:
             case CompanyName.CONST_SELF_PRODUCT:
                 self.style_name = 'self_product'
             case CompanyName.CONST_STARTUP:
@@ -52,15 +80,13 @@ class CompanyType(models.Model):
 
             case CompanyName.CONST_GAME_DEV:
                 self.style_name = 'game_dev'
-            case CompanyName.CONST_STATE_STRUCTURE:
-                self.style_name = 'state_structure'
             case CompanyName.CONST_NONE_TYPE:
                 self.style_name = 'none_type'
-        super(CompanyType, self).save(*args, **kwargs)
+        super(Subcategory, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name = 'CompanyType'
-        verbose_name_plural = 'CompanyTypes'
+        verbose_name = 'CompanySubcategory'
+        verbose_name_plural = 'CompanySubcategories'
 
 
 class Company(models.Model):
@@ -68,7 +94,6 @@ class Company(models.Model):
     logotype = models.ImageField('logotype', upload_to='companies/logo/img')
     short_description = models.TextField('short_description')
     url = models.CharField('url', max_length=200)
-    type = models.ForeignKey(CompanyType, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.name
@@ -76,6 +101,17 @@ class Company(models.Model):
     class Meta:
         verbose_name = 'Company'
         verbose_name_plural = 'Companies'
+
+
+class CompanyCategory(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, default='')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+    subcategory = models.ForeignKey(Subcategory, on_delete=models.CASCADE, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'CompanyCategory'
+        verbose_name_plural = 'CompanyCategories'
+        unique_together = ('subcategory', 'company')
 
 
 class Favorite(models.Model):

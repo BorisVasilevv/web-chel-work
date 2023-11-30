@@ -9,8 +9,9 @@ class CompanyName:
     CONST_IT_COMPANY = 'Большие ИТ - компании'
     CONST_B2G = 'B2G'
     CONST_GAME_DEV = 'Разработка игр'
-    CONST_STATE_STRUCTURE = 'Госструктуры'
+    CONST_OTHER = 'Другое'
     CONST_NONE_TYPE = 'Неопределенный'
+
 
 
 

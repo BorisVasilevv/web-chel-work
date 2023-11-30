@@ -6,8 +6,7 @@
       "name": "Dextra",
       "logotype": "companies/logo/img/Dextra.png",
       "short_description": "Миссия интернет-агентства Dextra — разработка оптимальных решений для повышения эффективности бизнеса наших клиентов средствами интернет.",
-      "url": "https://www.dextra.ru/",
-      "type_id": "5"
+      "url": "https://www.dextra.ru/"
     }
   },
   {
@@ -17,8 +16,7 @@
       "name": "Napoleon IT",
       "logotype": "companies/logo/img/NapoleonIT.png",
       "short_description": "Napoleon IT — один из крупнейших AI-разработчиков программного обеспечения. Разработчик программного обеспечения. Мы предлагаем готовые решения в области бизнес-аналитики, предиктивной аналитики, компьютерного зрения, высоконагруженных систем и мобильной разработки",
-      "url": "https://napoleonit.ru/",
-      "type_id": "6"
+      "url": "https://napoleonit.ru/"
     }
   },
   {
@@ -28,8 +26,7 @@
       "name": "Xpage",
       "logotype": "companies/logo/img/xpage_cut.png",
       "short_description": "Разрабатываем web- и mobile- продукты для среднего и крупного бизнеса, оптимизируем работы back-office, выстраиваем эффектные маркетинговые компании",
-      "url": "https://www.xpage.ru/",
-      "type_id": "5"
+      "url": "https://www.xpage.ru/"
     }
   },
   {
@@ -39,8 +36,7 @@
       "name": "Интерсвязь",
       "logotype": "companies/logo/img/интерсвязь.png",
       "short_description": "Лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».",
-      "url": "https://www.is74.ru/oldsite/company/about/",
-      "type_id": "7"
+      "url": "https://www.is74.ru/oldsite/company/about/"
     }
   },
   {
@@ -50,8 +46,7 @@
       "name": "NovaGames",
       "logotype": "companies/logo/img/novagames.svg",
       "short_description": "Студия создания и разработки мобильных игр. Наша цель — делать лучшие игровые проекты для мобильных устройств.",
-      "url": "http://nv-games.com/",
-      "type_id": "8"
+      "url": "http://nv-games.com/"
     }
   },
   {
@@ -61,8 +56,7 @@
       "name": "Энигма",
       "logotype": "companies/logo/img/энигма.svg",
       "short_description": "Интегратор решений в области информационной безопасности",
-      "url": "https://it-enigma.ru/",
-      "type_id": "1"
+      "url": "https://it-enigma.ru/"
     }
   }
 ]
