@@ -8,7 +8,7 @@ ymaps.ready(init);
         });
 
         /*экземпляр*/
-        var chelgy = new ymaps.Placemark([55.161997, 61.401485], {
+        var chelgy = new ymaps.Placemark([55.177640451171285, 61.31967316313907], {
             iconContent: 'ЧелГУ', //текст на иконке
             balloonContent: 'Комфортное место'
         }, {
