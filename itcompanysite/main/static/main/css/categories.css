@@ -17,7 +17,6 @@
 .main-category{
     display: flex;
     flex-direction: column;
-    gap: 35px;
     border-radius: 10px;
     padding: 30px;
     align-items: flex-start;
@@ -85,8 +84,6 @@
     font-weight: 400;
     letter-spacing: 0.2px;
 }
-
-
 
 .categories-item_button{
     align-self: flex-start;
