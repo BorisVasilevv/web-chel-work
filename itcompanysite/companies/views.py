@@ -49,5 +49,7 @@ def search(request):
 @require_POST
 def add_to_favorites(request, company_id):
     company = Company.objects.get(pk=company_id)
-    favorite, created = Favorite.objects.get_or_create(user=request.user, company=company)
-    return JsonResponse({'status': 'added' if created else 'already_exists'})
+    user = request.user
+    if not user.is_anonymous:
+        favorite, created = Favorite.objects.get_or_create(user=request.user, company=company)
+        return JsonResponse({'status': 'added' if created else 'already_exists'})

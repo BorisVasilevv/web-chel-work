@@ -8,11 +8,13 @@
 {%block title%}Компании{%endblock%}
 {%block content%}
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 
 <main class="companies">
     {% for company in companies %}
-        <div class="companies-item company">
+
+        <div class="companies-item">
             <div class="company-item_main">
 
                 <div class="companies-item_left">
@@ -38,48 +40,25 @@
                     <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
                     <span class="companies-item_link-text">{{ company.name }}</span>
                 </a>
-                {% if user.is_authenticated %}
-                    <button id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" class="companies-item_fav-button">
+
+                <div class="" id="add-to-favorites-container-{{ company.id }}">
+                    <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" >
                         <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
                         <span>Избранное</span>
                     </button>
-                {% endif %}
+                </div>
+
+                <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
+                    <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
+                        <span>Удалить</span>
+                        <img class="fav-button_icon" src="{% static 'account/icons/trash-bin.svg'%}">
+                    </button>
+                </div>
             </div>
         </div>
     {% endfor%}
 </main>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.companies-item_fav-button').forEach(function (button) {
-            button.addEventListener('click', function () {
-                const companyId = button.getAttribute('data-company-id');
-                addToFavorites(companyId);
-            });
-        });
 
-        function addToFavorites(companyId) {
-            fetch(`add_to_favorites/${companyId}/`, {
-                method: 'POST',
-                headers: {
-                    'X-CSRFToken': getCookie('csrftoken'),
-                },
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'added') {
-                    alert('Компания добавлена в избранное!');
-                } else if (data.status === 'already_exists') {
-                    alert('Компания уже в избранном!');
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        }
+<script src=" {% static 'companies/js/scripts.js' %}"></script>
 
-        function getCookie(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-        }
-    });
-</script>
 {%endblock%}

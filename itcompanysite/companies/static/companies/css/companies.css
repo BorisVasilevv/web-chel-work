@@ -97,6 +97,8 @@
     gap: 10px;
     height: 32px;
     align-items: center;
+    justify-content: flex-start;
+    width: 250px;
 }
 
 .companies-item_link-icon{
@@ -128,7 +130,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    gap: 180px;
+    gap: 45px;
 }
 
 .companies-item_fav-button{

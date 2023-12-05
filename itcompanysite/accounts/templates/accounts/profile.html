@@ -30,21 +30,17 @@
         <span class="favourite-title">Избранное</span>
         <div class="companies favourite-companies">
             {% for company in companies %}
-
-                <div class="companies-item company">
+                <div id="company-{{company.id}}" class="companies-item">
                     <div class="company-item_main">
-
                         <div class="companies-item_left">
                             <span class="companies-item-title">{{ company.name }}</span>
                             <a class="companies-item_link" href="{{company.url}}">
                                  <img class="companies-item_link-img" src="{{ company.logotype.url }}">
                             </a>
-
                         </div>
 
                         <div class="companies-item_description">
                             <span class="companies-item_about-company">{{company.short_description}}</span>
-
                         </div>
                     </div>
 
@@ -54,11 +50,10 @@
                             <span class="companies-item_link-text">{{ company.name }}</span>
                         </a>
 
-                        <button class="companies-item_fav-button" onclick="removeFromFavorites('{{ company.id }}')">
+                        <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
                             <span>Удалить</span>
                             <img class="fav-button_icon" src="{% static 'account/icons/trash-bin.svg'%}">
                         </button>
-
                     </div>
                 </div>
             {%endfor%}
@@ -71,27 +66,6 @@
         </button>
     </form>
 </main>
-<script>
-    function removeFromFavorites(companyId) {
-        // Отправить запрос на сервер для удаления компании из избранного
-        fetch(`/accounts/remove_from_favorites/${companyId}/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': '{{ csrf_token }}'  // добавьте токен CSRF
-            },
-            body: JSON.stringify({
-                company_id: companyId,
-            })
-        })
-        .then(response => {
-            if (response.ok) {
-                // Обновить страницу или скрыть компанию из избранного без перезагрузки
-                // Например, можно использовать JavaScript для скрытия элемента
-                location.reload();
-            }
-        })
-        .catch(error => console.error('Ошибка:', error));
-    }
-</script>
+<script src=" {% static 'companies/js/scripts.js' %}"></script>
+
 {%endblock%}

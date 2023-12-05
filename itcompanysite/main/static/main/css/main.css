@@ -3,6 +3,10 @@ body{
     font-family: Gilroy;
 }
 
+.hidden{
+    display: none;
+}
+
 .main-header{
     display: flex;
     justify-content: space-between;
