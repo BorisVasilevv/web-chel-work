@@ -1,5 +1,6 @@
 body{
     background-color: #272727;
+    cursor: default;
     font-family: Gilroy;
 }
 
@@ -9,66 +10,50 @@ body{
 
 .main-header{
     display: flex;
-    justify-content: space-between;
     gap:15px;
-    padding: 10px 15px 0 0;
+    justify-content: space-between;
     margin: 0 0 50px 0;
+    padding: 10px 15px 0 0;
 }
 
 .main-logo{
     display: block;
-    max-width: 71px;
-    width: auto;
     height: auto;
+    max-width: 71px;
     padding: 5px 0 0 10px;
+    width: auto;
 }
 
 .search-container{
-    display: flex;
     align-items: center;
+    display: flex;
     margin-right: auto;
     margin-left: auto;
 }
 
-/*.navigation {
-    background: #2F0571;
-    display: flex;
-    justify-content: flex-end;
-    height: 10vh;
-
-    margin-right: 5%;
-    margin: 0 0 50px 0;
-
-}*/
-
 .navigation-elem{
-
+    align-items: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-
 }
 
 .navigation-elem-link{
-    text-decoration: none;
+    align-items: center;
     color:  #faf446;
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 5px;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .navigation-elem-icon{
-
     height: 24px;
     width: 24px;
 }
 
-
 .company-info {
     height:100px;
 }
-
 
 .company-name{
     height: 50%;
@@ -82,23 +67,22 @@ ul{
     background-color: #302D2D;
     border: solid 1px #faf446;
     border-radius: 7.5px 0 0 7.5px;
-    height:38px;
-    width:500px;
-    color: white;
+    color: #FFFFFF;
     font-size: 15px;
+    height:38px;
     line-height: 18px;
-
+    width:500px;
 }
 
 .search-button{
+    align-items: center;
     background-color: #faf446;
     border: 1px solid #faf446;
     border-radius: 0 7.5px 7.5px 0;
-    height:38px;
-    width:38px;
     display: flex;
+    height:38px;
     justify-content: center;
-    align-items: center;
+    width:38px;
 }
 
 .search-button-image{
@@ -109,7 +93,6 @@ ul{
 .search-button-image:hover{
     cursor: pointer;
 }
-
 
 /*--map--*/
 
@@ -124,5 +107,38 @@ ul{
     width: 75vw;
     margin-right: auto;
     margin-left: auto;
+}
+
+/*---------greeting----------*/
+
+.section-greeting{
+    background: linear-gradient(270deg, #000 0%, #000 0.14%, rgba(0, 0, 0, 0.00) 99.56%), url("../../main/img/workers-it-company.png");
+    color: #FFFFFF;
+    height: 693px;
+    letter-spacing: 0.2px;
+    margin: 50px auto;
+    width: 1200px;
+}
+
+.section-greeting__description{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 150px 50px 0 600px;
 
 }
+
+.section-greeting__headline{
+    font-size: 76px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.section-greeting__sub-headline{
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+

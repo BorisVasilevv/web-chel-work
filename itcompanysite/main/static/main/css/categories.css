@@ -7,22 +7,22 @@
 }
 
 .categories-container{
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 35px;
-    border-radius: 10px;
     padding: 10px;
 }
 
 .main-category{
+    align-items: flex-start;
+    border: 2px solid;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    padding: 30px;
-    align-items: flex-start;
     flex-wrap: wrap;
     gap: 15px;
-    border: 2px solid;
+    padding: 30px;
 }
 
 .main-category_header{
@@ -44,24 +44,24 @@
 }
 
 .main-category_subcategories{
+    align-items: flex-start;
     border-top: 1px solid #FFFFFF;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 35px;
     padding: 30px 0;
-    align-items: flex-start;
-    flex-wrap: wrap;
     width: 100%;
 }
 
 .categories-item{
+    border: 2px solid;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    border-radius: 10px;
     padding: 10px;
     width: 300px;
-    border: 2px solid;
 }
 
 .section-title{
@@ -72,22 +72,21 @@
 
 .section-subtitle{
     border-top: 1px solid #FFFFFF;
-    padding: 10px;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: 0.2px;
+    padding: 10px;
 }
 
 .categories-item_title{
-    height: 36px;
     font-size: 18px;
     font-weight: 400;
+    height: 36px;
     letter-spacing: 0.2px;
 }
 
 .categories-item_button{
     align-self: flex-start;
-    align-items: center;
     background-color: #272727;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
@@ -107,10 +106,6 @@
 
 .categories-item_summary:hover{
     cursor: pointer;
-}
-
-.categories-item_description{
-
 }
 
 /*--colors for company types--*/

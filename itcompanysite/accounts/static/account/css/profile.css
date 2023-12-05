@@ -1,15 +1,15 @@
 .profile-container{
     display: flex;
-    flex-direction: column;
     gap: 50px;
+    flex-direction: column;
     margin: 15px;
 }
 
 .profile-header{
     align-items: center;
     display: flex;
-    flex-direction: row;
     gap: 10px;
+    flex-direction: row;
 }
 
 .profile-header__icon{
@@ -32,11 +32,11 @@
 
 .userName-reduction{
     align-items: baseline;
+    color: #FFFFFF;
     display: flex;
     flex-direction: row;
-    gap: 5px;
-    color: #FFFFFF;
     font-size: 16px;
+    gap: 5px;
     letter-spacing: 0.2px;
     cursor: pointer;
 }
@@ -69,16 +69,12 @@
     align-items: center;
     background-color: #272727;
     border: 1px solid #272727;
-
-    display: flex;
-    gap: 10px;
-    flex-direction: row;
-
-    font-size: 20px;
-    letter-spacing: 0.2px;
-
     color: #FFFFFF;
-
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    gap: 10px;
+    letter-spacing: 0.2px;
     padding: 15px 20px;
     cursor: pointer;
 }
