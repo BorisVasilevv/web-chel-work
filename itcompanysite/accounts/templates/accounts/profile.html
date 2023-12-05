@@ -3,7 +3,7 @@
 {% load widget_tweaks %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{%static 'account/css/profile.css'%}">
+<link rel="stylesheet" type="text/css" href="{%static 'accounts/css/profile.css'%}">
 <link rel="stylesheet" type="text/css" href="{% static 'companies/css/companies.css'%}">
 {% endblock %}
 {% block title %}Мой профиль{%endblock%}
@@ -14,12 +14,12 @@
 
     <div class="profile-header">
 
-        <img class="profile-header__icon" src="{% static 'account/icons/user.svg'%}">
+        <img class="profile-header__icon" src="{% static 'accounts/icons/user.svg'%}">
         <div class="profile-header__userName">
             <span class="userName-text">{{user.username}}</span>
             <a class="userName-reduction">
                 <span>редактировать</span>
-                <img class="userName-reduction__icon" src="{% static 'account/icons/arrow-right.svg'%}">
+                <img class="userName-reduction__icon" src="{% static 'accounts/icons/arrow-right.svg'%}">
             </a>
         </div>
     </div>
@@ -52,7 +52,7 @@
 
                         <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
                             <span>Удалить</span>
-                            <img class="fav-button_icon" src="{% static 'account/icons/trash-bin.svg'%}">
+                            <img class="fav-button_icon" src="{% static 'accounts/icons/trash-bin.svg'%}">
                         </button>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
     </div>
     <form class="profile-logout" action="{%url 'logout'%}">
         <button class="profile-logout__button button" type="submit">
-            <img class="profile-logout_icon" src="{% static 'account/icons/logout.svg'%}">
+            <img class="profile-logout_icon" src="{% static 'accounts/icons/logout.svg'%}">
             <span>Выйти</span>
         </button>
     </form>

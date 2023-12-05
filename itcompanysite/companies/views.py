@@ -7,13 +7,15 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
+from .helpstructure import CompanyWithFavoriteFlag
 
 # Create your views here.
 
 
 def companies(request):
     all_companies = Company.objects.all()
-    return render(request, 'companies/companies.html', {'companies': all_companies})
+    result_companies = get_companies_with_favorite_flag(request, all_companies)
+    return render(request, 'companies/companies.html', {'companies': result_companies})
 
 
 def companies_per_category_subcategory(request, category_or_subcategory_name):
@@ -33,7 +35,9 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
         company_categories = CompanyCategory.objects.filter(subcategory_id=subcategory.id)
         company_of_subcategory = [company_category.company for company_category in company_categories]
         requested_companies.extend(company_of_subcategory)
-    return render(request, 'companies/companies.html', {'companies': requested_companies})
+
+    result_comp = get_companies_with_favorite_flag(request, requested_companies)
+    return render(request, 'companies/companies.html', {'companies': result_comp})
 
 def search(request):
     query = request.GET.get("q")
@@ -43,6 +47,24 @@ def search(request):
         query = query.title()
         result_companies = Company.objects.filter(name__icontains=query)
     return render(request, 'companies/companies.html', {'companies': result_companies})
+
+
+def get_companies_with_favorite_flag(request, companies_set):
+    result_comp = []
+    user = request.user
+    if not user.is_anonymous:
+        favorite = Favorite.objects.filter(user_id=user.id)
+        favorite_companies = [fav.company for fav in favorite]
+        for comp in companies_set:
+            is_favorite = favorite_companies.__contains__(comp)
+            result_comp.append(CompanyWithFavoriteFlag(comp.id, comp.name, comp.logotype,
+                                                       comp.short_description, comp.url, is_favorite))
+    else:
+        for comp in companies_set:
+            result_comp.append(CompanyWithFavoriteFlag(comp.id, comp.name, comp.logotype,
+                                                       comp.short_description, comp.url, False))
+    return result_comp
+
 
 
 @login_required

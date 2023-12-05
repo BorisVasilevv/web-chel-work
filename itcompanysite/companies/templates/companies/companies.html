@@ -40,20 +40,35 @@
                     <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
                     <span class="companies-item_link-text">{{ company.name }}</span>
                 </a>
+                {% if company.is_favorite %}
+                    <div class="hidden" id="add-to-favorites-container-{{ company.id }}">
+                        <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" >
+                            <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
+                            <span>Избранное</span>
+                        </button>
+                    </div>
 
-                <div class="" id="add-to-favorites-container-{{ company.id }}">
-                    <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" >
-                        <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
-                        <span>Избранное</span>
-                    </button>
-                </div>
+                    <div class="" id="remove-to-favorites-container-{{ company.id }}">
+                        <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
+                            <span>Удалить</span>
+                            <img class="fav-button_icon" src="{% static 'accounts/icons/trash-bin.svg'%}">
+                        </button>
+                    </div>
+                {% else %}
+                     <div class="" id="add-to-favorites-container-{{ company.id }}">
+                        <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" >
+                            <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
+                            <span>Избранное</span>
+                        </button>
+                    </div>
 
-                <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
-                    <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
-                        <span>Удалить</span>
-                        <img class="fav-button_icon" src="{% static 'account/icons/trash-bin.svg'%}">
-                    </button>
-                </div>
+                    <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
+                        <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
+                            <span>Удалить</span>
+                            <img class="fav-button_icon" src="{% static 'accounts/icons/trash-bin.svg'%}">
+                        </button>
+                    </div>
+                {% endif %}
             </div>
         </div>
     {% endfor%}
