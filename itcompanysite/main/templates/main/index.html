@@ -34,7 +34,7 @@
 
         <div class="categories-container">
             {% for category in categories %}
-                <div class="main-category {{category.style_name}}">
+                <div class="main-category" style="border-color: {{category.color}}">
                     <div class="main-category_header">
                         <div class="main-category_header-upper">
                             <span class="main-category_header-title">{{category.category_name}}</span>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="main-category_subcategories">
                         {% for subcategory in category.subcategories %}
-                                <div  class="categories-item {{subcategory.style_name}}">
+                                <div  class="categories-item" style="border-color: {{subcategory.color}}">
                                     <h2 class="categories-item_title">{{subcategory.subcategory_name}}</h2>
                                     <details class="categories-item_details">
                                         <summary class="categories-item_summary">Описание</summary>
