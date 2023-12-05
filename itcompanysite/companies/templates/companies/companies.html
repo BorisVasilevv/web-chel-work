@@ -15,15 +15,18 @@
     {% for company in companies %}
 
         <div class="companies-item">
+
+            <div class="companies-item_header">
+                <span class="companies-item_header-title">{{ company.name }}</span>
+<!--                <button class="category-button category_style">-->
+<!--                        <span>Сопровождение популярных массовых ИТ продуктов</span>-->
+<!--                </button>-->
+            </div>
+
             <div class="company-item_main">
-
-                <div class="companies-item_left">
-                    <span class="companies-item-title">{{ company.name }}</span>
-                    <a class="companies-item_link" href="{{company.url}}">
-                         <img class="companies-item_link-img" src="{{ company.logotype.url }}">
-                    </a>
-                </div>
-
+                <a class="companies-item_link" href="{{company.url}}">
+                    <img class="companies-item_link-img" src="{{ company.logotype.url }}">
+                </a>
                 <div class="companies-item_description">
                   <!--  <div class="companies-item-tags">
                         <span class="companies-item-tag">Frontend</span>
