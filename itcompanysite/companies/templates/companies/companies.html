@@ -62,12 +62,12 @@
                         </button>
                     </div>
 
-                    <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
-                        <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
-                            <span>Удалить</span>
-                            <img class="fav-button_icon" src="{% static 'accounts/icons/trash-bin.svg'%}">
-                        </button>
-                    </div>
+                <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
+                    <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
+                        <img class="fav-button_icon" src="{% static 'companies/icons/heart_full.svg'%}">
+                        <span>В избранном</span>
+                    </button>
+                </div>
                 {% endif %}
             </div>
         </div>
