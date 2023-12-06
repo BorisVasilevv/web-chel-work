@@ -14,11 +14,13 @@
 </head>
 <body>
     <div class="main-header">
-        <div class="site-logo">
-            <a class="site-logo" href="{% url 'home' %}">
+        <div class="site-logo-container">
+            <a class="site-logo__href" href="https://www.csu.ru/">
                 <img class="main-logo" src="{% static 'main/img/logoCSU.png'%}">
             </a>
-            <span class="IIT-logo">IIT</span>
+            <a class="site-logo__href" href="https://iit.csu.ru/">
+                <span class="IIT-logo">IIT</span>
+            </a>
         </div>
         <form action="{% url 'search'%}" method="get" class="search-container">
             <input class="search-row" placeholder="Введите название компании..."  autocomplete="off" type="search" name="q" required="">
