@@ -8,9 +8,6 @@
 {%block title%}Компании{%endblock%}
 {%block content%}
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-
 <main class="companies">
     {% for company in companies %}
 
@@ -53,8 +50,8 @@
 
                     <div class="" id="remove-to-favorites-container-{{ company.id }}">
                         <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
-                            <span>Удалить</span>
-                            <img class="fav-button_icon" src="{% static 'accounts/icons/trash-bin.svg'%}">
+                            <img class="fav-button_icon" src="{% static 'companies/icons/heart_full.svg'%}">
+                            <span>В избранном</span>
                         </button>
                     </div>
                 {% else %}
@@ -65,12 +62,12 @@
                         </button>
                     </div>
 
-                <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
-                    <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
-                        <img class="fav-button_icon" src="{% static 'companies/icons/heart_full.svg'%}">
-                        <span>В избранном</span>
-                    </button>
-                </div>
+                    <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
+                        <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
+                            <img class="fav-button_icon" src="{% static 'companies/icons/heart_full.svg'%}">
+                            <span>В избранном</span>
+                        </button>
+                    </div>
                 {% endif %}
             </div>
         </div>

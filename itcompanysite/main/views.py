@@ -10,7 +10,7 @@ def index(request):
     for category in categories:
         categor = CategoryWithSubcategories(category.id,
                                             category.category_name,
-                                            category.style_name,
+                                            category.color,
                                             category.description)
         categor.subcategories = Subcategory.objects.filter(company_category_id=category.id)
         categories_with_subcategories.append(categor)
