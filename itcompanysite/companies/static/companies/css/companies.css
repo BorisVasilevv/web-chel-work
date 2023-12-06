@@ -152,12 +152,11 @@
 }
 
 .category-button{
-    background-color: #0000FF;
-    border: 1px solid #0000FF;
+    background-color: #F98E8E;
+    border: 1px solid #F98E8E;
     border-radius: 10px;
     color: #272727;
     font-size: 16px;
-    font-weight: 700;
     max-width: 250px;
     padding: 5px;
     cursor: pointer;
