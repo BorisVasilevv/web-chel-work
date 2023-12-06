@@ -16,7 +16,7 @@ class Category(models.Model):
     )
 
     category_name = models.CharField('category_name', max_length=100, choices=CATEGORY_NAME)
-    style_name = models.CharField('style_name', max_length=100, default="")
+    color = models.CharField('color', max_length=25, default="gray")
     description = models.TextField('description', default="")
 
     def __str__(self):
@@ -53,7 +53,7 @@ class Subcategory(models.Model):
         (CompanyName.CONST_NONE_TYPE, CompanyName.CONST_NONE_TYPE)
     )
     subcategory_name = models.CharField('subcategory_name', max_length=100, choices=SUBCATEGORY_NAME)
-    style_name = models.CharField('style_name', max_length=100, default="")
+    color = models.CharField('color', max_length=25, default="gray")
     description = models.TextField('description', default="")
     company_category = models.ForeignKey(Category, on_delete=models.DO_NOTHING,  default='')
 
