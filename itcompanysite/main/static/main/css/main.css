@@ -4,6 +4,10 @@ body{
     font-family: Gilroy;
 }
 
+ul{
+    list-style: none;
+}
+
 .hidden{
     display: none;
 }
@@ -16,51 +20,44 @@ body{
     padding: 10px 15px 0 0;
 }
 
+/*--logo--*/
+
 .main-logo{
     display: block;
     height: auto;
-    max-width: 71px;
-    padding: 5px 0 5px 10px;
+    max-height: 55px;
+    padding-left: 10px;
     width: auto;
 }
+
+.site-logo-container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.site-logo__href{
+    text-decoration: none;
+}
+
+.IIT-logo{
+    display: inline-flex;
+    background-color: #faf446;
+    color: #272727;
+    font-family: Ultra;
+    font-size: 50px;
+    padding: 0 5px;
+}
+
+/*----------*/
 
 .search-container{
     align-items: center;
     display: flex;
     margin-right: auto;
     margin-left: auto;
-}
-
-.navigation-elem{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.navigation-elem-link{
-    align-items: center;
-    color:  #faf446;
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.navigation-elem-icon{
-    height: 24px;
-    width: 24px;
-}
-
-.company-info {
-    height:100px;
-}
-
-.company-name{
-    height: 50%;
-}
-
-ul{
-    list-style: none;
 }
 
 .search-row{
@@ -92,6 +89,27 @@ ul{
 
 .search-button-image:hover{
     cursor: pointer;
+}
+
+
+.navigation-elem{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-elem-link{
+    align-items: center;
+    color:  #faf446;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.navigation-elem-icon{
+    height: 24px;
+    width: 24px;
 }
 
 /*--map--*/
@@ -144,21 +162,4 @@ ul{
     line-height: normal;
 }
 
-.site-logo{
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-}
 
-.IIT-logo{
-    align-item: end;
-    background-color: #faf446;
-    color: #272727;
-    font-family: Ultra;
-    font-size: 50px;
-    height: 50px;
-    padding: 0 3px;
-    letter-spacing: Ypx;
-}
