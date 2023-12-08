@@ -14,7 +14,7 @@
     "pk": 2,
     "fields": {
       "name": "Napoleon IT",
-      "logotype": "companies/logo/img/Napoleon IT.png",
+      "logotype": "companies/logo/img/NapoleonIT.png",
       "short_description": "Napoleon IT — один из крупнейших AI-разработчиков программного обеспечения. Разработчик программного обеспечения. Мы предлагаем готовые решения в области бизнес-аналитики, предиктивной аналитики, компьютерного зрения, высоконагруженных систем и мобильной разработки",
       "url": "https://napoleonit.ru/"
     }
@@ -24,7 +24,7 @@
     "pk": 3,
     "fields": {
       "name": "Xpage",
-      "logotype": "companies/logo/img/Xpage.png",
+      "logotype": "companies/logo/img/xpage_full.png",
       "short_description": "Разрабатываем web- и mobile- продукты для среднего и крупного бизнеса, оптимизируем работы back-office, выстраиваем эффектные маркетинговые компании",
       "url": "https://www.xpage.ru/"
     }
@@ -34,7 +34,7 @@
     "pk": 4,
     "fields": {
       "name": "Интерсвязь",
-      "logotype": "companies/logo/img/Интерсвязь.png",
+      "logotype": "companies/logo/img/интерсвязь.png",
       "short_description": "Лидер телекоммуникационного рынка Челябинской области, одна из крупнейших IT-компаний Урала, создатель умных технологий и оператор услуг «Умного города».",
       "url": "https://www.is74.ru/oldsite/company/about/"
     }
@@ -44,7 +44,7 @@
     "pk": 5,
     "fields": {
       "name": "NovaGames",
-      "logotype": "companies/logo/img/NovaGames.png",
+      "logotype": "companies/logo/img/novagames.png",
       "short_description": "Студия создания и разработки мобильных игр. Наша цель — делать лучшие игровые проекты для мобильных устройств.",
       "url": "http://nv-games.com/"
     }
@@ -54,9 +54,9 @@
     "pk": 6,
     "fields": {
       "name": "Энигма",
-      "logotype": "companies/logo/img/Энигма.png",
+      "logotype": "companies/logo/img/enigma.png",
       "short_description": "Интегратор решений в области информационной безопасности",
-      "url": "https://it-enigma.ru/"
+      "url": "Ланит Челябинск (lanit-cheliabinsk.ru)"
     }
   },
   {
