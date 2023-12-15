@@ -8,8 +8,15 @@
 {%block title%}Компании{%endblock%}
 {%block content%}
 
+{% if context.category_or_subcategory_name %}
+    <section class="section">
+        <span class="section-title">{{context.category_or_subcategory_name}}</span>
+        <span class="section-subtitle">Ниже представлены компании, относящиеся к данной категории</span>
+    </section>
+    {% endif %}
+
 <main class="companies">
-    {% for company in companies %}
+    {% for company in context.result_companies %}
 
         <div class="companies-item">
 

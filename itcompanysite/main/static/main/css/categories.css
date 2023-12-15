@@ -108,49 +108,4 @@
     cursor: pointer;
 }
 
-/*--colors for company types--*/
-
-.self_product{
-    border-color: #FF0495;
-}
-
-.startup{
-    border-color: #F9B58E;
-}
-
-.project_support{
-    border-color:#F98E8E;
-}
-
-
-.custom_dev{
-    border-color: #94D377;
-}
-
-.web_studio{
-    border-color:#9955FF;
-}
-
-.big_it_company{
-    border-color:#AE8EF9;
-}
-
-.b2g{
-    border-color:#66DDEE;
-}
-
-
-.game_dev{
-    border-color: #FF8A00;
-}
-
-
-.other{
-    border-color: #9999BB;
-}
-
-.none_type{
-    border-color: red;
-}
-
 /*--------*/
