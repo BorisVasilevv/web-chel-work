@@ -17,10 +17,10 @@
         <img class="profile-header__icon" src="{% static 'accounts/icons/user.svg'%}">
         <div class="profile-header__userName">
             <span class="userName-text">{{user.username}}</span>
-            <a class="userName-reduction">
-                <span>редактировать</span>
-                <img class="userName-reduction__icon" src="{% static 'accounts/icons/arrow-right.svg'%}">
-            </a>
+<!--            <a class="userName-reduction">-->
+<!--                <span>редактировать</span>-->
+<!--                <img class="userName-reduction__icon" src="{% static 'accounts/icons/arrow-right.svg'%}">-->
+<!--            </a>-->
         </div>
     </div>
 
@@ -29,6 +29,11 @@
     <div class="profile__favourite">
         <span class="favourite-title">Избранное</span>
         <div class="companies favourite-companies">
+
+<!--            {% if not companies %}-->
+<!--                <h4>Здесь пока нет компаний</h4>-->
+<!--            {% endif %}-->
+
             {% for company in companies %}
                 <div id="company-{{company.id}}" class="companies-item">
                     <div class="companies-item_header">

@@ -15,7 +15,7 @@ from .helpstructure import CompanyWithFavoriteFlag
 def companies(request):
     all_companies = Company.objects.all()
     result_companies = get_companies_with_favorite_flag(request, all_companies)
-    return render(request, 'companies/companies.html', {'companies': result_companies})
+    return render(request, 'companies/companies.html', context={'context': {'result_companies': result_companies}})
 
 
 def companies_per_category_subcategory(request, category_or_subcategory_name):
@@ -36,8 +36,13 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
         company_of_subcategory = [company_category.company for company_category in company_categories]
         requested_companies.extend(company_of_subcategory)
 
-    result_comp = get_companies_with_favorite_flag(request, requested_companies)
-    return render(request, 'companies/companies.html', {'companies': result_comp})
+    result_companies = get_companies_with_favorite_flag(request, requested_companies)
+    context = {
+        "category_or_subcategory_name": category_or_subcategory_name,
+        "result_companies": result_companies,
+    }
+    return render(request, 'companies/companies.html', {'context': context})
+
 
 def search(request):
     query = request.GET.get("q")
@@ -66,10 +71,19 @@ def get_companies_with_favorite_flag(request, companies_set):
     return result_comp
 
 
-
 @login_required
 @require_POST
 def add_to_favorites(request, company_id):
+    company = Company.objects.get(pk=company_id)
+    user = request.user
+    if not user.is_anonymous:
+        favorite, created = Favorite.objects.get_or_create(user=request.user, company=company)
+        return JsonResponse({'status': 'added' if created else 'already_exists'})
+
+
+@login_required
+@require_POST
+def add_to_favorites_with_category(request, category_or_subcategory_name, company_id):
     company = Company.objects.get(pk=company_id)
     user = request.user
     if not user.is_anonymous:
