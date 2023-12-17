@@ -15,6 +15,12 @@
     </section>
     {% endif %}
 
+<div class="category-buttons">
+    {% for subcategory in context.subcategories %}
+        <button class="category-button" data-category="{{ subcategory.subcategory_name }}" style="border-color: {{ subcategory.color }};">{{ subcategory.subcategory_name }}</button>
+    {% endfor %}
+</div>
+
 <main class="companies">
     {% for company in context.result_companies %}
 
@@ -82,5 +88,20 @@
 </main>
 
 <script src=" {% static 'companies/js/scripts.js' %}"></script>
+
+<script>document.addEventListener('DOMContentLoaded', function () {
+    var buttons = document.querySelectorAll('.category-button');
+
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Toggle background color and border color
+            var currentColor = button.style.backgroundColor;
+            var newColor = button.style.borderColor;
+
+            button.style.backgroundColor = newColor;
+            button.style.borderColor = currentColor;
+        });
+    });
+});</script>
 
 {%endblock%}
