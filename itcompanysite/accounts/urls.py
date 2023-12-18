@@ -14,13 +14,11 @@ urlpatterns = [
         TemplateView.as_view(template_name='accounts/invalid_verify.html'),
         name='invalid_verify'
     ),
-
     path(
         'confirm_email/',
         TemplateView.as_view(template_name='accounts/confirm_email.html'),
         name='confirm_email'
     ),
-
     path(
         'verify_email/<uidb64>/<token>/',
         EmailView.as_view(),
