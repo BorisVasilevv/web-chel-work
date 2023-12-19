@@ -151,14 +151,14 @@
     gap: 25px;
 }
 
-.category-buttons {
+.subcategory-buttons {
     display: flex;
     justify-content: space-around;
     background-color: #272727;
     padding: 10px;
 }
 
-.category-button {
+.subcategory-button {
     background-color: #272727;
     border: 1px solid transparent;
     border-radius: 20px;
