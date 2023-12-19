@@ -9,5 +9,3 @@ urlpatterns = [
     path('add_to_favorites/<int:company_id>/', views.add_to_favorites, name='add_to_favorites'),
     path('<str:category_or_subcategory_name>/add_to_favorites/<int:company_id>/', views.add_to_favorites_with_category, name='add_to_favorites_with_category')
 ]
-
-

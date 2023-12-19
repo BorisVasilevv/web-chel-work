@@ -15,7 +15,7 @@
       "subcategory_id": 4
     }
   },
-    {
+  {
     "model": "companies.CompanyCategory",
     "pk": 3,
     "fields": {
@@ -31,7 +31,7 @@
       "subcategory_id": 2
     }
   },
-    {
+  {
     "model": "companies.CompanyCategory",
     "pk": 5,
     "fields": {
@@ -44,6 +44,158 @@
     "pk": 6,
     "fields": {
       "company_id": 6,
+      "subcategory_id": 7
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 7,
+    "fields": {
+      "company_id": 7,
+      "subcategory_id": 7
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 8,
+    "fields": {
+      "company_id": 8,
+      "subcategory_id": 1
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 9,
+    "fields": {
+      "company_id": 9,
+      "subcategory_id": 6
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 10,
+    "fields": {
+      "company_id": 10,
+      "subcategory_id": 6
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 11,
+    "fields": {
+      "company_id": 11,
+      "subcategory_id": 6
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 12,
+    "fields": {
+      "company_id": 12,
+      "subcategory_id": 1
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 13,
+    "fields": {
+      "company_id": 13,
+      "subcategory_id": 2
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 14,
+    "fields": {
+      "company_id": 14,
+      "subcategory_id": 3
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 15,
+    "fields": {
+      "company_id": 15,
+      "subcategory_id": 3
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 16,
+    "fields": {
+      "company_id": 16,
+      "subcategory_id": 4
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 17,
+    "fields": {
+      "company_id": 17,
+      "subcategory_id": 4
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 18,
+    "fields": {
+      "company_id": 18,
+      "subcategory_id": 4
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 19,
+    "fields": {
+      "company_id": 19,
+      "subcategory_id": 3
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 20,
+    "fields": {
+      "company_id": 20,
+      "subcategory_id": 4
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 21,
+    "fields": {
+      "company_id": 21,
+      "subcategory_id": 4
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 22,
+    "fields": {
+      "company_id": 22,
+      "subcategory_id": 5
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 23,
+    "fields": {
+      "company_id": 23,
+      "subcategory_id": 5
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 24,
+    "fields": {
+      "company_id": 24,
+      "subcategory_id": 4
+    }
+  },
+  {
+    "model": "companies.CompanyCategory",
+    "pk": 25,
+    "fields": {
+      "company_id": 25,
       "subcategory_id": 2
     }
   }

@@ -22,13 +22,8 @@ def registration(request):
         user_reg_form = MyUserCreationForm(request.POST)
         if user_reg_form.is_valid():
             new_user = user_reg_form.save()
-            #Проверки
-            # new_user.set_password(user_form.cleaned_data['password'])
-
             send_email_for_verify(request, new_user)
             return redirect('/accounts/confirm_email/')
-            # login(request, new_user)
-            # return redirect('/accounts/profile/')
         context = {'user_form': user_reg_form}
         return render(request, 'accounts/registration.html', context)
     else:
