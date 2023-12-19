@@ -121,13 +121,33 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Перебираем компании и скрываем те, которые не соответствуют выбранной подкатегории
                 companies.forEach(function (company) {
                     var companyCategory = company.getAttribute('data-category');
-                    companyCategory = companyCategory.substring(companyCategory.indexOf(':')+1, companyCategory.indexOf('>')).trim();
+                    companyCategoryList = [];
+                    if (companyCategory.includes(',')){
+                        var regex = /<Subcategory:\s(.*?)>/g;
+                        var subctgr;
+                        while((subctgr = regex.exec(companyCategory)) !== null) {
+                            subctgr[1].trim()
+                            companyCategoryList.push(subctgr[1]);
+                        }
+                    }
+                    else {
+                        companyCategory = companyCategory.substring(companyCategory.indexOf(':')+1, companyCategory.indexOf('>')).trim();
+                        companyCategoryList.push(companyCategory);
+                    }
 
-                    if (selectedSubcategories.includes(companyCategory)) {
-                        company.style.display = 'flex'; // Показываем компанию
-                    } else {
-                        company.style.display = 'none'; // Скрываем компанию
-                        console.log(companyCategory)
+                    try {
+                        companyCategoryList.forEach(function(companyctgr) {
+                            if (selectedSubcategories.includes(companyctgr)) {
+                                company.style.display = 'flex'; // Показываем компанию
+                                throw 'StopIteration'; // Кидаем исключение, чтобы выйти из цикла и случайно не скрыть компанию, которая состоит в двух категориях
+                            } else {
+                                company.style.display = 'none'; // Скрываем компанию
+                            }
+                        });
+                    } catch (e) {
+                        if (e !== 'StopIteration') {
+                            throw e;
+                        }
                     }
                 });
             }
