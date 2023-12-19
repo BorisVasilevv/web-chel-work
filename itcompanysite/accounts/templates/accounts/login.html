@@ -21,7 +21,7 @@
 
 
     {% if form.errors %}
-        <p>{{form.errors}}</p>
+        <p>{{form.non_field_errors}}</p>
     {% endif %}
 
     <form action="{% url 'login' %}" method="post" class="registration-form">

@@ -29,7 +29,7 @@
             <div class="companies-item_header">
                 <span class="companies-item_header-title">{{ company.name }}</span>
                 {% for subcategory in company.subcategories %}
-                    <button class="category-button" style="background-color: {{subcategory.color}}">
+                    <button class="category-button" onclick="window.location.href = 'http://127.0.0.1:8000/companies/{{subcategory.subcategory_name}}'" style="background-color: {{subcategory.color}}">
                             <span>{{subcategory.subcategory_name}}</span>
                     </button>
                 {% endfor%}
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (selectedSubcategories.length === 0) {
                 companies.forEach(function (company) {
-                    company.style.display = 'block';
+                    company.style.display = 'flex';
                 });
             }
             else {
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     companyCategory = companyCategory.substring(companyCategory.indexOf(':')+1, companyCategory.indexOf('>')).trim();
 
                     if (selectedSubcategories.includes(companyCategory)) {
-                        company.style.display = 'block'; // Показываем компанию
+                        company.style.display = 'flex'; // Показываем компанию
                     } else {
                         company.style.display = 'none'; // Скрываем компанию
                         console.log(companyCategory)

@@ -52,11 +52,16 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
 def search(request):
     query = request.GET.get("q")
     query = query.lower()
-    result_companies = Company.objects.filter(name__icontains=query)
-    if result_companies.__len__() == 0:
+    requested_companies = Company.objects.filter(name__icontains=query)
+    if requested_companies.__len__() == 0:
         query = query.title()
-        result_companies = Company.objects.filter(name__icontains=query)
-    return render(request, 'companies/companies.html', {'companies': result_companies})
+        requested_companies = Company.objects.filter(name__icontains=query)
+
+    result_companies = get_companies_with_favorite_flag_and_category(request, requested_companies)
+    context = {
+        "result_companies": result_companies,
+    }
+    return render(request, 'companies/companies.html', {'context': context})
 
 
 def get_companies_with_favorite_flag_and_category(request, companies_set):
@@ -69,23 +74,21 @@ def get_companies_with_favorite_flag_and_category(request, companies_set):
         # Code review please
         for comp in companies_set:
             is_favorite = favorite_companies.__contains__(comp)
-            company_categories = CompanyCategory.objects.filter(company_id=comp.id)
-            subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
-            categories_by_comp = [subcat.company_category for subcat in subcategories_by_comp]
-            result_comp.append(CompanyWithFavoriteFlagAndCategoryData(comp.id, comp.name, comp.logotype,
-                                                                      comp.short_description, comp.url, is_favorite,
-                                                                      categories_by_comp, subcategories_by_comp))
+            result_comp.append(company_to_company_with_favorite_flag_and_category_data(comp, is_favorite))
 
     else:
         for comp in companies_set:
-            company_categories = CompanyCategory.objects.filter(company_id=comp.id)
-            subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
-            categories_by_comp = [subcat.company_category for subcat in subcategories_by_comp]
-            result_comp.append(CompanyWithFavoriteFlagAndCategoryData(comp.id, comp.name, comp.logotype,
-                                                                      comp.short_description, comp.url, False,
-                                                                      categories_by_comp, subcategories_by_comp))
+            result_comp.append(company_to_company_with_favorite_flag_and_category_data(comp, False))
     return result_comp
 
+
+def company_to_company_with_favorite_flag_and_category_data(company, is_favorite):
+    company_categories = CompanyCategory.objects.filter(company_id=company.id)
+    subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
+    categories_by_comp = [subcat.company_category for subcat in subcategories_by_comp]
+    return CompanyWithFavoriteFlagAndCategoryData(company.id, company.name, company.logotype,
+                                                              company.short_description, company.url, is_favorite,
+                                                              categories_by_comp, subcategories_by_comp)
 
 @login_required
 @require_POST

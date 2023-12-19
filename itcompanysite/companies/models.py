@@ -33,8 +33,8 @@ class Category(models.Model):
         super(Category, self).save(*args, **kwargs)
 
     class Meta:
-        verbose_name = 'CompanyCategory'
-        verbose_name_plural = 'CompanyCategories'
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
 
 
 class Subcategory(models.Model):
@@ -48,6 +48,7 @@ class Subcategory(models.Model):
         (CompanyName.CONST_B2G, CompanyName.CONST_B2G),
 
         (CompanyName.CONST_GAME_DEV, CompanyName.CONST_GAME_DEV),
+        (CompanyName.IT_SAFETY, CompanyName.IT_SAFETY),
         (CompanyName.CONST_NONE_TYPE, CompanyName.CONST_NONE_TYPE)
     )
     subcategory_name = models.CharField('subcategory_name', max_length=100, choices=SUBCATEGORY_NAME)

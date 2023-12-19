@@ -38,9 +38,11 @@
                 <div id="company-{{company.id}}" class="companies-item">
                     <div class="companies-item_header">
                 <span class="companies-item_header-title">{{ company.name }}</span>
-<!--                <button class="category-button category_style">-->
-<!--                        <span>Сопровождение популярных массовых ИТ продуктов</span>-->
-<!--                </button>-->
+                {% for subcategory in company.subcategories %}
+                    <button class="category-button" onclick="window.location.href = 'http://127.0.0.1:8000/companies/{{subcategory.subcategory_name}}'" style="background-color: {{subcategory.color}}">
+                            <span>{{subcategory.subcategory_name}}</span>
+                    </button>
+                {% endfor%}
             </div>
                     <div class="company-item_main">
                         <div class="companies-item_left">

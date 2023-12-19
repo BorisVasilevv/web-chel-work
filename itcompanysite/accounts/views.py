@@ -5,7 +5,7 @@ from django.db.models import QuerySet
 from django.shortcuts import render, redirect
 from .forms import UserCreationForm
 from django.contrib.auth import login
-from companies.models import Company, Favorite
+from companies.models import Company, Favorite, CompanyCategory
 from django.utils.http import urlsafe_base64_decode
 from django.views import View
 from .forms import MyUserCreationForm, MyAuthenticationForm
@@ -14,9 +14,11 @@ from django.contrib.auth.tokens import default_token_generator as token_generato
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_protect
-
+from .helpstructure import CompanyWithCategoryData
 
 User = get_user_model()
+
+
 def registration(request):
     if request.method == 'POST':
         user_reg_form = MyUserCreationForm(request.POST)
@@ -35,7 +37,16 @@ def registration(request):
 def profile(request):
     favorite_entries = Favorite.objects.filter(user_id=request.user.id)
     companies_for_user = [entry.company for entry in favorite_entries]
-    return render(request, 'accounts/profile.html', {'companies': companies_for_user})
+    result_companies = []
+    for comp in companies_for_user:
+        company_categories = CompanyCategory.objects.filter(company_id=comp.id)
+        subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
+        categories_by_comp = [subcat.company_category for subcat in subcategories_by_comp]
+        result_companies.append(CompanyWithCategoryData(comp.id, comp.name, comp.logotype,
+                                                        comp.short_description, comp.url,
+                                                        categories_by_comp, subcategories_by_comp))
+    return render(request, 'accounts/profile.html', {'companies': result_companies})
+
 
 class EmailView(View):
     def get(self, request, uidb64, token):
@@ -78,7 +89,7 @@ def remove_from_favorites(request, company_id):
     else:
         return JsonResponse({'status': 'error', 'message': 'Пользователь не аутентифицирован.'})
 
+
 class MyLoginView(LoginView):
     template_name = "accounts/login.html"
     form_class = MyAuthenticationForm
-

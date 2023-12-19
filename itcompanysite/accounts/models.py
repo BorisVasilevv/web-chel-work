@@ -12,7 +12,7 @@ class User(AbstractUser):
         _("email address"),
         unique=True,
         error_messages={
-            "unique": _("A user with that username already exists."),
+            "unique": _("Пользователь с такой почтой уже зарегистрирован."),
         },)
     username = models.CharField(
         _("username"),
