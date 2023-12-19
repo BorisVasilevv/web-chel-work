@@ -1,23 +1,23 @@
 
-{%extends 'main/layout.html'%}
+
 {% load static %}
-{% block head %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+
     <meta charset="UTF-8">
-    <title>Title</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Карта</title>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css"  href="{% static 'main/css/reset.css'%}">
     <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
-{% endblock %}
-{% block title %} Карта {% endblock %}
+</head>
 
-{% block content %}
+
+<body>
     <div class="map-page-container">
         <div id="map" style="width: 100%; height: 100%;"></div>
     </div>
     <script src=" {% static 'main/js/map.js' %}"></script>
-{% endblock %}
-
-
-
-
-
+</body>
