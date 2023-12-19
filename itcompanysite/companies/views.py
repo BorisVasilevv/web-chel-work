@@ -15,7 +15,12 @@ from .helpstructure import CompanyWithFavoriteFlagAndCategoryData
 def companies(request):
     all_companies = Company.objects.all()
     result_companies = get_companies_with_favorite_flag_and_category(request, all_companies)
-    return render(request, 'companies/companies.html', context={'context': {'result_companies': result_companies}})
+    subcategories = Subcategory.objects.all()
+    context = {
+        'subcategories': subcategories,
+        'result_companies': result_companies,
+    }
+    return render(request, 'companies/companies.html', {'context': context})
 
 
 def companies_per_category_subcategory(request, category_or_subcategory_name):

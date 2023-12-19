@@ -151,14 +151,19 @@
     gap: 25px;
 }
 
-.category-button{
+.subcategory-buttons {
+    display: flex;
+    justify-content: space-around;
+    background-color: #272727;
+    padding: 10px;
+}
 
-    border: 1px solid;
-    border-radius: 10px;
-    color: #272727;
+.subcategory-button {
+    background-color: #272727;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    color: #fff;
     font-size: 16px;
-    font-weight: 700;
-    max-width: 250px;
-    padding: 5px;
+    padding: 10px 20px;
     cursor: pointer;
 }
