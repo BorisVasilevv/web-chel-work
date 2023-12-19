@@ -15,9 +15,9 @@
     </section>
     {% endif %}
 
-<div class="category-buttons">
+<div class="subcategory-buttons">
     {% for subcategory in context.subcategories %}
-        <button class="category-button" data-category="{{ subcategory.subcategory_name }}" style="border-color: {{ subcategory.color }};">{{ subcategory.subcategory_name }}</button>
+        <button class="subcategory-button" data-category="{{ subcategory.subcategory_name }}" style="border-color: {{ subcategory.color }};">{{ subcategory.subcategory_name }}</button>
     {% endfor %}
 </div>
 
@@ -89,8 +89,9 @@
 
 <script src=" {% static 'companies/js/scripts.js' %}"></script>
 
-<script>document.addEventListener('DOMContentLoaded', function () {
-    var buttons = document.querySelectorAll('.category-button');
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var buttons = document.querySelectorAll('.subcategory-button');
 
     buttons.forEach(function (button) {
         button.addEventListener('click', function () {
@@ -102,6 +103,7 @@
             button.style.borderColor = currentColor;
         });
     });
-});</script>
+});
+</script>
 
 {%endblock%}
