@@ -1,15 +1,39 @@
-.profile-container{
+.map-page-container{
     display: flex;
-    gap: 50px;
+    gap: 10px;
     flex-direction: column;
-    margin: 15px;
+    font-family: Gilroy;
+
 }
 
-.profile-header{
+.main-section{
+    color: #FFFFFF;
+    margin: auto;
+    height: 88vh;
+    width: 99vw;
+
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+}
+
+.color-info{
+    align-self: center;
+    padding:15px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: 350px;
+}
+
+.map-header{
     align-items: center;
+    border-bottom: 1px solid #faf446;
+    justify-content: space-between;
     display: flex;
     gap: 10px;
     flex-direction: row;
+    padding: 10px 10px 0 10px;
 }
 
 .profile-header__icon{
@@ -22,10 +46,10 @@
     gap: 10px;
 }
 
-.userName-text{
+.map-title{
     align-self: start;
     color: #FFFFFF;
-    font-size: 60px;
+    font-size: 42px;
     font-weight: 700;
     letter-spacing: 0.2px;
 }
@@ -45,12 +69,6 @@
     height: 10px;
 }
 
-.profile-header__rect{
-    background-color: #faf446;
-    height: 1px;
-
-}
-
 /*----------------*/
 
 
@@ -61,7 +79,6 @@
 }
 
 .profile-logout{
-    border-top: 1px solid #FFFFFF;
     width: 160px;
 }
 
@@ -75,17 +92,10 @@
     font-size: 20px;
     gap: 10px;
     letter-spacing: 0.2px;
-    padding: 15px 20px;
+    padding: 10px 15px;
     cursor: pointer;
 }
 
 .profile-logout_icon{
     height: 30px;
 }
-
-h4{
-    color: #FFFFFF;
-    font-size: 20px;
-    padding: 15px 0;
-}
-

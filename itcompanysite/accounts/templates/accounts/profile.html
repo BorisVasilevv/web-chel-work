@@ -30,9 +30,9 @@
         <span class="favourite-title">Избранное</span>
         <div class="companies favourite-companies">
 
-<!--            {% if not companies %}-->
-<!--                <h4>Здесь пока нет компаний</h4>-->
-<!--            {% endif %}-->
+            {% if not companies %}
+                <h4>Здесь пока нет компаний</h4>
+            {% endif %}
 
             {% for company in companies %}
                 <div id="company-{{company.id}}" class="companies-item">

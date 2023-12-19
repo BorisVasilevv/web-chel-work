@@ -29,7 +29,7 @@
             <div class="companies-item_header">
                 <span class="companies-item_header-title">{{ company.name }}</span>
                 {% for subcategory in company.subcategories %}
-                    <button class="category-button" style="background-color: {{subcategory.color}}">
+                    <button class="header_category-button" style="border-color: {{subcategory.color}}">
                             <span>{{subcategory.subcategory_name}}</span>
                     </button>
                 {% endfor%}
