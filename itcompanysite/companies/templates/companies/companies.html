@@ -24,7 +24,7 @@
 <main class="companies">
     {% for company in context.result_companies %}
 
-        <div class="companies-item">
+        <div class="companies-item" data-category="{{ company.subcategories }}">
 
             <div class="companies-item_header">
                 <span class="companies-item_header-title">{{ company.name }}</span>
@@ -88,7 +88,53 @@
 </main>
 
 <script src=" {% static 'companies/js/scripts.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var buttons = document.querySelectorAll('.subcategory-button');
+    var companies = document.querySelectorAll('.companies-item');
 
+    buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+
+            if(button.classList.contains('active')){
+                button.classList.remove('active');
+            }
+            else {
+                button.classList.add('active');
+            }
+            var selectedSubcategories = [];
+            buttons.forEach(function(btn) {
+                if (btn.classList.contains('active')) {
+                    var selectedCategory = btn.getAttribute('data-category');
+                    selectedSubcategories.push(selectedCategory)
+                }
+            });
+
+            if (selectedSubcategories.length === 0) {
+                companies.forEach(function (company) {
+                    company.style.display = 'block';
+                });
+            }
+            else {
+                // Перебираем компании и скрываем те, которые не соответствуют выбранной подкатегории
+                companies.forEach(function (company) {
+                    var companyCategory = company.getAttribute('data-category');
+                    companyCategory = companyCategory.substring(companyCategory.indexOf(':')+1, companyCategory.indexOf('>')).trim();
+
+                    if (selectedSubcategories.includes(companyCategory)) {
+                        company.style.display = 'block'; // Показываем компанию
+                        console.log("ЕСТЬ!!!")
+                    } else {
+                        company.style.display = 'none'; // Скрываем компанию
+                        console.log(companyCategory)
+                        console.log("ХУЙ ТАМ!!!")
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var buttons = document.querySelectorAll('.subcategory-button');
