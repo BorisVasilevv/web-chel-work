@@ -29,8 +29,8 @@
             <div class="companies-item_header">
                 <span class="companies-item_header-title">{{ company.name }}</span>
                 {% for subcategory in company.subcategories %}
-                    <button class="category-button" onclick="window.location.href = 'http://127.0.0.1:8000/companies/{{subcategory.subcategory_name}}'" style="background-color: {{subcategory.color}}">
-                            <span>{{subcategory.subcategory_name}}</span>
+                    <button class="header_category-button" onclick="window.location.href = 'http://127.0.0.1:8000/companies/{{subcategory.subcategory_name}}'" style="border-color: {{subcategory.color}}">
+                        <span>{{subcategory.subcategory_name}}</span>
                     </button>
                 {% endfor%}
             </div>
