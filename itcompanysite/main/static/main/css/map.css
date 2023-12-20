@@ -3,7 +3,6 @@
     gap: 10px;
     flex-direction: column;
     font-family: Gilroy;
-
 }
 
 .main-section{
@@ -36,14 +35,8 @@
     padding: 10px 10px 0 10px;
 }
 
-.profile-header__icon{
+.map-header__icon{
     height: 100px;
-}
-
-.profile-header__userName{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .map-title{
@@ -54,35 +47,13 @@
     letter-spacing: 0.2px;
 }
 
-.userName-reduction{
-    align-items: baseline;
-    color: #FFFFFF;
-    display: flex;
-    flex-direction: row;
-    font-size: 16px;
-    gap: 5px;
-    letter-spacing: 0.2px;
-    cursor: pointer;
-}
-
-.userName-reduction__icon{
-    height: 10px;
-}
-
 /*----------------*/
 
-
-.favourite-title{
-    color: #FFFFFF;
-    font-size: 30px;
-    letter-spacing: 0.2px;
-}
-
-.profile-logout{
+.map-logout{
     width: 160px;
 }
 
-.profile-logout__button{
+.map-logout__button{
     align-items: center;
     background-color: #272727;
     border: 1px solid #272727;
@@ -96,6 +67,6 @@
     cursor: pointer;
 }
 
-.profile-logout_icon{
+.map-logout_icon{
     height: 30px;
 }
