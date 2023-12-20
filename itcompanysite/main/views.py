@@ -17,4 +17,10 @@ def index(request):
     return render(request, 'main/index.html', {"categories": categories_with_subcategories})
 
 def map(request):
-    return render(request, 'main/map.html')
+    categories = Category.objects.all()
+    subcategories = Subcategory.objects.all()
+    context = {
+        "categories": categories,
+        "subcategories": subcategories
+    }
+    return render(request, 'main/map.html', {"subcategories": subcategories})
