@@ -3,7 +3,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"  href="{% static 'main/css/reset.css'%}">
     <link rel="stylesheet" type="text/css"  href="{% static 'main/css/font.css'%}">
     <link rel="stylesheet" href="{% static 'main/css/main.css'%}">
@@ -58,6 +58,42 @@
                 </a>
             </div>
         {% endif %}
+
+        <nav class="menu-wrap">
+            <label for="menu-toggle">
+                <img class="menu-icon" src="{% static 'main/icons/menu.svg'%}">
+            </label>
+            <input id="menu-toggle" type="checkbox">
+
+            <ul class="menu clearfix">
+                <li>
+                    <a class="navigation-elem-link" href="{%url 'home'%}">
+                        <img class="navigation-elem-icon" src="{% static 'main/icons/home.svg'%}">Главная
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation-elem-link" href="{%url 'companies'%}">
+                        <img class="navigation-elem-icon" src="{% static 'main/icons/companies.svg'%}">Компании
+                    </a>
+                </li>
+                <li>
+                    <a class="navigation-elem-link" href="{%url 'map'%}">
+                        <img class="navigation-elem-icon" src="{% static 'main/icons/map.svg'%}">Карта
+                    </a>
+                </li>
+                <li>
+                    {% if user.is_authenticated %}
+                    <a class="navigation-elem-link" href="{%url 'profile'%}">
+                        <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Мой профиль
+                    </a>
+                    {% else %}
+                    <a class="navigation-elem-link" href="{%url 'registration'%}">
+                        <img class="navigation-elem-icon" src="{% static 'main/icons/user.svg'%}">Регистрация
+                    </a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
     </div>
     {% block content %}
 

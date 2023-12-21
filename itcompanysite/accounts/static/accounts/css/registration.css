@@ -36,6 +36,7 @@
     color: #ffffff;
     height: 30px;
     margin-bottom: 20px;
+    letter-spacing: 0.2px;
 }
 
 .registration-help-info{
@@ -43,6 +44,7 @@
     font-size: 20px;
     font-weight: 500;
     line-height: 22px;
+    letter-spacing: 0.2px;
 }
 
 
@@ -56,6 +58,7 @@
     padding: 15px ;
     width: 420px;
     cursor: pointer;
+    letter-spacing: 0.2px;
 }
 
 .submit-button:hover{
@@ -108,6 +111,7 @@ h5{
 a{
     color: #FFFFFF;
     font-size: 18px;
+    letter-spacing: 0.2px;
 }
 
 .message{
@@ -124,3 +128,40 @@ a{
 }
 
 /*----*/
+
+@media screen and (max-width: 390px) {
+
+    .extra-button {
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .registration-header_main {
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .registration-form {
+        padding: 20px 0 20px 0;
+        width: 320px;
+
+    }
+
+    .registration-help-info {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 18px;
+
+    }
+
+    .submit-button {
+        font-size: 14px;
+        line-height: 16px;
+        width: 320px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}
+
