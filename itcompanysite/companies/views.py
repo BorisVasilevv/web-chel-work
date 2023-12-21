@@ -9,6 +9,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from .helpstructure import CompanyWithFavoriteFlagAndCategoryData
 
+
 # Create your views here.
 
 
@@ -87,8 +88,9 @@ def company_to_company_with_favorite_flag_and_category_data(company, is_favorite
     subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
     categories_by_comp = [subcat.company_category for subcat in subcategories_by_comp]
     return CompanyWithFavoriteFlagAndCategoryData(company.id, company.name, company.logotype,
-                                                              company.short_description, company.url, is_favorite,
-                                                              categories_by_comp, subcategories_by_comp)
+                                                  company.short_description, company.url, is_favorite,
+                                                  categories_by_comp, subcategories_by_comp)
+
 
 @login_required
 @require_POST

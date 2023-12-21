@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserRegistrationForm
-from companies.models import Category, Subcategory
-from .helpstructure import CategoryWithSubcategories
+from companies.models import Category, Subcategory, Company, City, Address, CompanyAddress, CompanyCategory
+from .helpstructure import CategoryWithSubcategories, CompanyWithAddress
 
 def index(request):
     categories = Category.objects.all()
@@ -17,10 +17,35 @@ def index(request):
     return render(request, 'main/index.html', {"categories": categories_with_subcategories})
 
 def map(request):
-    categories = Category.objects.all()
     subcategories = Subcategory.objects.all()
+    companies = Company.objects.all()
+    # Достаём город пользователя по его геолокации
+    city = City.objects.filter(id=1)
+    result_companies = []
+    for comp in companies:
+        company_categories = CompanyCategory.objects.filter(company_id=comp.id)
+        subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
+        color = subcategories_by_comp[0].color
+        comp_addresses_elems = CompanyAddress.objects.filter(company_id=comp.id)
+        comp_addresses = [comp_addr_elem.address for comp_addr_elem in comp_addresses_elems]
+        for address in comp_addresses:
+            address_name = "%s %s" % (address.street, address.home_number)
+            company_with_address = CompanyWithAddress(comp.id, comp.name, color, address_name,
+                                                      address.coordinate_x, address.coordinate_y)
+
+            result_companies.append(company_with_address)
+
     context = {
-        "categories": categories,
-        "subcategories": subcategories
+        "subcategories": subcategories,
+        "city": city,
+        "companies_with_address": result_companies
     }
-    return render(request, 'main/map.html', {"subcategories": subcategories})
+    return render(request, 'main/map.html', context=context)
+
+
+# id: int
+#     name: str
+#     color: str
+#     address: str
+#     coordinate_x: str
+#     coordinate_y: str

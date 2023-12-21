@@ -111,6 +111,9 @@ class CompanyCategory(models.Model):
         verbose_name_plural = 'CompanyCategories'
         unique_together = ('subcategory', 'company')
 
+    def __str__(self):
+        return "\"%s\" принадлежит к %s" % (self.company, self.subcategory)
+
 
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -118,3 +121,43 @@ class Favorite(models.Model):
 
     class Meta:
         unique_together = ('user', 'company')
+
+    def __str__(self):
+        return "%s добавил в избранное %s" % (self.user, self.company)
+
+class City(models.Model):
+    name = models.CharField('name', max_length=150)
+    coordinate_x = models.FloatField()
+    coordinate_y = models.FloatField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'City'
+        verbose_name_plural = 'Cities'
+
+class Address(models.Model):
+    city = models.ForeignKey(City, on_delete=models.DO_NOTHING, default='')
+    street = models.CharField('street', max_length=150)
+    home_number = models.CharField('home_number', max_length=15)
+    coordinate_x = models.FloatField()
+    coordinate_y = models.FloatField()
+
+    def __str__(self):
+        return "%s %s %s" % (self.city, self.street, self.home_number)
+
+    class Meta:
+        verbose_name = 'Address'
+        verbose_name_plural = 'Addresses'
+
+class CompanyAddress(models.Model):
+    company = models.ForeignKey(Company, on_delete=models.DO_NOTHING, default='')
+    address = models.ForeignKey(Address, on_delete=models.DO_NOTHING, default='')
+
+    def __str__(self):
+        return "%s располагается по адресу %s" % (self.сompany, self.address)
+
+    class Meta:
+        verbose_name = 'CompanyAddress'
+        verbose_name_plural = 'CompanyAddresses'

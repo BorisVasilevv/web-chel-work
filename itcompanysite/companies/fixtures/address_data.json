@@ -1,0 +1,288 @@
+[
+    {
+        "model": "companies.Address",
+        "pk": 1,
+        "fields": {
+            "city_id": 1,
+            "street": "Воровского",
+            "coordinate_x": "55.14926455931064",
+            "coordinate_y": "61.385146816169396",
+            "home_number": "36В"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 2,
+        "fields": {
+            "city_id": 1,
+            "street": "Коммуны",
+            "coordinate_x": "55.162085806673836",
+            "coordinate_y": "61.397694811663214",
+            "home_number": "87"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 3,
+        "fields": {
+            "city_id": 1,
+            "street": "Лесопарковая",
+            "coordinate_x": "55.15369593760404",
+            "coordinate_y": "61.364913353990026",
+            "home_number": "627"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 4,
+        "fields": {
+            "city_id": 1,
+            "street": "Артиллерийская",
+            "coordinate_x": "55.17315000190367",
+            "coordinate_y": "61.365313565575164",
+            "home_number": "100В"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 5,
+        "fields": {
+            "city_id": 1,
+            "street": "Ленина",
+            "coordinate_x": "55.16207655138783",
+            "coordinate_y": "61.43051607119092",
+            "home_number": "26А"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 6,
+        "fields": {
+            "city_id": 1,
+            "street": "Энтузиастов",
+            "coordinate_x": "55.162322563924604",
+            "coordinate_y": "61.37485434686038",
+            "home_number": "2"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 7,
+        "fields": {
+            "city_id": 1,
+            "street": "Северная",
+            "coordinate_x": "55.156877627170346",
+            "coordinate_y": "61.30099144042235",
+            "home_number": "52Б"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 8,
+        "fields": {
+            "city_id": 1,
+            "street": "Цвиллинга",
+            "coordinate_x": "55.15493100593255",
+            "coordinate_y": "61.40023052271539",
+            "home_number": "16"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 9,
+        "fields": {
+            "city_id": 1,
+            "street": "Кирова",
+            "coordinate_x": "55.164874685353645",
+            "coordinate_y": "61.401122082826944",
+            "home_number": "159"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 10,
+        "fields": {
+            "city_id": 1,
+            "street": "Российская",
+            "coordinate_x": "55.170745197135254",
+            "coordinate_y": "61.413583227009354",
+            "home_number": "110к2"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 11,
+        "fields": {
+            "city_id": 1,
+            "street": "Труда",
+            "coordinate_x": "55.169148746093036",
+            "coordinate_y": "61.378706984682104",
+            "home_number": "156в"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 12,
+        "fields": {
+            "city_id": 1,
+            "street": "Кирова",
+            "coordinate_x": "55.16480844266152",
+            "coordinate_y": "61.401059942354664",
+            "home_number": "159"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 13,
+        "fields": {
+            "city_id": 1,
+            "street": "Елькина",
+            "coordinate_x": "55.15576413484781",
+            "coordinate_y": "61.370867812263874",
+            "home_number": "45А"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 14,
+        "fields": {
+            "city_id": 1,
+            "street": "Молодогвардейцев",
+            "coordinate_x": "55.190730814944175",
+            "coordinate_y": "61.33353100555804",
+            "home_number": "31 к1"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 15,
+        "fields": {
+            "city_id": 1,
+            "street": "Энтузиастов",
+            "coordinate_x": "55.16501443448449",
+            "coordinate_y": "61.37425512082958",
+            "home_number": "2"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 16,
+        "fields": {
+            "city_id": 1,
+            "street": "Северная",
+            "coordinate_x": "55.15688962758773",
+            "coordinate_y": "61.302039981860936",
+            "home_number": "48А"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 17,
+        "fields": {
+            "city_id": 1,
+            "street": "Труда",
+            "coordinate_x": "55.16849278757826",
+            "coordinate_y": "61.40638978282713",
+            "home_number": "78"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 18,
+        "fields": {
+            "city_id": 1,
+            "street": "Академика Королёва",
+            "coordinate_x": "55.164439229950894",
+            "coordinate_y": "61.30143849817261",
+            "home_number": "4"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 19,
+        "fields": {
+            "city_id": 1,
+            "street": "Комсомольский",
+            "coordinate_x": "55.191764377931044",
+            "coordinate_y": "61.35612132701031",
+            "home_number": "29"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 20,
+        "fields": {
+            "city_id": 1,
+            "street": "Коммунальная",
+            "coordinate_x": "55.17738374482536",
+            "coordinate_y": "61.40015691351884",
+            "home_number": "10"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 21,
+        "fields": {
+            "city_id": 1,
+            "street": "Маркса",
+            "coordinate_x": "55.16584563980339",
+            "coordinate_y": "61.4095245116634",
+            "home_number": "46"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 22,
+        "fields": {
+            "city_id": 1,
+            "street": "Молодогвардейцев",
+            "coordinate_x": "55.1645905438025",
+            "coordinate_y": "61.40106692329928",
+            "home_number": "31 к1"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 23,
+        "fields": {
+            "city_id": 1,
+            "street": "Труда",
+            "coordinate_x": "55.15672528689525",
+            "coordinate_y": "61.30157939817233",
+            "home_number": "156В"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 24,
+        "fields": {
+            "city_id": 2,
+            "street": "Жукова",
+            "coordinate_x": "53.35964069213474",
+            "coordinate_y": "58.97011004310974",
+            "home_number": "13"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 25,
+        "fields": {
+            "city_id": 1,
+            "street": "Радонежская",
+            "coordinate_x": "53.35964069213474",
+            "coordinate_y": "58.97011004310974",
+            "home_number": "5"
+        }
+    },
+    {
+        "model": "companies.Address",
+        "pk": 26,
+        "fields": {
+            "city_id": 1,
+            "street": "Энтузиастов",
+            "coordinate_x": "53.35964069213474",
+            "coordinate_y": "58.97011004310974",
+            "home_number": "28А"
+        }
+    }
+]
