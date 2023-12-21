@@ -14,13 +14,34 @@ def index(request):
                                             category.description)
         categor.subcategories = Subcategory.objects.filter(company_category_id=category.id)
         categories_with_subcategories.append(categor)
-    return render(request, 'main/index.html', {"categories": categories_with_subcategories})
+
+    companies = Company.objects.all()
+    # Достаём город пользователя по его геолокации
+    city = City.objects.filter(id=1)
+    result_companies = companies_to_companies_with_address(companies)
+
+    context = {
+        "categories": categories_with_subcategories,
+        "city": city,
+        "companies_with_address": result_companies
+    }
+    return render(request, 'main/index.html', context=context)
 
 def map(request):
     subcategories = Subcategory.objects.all()
     companies = Company.objects.all()
     # Достаём город пользователя по его геолокации
     city = City.objects.filter(id=1)
+    result_companies = companies_to_companies_with_address(companies)
+
+    context = {
+        "subcategories": subcategories,
+        "city": city,
+        "companies_with_address": result_companies
+    }
+    return render(request, 'main/map.html', context=context)
+
+def companies_to_companies_with_address(companies):
     result_companies = []
     for comp in companies:
         company_categories = CompanyCategory.objects.filter(company_id=comp.id)
@@ -34,18 +55,4 @@ def map(request):
                                                       address.coordinate_x, address.coordinate_y)
 
             result_companies.append(company_with_address)
-
-    context = {
-        "subcategories": subcategories,
-        "city": city,
-        "companies_with_address": result_companies
-    }
-    return render(request, 'main/map.html', context=context)
-
-
-# id: int
-#     name: str
-#     color: str
-#     address: str
-#     coordinate_x: str
-#     coordinate_y: str
+    return result_companies

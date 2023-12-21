@@ -156,7 +156,7 @@ class CompanyAddress(models.Model):
     address = models.ForeignKey(Address, on_delete=models.DO_NOTHING, default='')
 
     def __str__(self):
-        return "%s располагается по адресу %s" % (self.сompany, self.address)
+        return "%s располагается по адресу %s" % (self.company, self.address)
 
     class Meta:
         verbose_name = 'CompanyAddress'
