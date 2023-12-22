@@ -266,3 +266,57 @@
     color: #FFFFFF;
     font-size: 18px;
 }
+
+@media screen and (max-width: 390px) {
+    .companies-item {
+        width: 297px;
+        padding: 25px;
+    }
+
+    .companies-item_header {
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .companies-item_header-title {
+        font-size: 26px;
+    }
+
+    .company-item_main {
+        display: flex;
+        gap: 35px;
+        flex-direction: column;
+    }
+
+    .companies-item_footer {
+        gap: unset;
+    }
+
+    .companies-item_footer-link {
+        width: 180px;
+    }
+
+    .subcategory-buttons {
+        gap: 5px;
+        flex-display: row;
+        flex-wrap: wrap;
+    }
+
+    .subcategory-button {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .header_category-button {
+        font-size: 14px;
+        padding: 7px 12px;
+    }
+
+    .companies-item_fav-button {
+        gap: 5px;
+        line-height: unset;
+        height: 40px;
+        padding: 10px;
+    }
+}

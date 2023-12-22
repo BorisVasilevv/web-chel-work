@@ -89,3 +89,43 @@ h4{
     padding: 15px 0;
 }
 
+
+
+@media screen and (max-width: 390px) {
+
+    .profile-container {
+        gap: 25px;
+    }
+
+    .profile-header__icon {
+        height: 50px;
+    }
+
+    .userName-text {
+        font-size: 30px;
+    }
+
+    .favourite-title {
+        font-size: 26px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    .profile-logout {
+        border-top: 1px solid #FFFFFF;
+        width: 130px;
+    }
+
+     .profile-logout__button{
+        font-size: 14px;
+        gap: 10px;
+        padding: 5px 15px;
+    }
+
+    .profile-logout_icon{
+        height: 25px;
+    }
+}
+
