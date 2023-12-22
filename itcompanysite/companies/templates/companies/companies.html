@@ -89,7 +89,25 @@
     {% endfor%}
 </main>
 
+<div class="register_modal" id="register_modal" aria-hidden="true" >
+    <div class="register_modal__wrap">
+        <div class="register_modal__window" role="dialog" aria-modal="true" >
+
+            <button data-hystclose class="register_modal__close">Закрыть</button>
+            <span>Для того чтобы добавлять в избранное зарегистрируйтесь на сайте или войдите в систему
+                <a class="register_modal-link" href="{%url 'login'%}">
+                    Вход
+                </a>
+                <a class="register_modal-link" href="{%url 'registration'%}">
+                    Регистрация
+                </a>
+            </span>
+        </div>
+    </div>
+</div>
+
 <script src=" {% static 'companies/js/scripts.js' %}"></script>
+<script src=" {% static 'companies/js/modal.js' %}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var buttons = document.querySelectorAll('.subcategory-button');
