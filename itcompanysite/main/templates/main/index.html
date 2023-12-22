@@ -22,6 +22,24 @@
         <span class="section-subtitle"></span>
 
         <div id="main-page-map-container" class="main-page-map-container">
+            <script>
+                ymaps.ready(init);
+                function init() {
+                    var myMap = new ymaps.Map('map', {
+                        center: [55.161997, 61.401485],
+                        zoom: 12
+                    });
+                    {% for company_with_address in companies_with_address %}
+                    var placemark = new ymaps.Placemark(["{{company_with_address.coordinate_x|safe}}", "{{company_with_address.coordinate_y|safe}}"], {
+                        hintContent: "{{company_with_address.name|safe}}",
+                        balloonContent: "{{company_with_address.address|safe}}"
+                    }, {
+                        iconColor: "{{company_with_address.color|safe}}"
+                    });
+                    myMap.geoObjects.add(placemark);
+                    {% endfor %}
+                }
+            </script>
             <div id="map" style="width: 100%; height: 100%;"></div>
         </div>
 
@@ -61,6 +79,4 @@
             {% endfor %}
         </div>
     </section>
-
-    <script src=" {% static 'main/js/map.js' %}"></script>
 {%endblock%}
