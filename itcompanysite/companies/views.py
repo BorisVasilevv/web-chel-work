@@ -8,10 +8,10 @@ from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 from .helpstructure import CompanyWithFavoriteFlagAndCategoryData
+from .utils import has_russian_letters
 
 
 # Create your views here.
-
 
 def companies(request):
     all_companies = Company.objects.all()
@@ -52,10 +52,14 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
 
 def search(request):
     query = request.GET.get("q")
-    query = query.lower()
-    requested_companies = Company.objects.filter(name__icontains=query)
-    if requested_companies.__len__() == 0:
+
+    if has_russian_letters(query):
+        query = query.lower()
+        requested_companies_lower = Company.objects.filter(name__icontains=query)
         query = query.title()
+        requested_companies_title = Company.objects.filter(name__icontains=query)
+        requested_companies = requested_companies_lower.union(requested_companies_title)
+    else:
         requested_companies = Company.objects.filter(name__icontains=query)
 
     result_companies = get_companies_with_favorite_flag_and_category(request, requested_companies)
