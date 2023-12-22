@@ -26,7 +26,7 @@
                 {% for company_with_address in companies_with_address %}
                     var placemark = new ymaps.Placemark(["{{company_with_address.coordinate_x|safe}}", "{{company_with_address.coordinate_y|safe}}"], {
                         hintContent: "{{company_with_address.name|safe}}",
-                        balloonContent: "{{company_with_address.address|safe}}"
+                        balloonContent: "Компания {{company_with_address.name|safe}}. Адрес: {{company_with_address.address|safe}}"
                     }, {
                         iconColor: "{{company_with_address.color|safe}}"
                     });

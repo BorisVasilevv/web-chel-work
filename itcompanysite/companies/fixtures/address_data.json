@@ -269,8 +269,8 @@
         "fields": {
             "city_id": 1,
             "street": "Радонежская",
-            "coordinate_x": "53.35964069213474",
-            "coordinate_y": "58.97011004310974",
+            "coordinate_x": "55.227078321631126",
+            "coordinate_y": "61.31539469866137",
             "home_number": "5"
         }
     },
@@ -280,8 +280,8 @@
         "fields": {
             "city_id": 1,
             "street": "Энтузиастов",
-            "coordinate_x": "53.35964069213474",
-            "coordinate_y": "58.97011004310974",
+            "coordinate_x": "55.15085612830961",
+            "coordinate_y": "61.376037330666215",
             "home_number": "28А"
         }
     }
