@@ -55,39 +55,77 @@
                     <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
                     <span class="companies-item_link-text">{{ company.name }}</span>
                 </a>
-                {% if company.is_favorite %}
-                    <div class="hidden" id="add-to-favorites-container-{{ company.id }}">
-                        <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" >
-                            <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
-                            <span>Избранное</span>
-                        </button>
-                    </div>
-
-                    <div class="" id="remove-to-favorites-container-{{ company.id }}">
-                        <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
-                            <img class="fav-button_icon" src="{% static 'companies/icons/heart_full.svg'%}">
-                            <span>В избранном</span>
-                        </button>
+                {% if not user.is_authenticated %}
+                    <div class="" id="add-to-favorites-container-{{ company.id }}">
+                            <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" data-register-modal="#registerModal">
+                                <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
+                                <span>Избранное</span>
+                            </button>
                     </div>
                 {% else %}
-                     <div class="" id="add-to-favorites-container-{{ company.id }}">
-                        <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" >
-                            <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
-                            <span>Избранное</span>
-                        </button>
-                    </div>
+                    {% if company.is_favorite %}
+                        <div class="hidden" id="add-to-favorites-container-{{ company.id }}">
+                            <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}"  >
+                                <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
+                                <span>Избранное</span>
+                            </button>
+                        </div>
 
-                    <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
-                        <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
-                            <img class="fav-button_icon" src="{% static 'companies/icons/heart_full.svg'%}">
-                            <span>В избранном</span>
-                        </button>
-                    </div>
+                        <div class="" id="remove-to-favorites-container-{{ company.id }}">
+                            <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
+                                <img class="fav-button_icon" src="{% static 'companies/icons/heart_full.svg'%}">
+                                <span>В избранном</span>
+                            </button>
+                        </div>
+                    {% else %}
+                         <div class="" id="add-to-favorites-container-{{ company.id }}">
+                            <button class="companies-item_fav-button add-fav" id="add-to-favorites-{{ company.id }}" data-company-id="{{ company.id }}" >
+                                <img class="fav-button_icon" src="{% static 'companies/icons/heart.svg'%}">
+                                <span>Избранное</span>
+                            </button>
+                        </div>
+
+                        <div class="hidden" id="remove-to-favorites-container-{{ company.id }}">
+                            <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
+                                <img class="fav-button_icon" src="{% static 'companies/icons/heart_full.svg'%}">
+                                <span>В избранном</span>
+                            </button>
+                        </div>
+                    {% endif %}
                 {% endif %}
             </div>
         </div>
     {% endfor%}
 </main>
+
+<div class="register_modal" id="register_modal">
+    <div class="register_modal__window" id="register_modal__window">
+        <div class="register_modal__header">
+            <span class="register_modal-title">Вы не авторизованы!</span>
+            <button data-hystclose class="register_modal__close-button">
+                <img class="register_modal__close-button_icon" src="{% static 'companies/icons/close.svg'%}">
+            </button>
+        </div>
+        <div class="register_modal__content">
+            <span class="register_modal-text">
+                Для того чтобы добавлять в избранное войдите в аккаунт
+                или зарегистрируйтесь на сайте
+            </span>
+            <a class="register_modal-link" href="{%url 'login'%}">
+                Вход
+            </a>
+            <span class="register_modal-text">  /  </span>
+            <a class="register_modal-link" href="{%url 'registration'%}">
+                Регистрация
+            </a>
+        </div>
+
+
+    </div>
+</div>
+
+
+
 
 <script src=" {% static 'companies/js/scripts.js' %}"></script>
 <script>
@@ -171,5 +209,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
-
 {%endblock%}

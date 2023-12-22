@@ -177,3 +177,92 @@
     padding: 10px 20px;
     cursor: pointer;
 }
+
+
+
+.register_modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    padding: 30px 0;
+}
+
+.register_modal__window {
+    display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: #272727;
+    width: 600px;
+    max-width: 100%;
+    overflow: visible;
+    padding: 15px;
+    flex-direction: column;
+    gap: 25px;
+    border-radius: 10px;
+}
+
+.register_modal__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Класс который блокирует прокрутку при открытии окна */
+.register_modal__opened {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.register_modal__close-button{
+
+    border: none;
+    background:  #272727;
+}
+
+.register_modal__close-button_icon{
+    width: 30px;
+    height:30px;
+    background:  #272727;
+}
+
+.register_modal__close-button:hover{
+    cursor: pointer;
+}
+
+.register_modal-title{
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0.2px;
+}
+
+.register_modal-text{
+    color: #FFFFFF;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.register_modal__content{
+
+}
+
+
+.register_modal-link{
+    color: #FFFFFF;
+    font-size: 18px;
+}
