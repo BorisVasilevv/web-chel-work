@@ -68,6 +68,7 @@
     font-size: 32px;
     font-weight: 700;
     line-height: normal;
+    text-decoration: none;
 }
 
 .companies-item_about-company{
@@ -92,8 +93,8 @@
 }
 
 .companies-item_link-icon{
-    max-height: 32px;
-    max-width: 32px;
+    max-height: 22px;
+    max-width: 22px;
 }
 
 .companies-item_link:hover{
@@ -132,10 +133,8 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
-    height: 59px;
     letter-spacing: 0.2px;
-    line-height: 21px;
-    padding: 15px ;
+    padding: 12px ;
     cursor: pointer;
 }
 
@@ -153,9 +152,11 @@
 
 .subcategory-buttons {
     display: flex;
+    gap: 10px;
     justify-content: space-around;
     background-color: #272727;
-    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .subcategory-button {
@@ -179,7 +180,7 @@
 }
 
 
-
+/*------------------------------------*/
 .register_modal {
     position: fixed;
     top: 0;
@@ -233,8 +234,8 @@
 }
 
 .register_modal__close-button_icon{
-    width: 30px;
-    height:30px;
+    width: 10px;
+    height: 10px;
     background:  #272727;
 }
 
@@ -244,27 +245,26 @@
 
 .register_modal-title{
     color: #FFFFFF;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
-    line-height: 35px;
     letter-spacing: 0.2px;
 }
 
 .register_modal-text{
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 14px;
     width: 100%;
     text-align: center;
+    letter-spacing: 0.2px;
 }
 
 .register_modal__content{
 
 }
 
-
 .register_modal-link{
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 14px;
 }
 
 @media screen and (max-width: 390px) {

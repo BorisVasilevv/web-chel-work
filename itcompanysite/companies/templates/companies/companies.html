@@ -27,7 +27,7 @@
         <div class="companies-item" data-category="{{ company.subcategories }}">
 
             <div class="companies-item_header">
-                <span class="companies-item_header-title">{{ company.name }}</span>
+                <a class="companies-item_header-title" href="{{company.url}}">{{ company.name }}</a>
                 {% for subcategory in company.subcategories %}
                     <button class="header_category-button" onclick="window.location.href = '{%url 'companies_per_subcategory' subcategory.subcategory_name %}'" style="border-color: {{subcategory.color}}">
                         <span>{{subcategory.subcategory_name}}</span>

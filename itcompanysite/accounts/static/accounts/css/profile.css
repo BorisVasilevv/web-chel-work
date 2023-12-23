@@ -1,15 +1,16 @@
 .profile-container{
     display: flex;
-    gap: 50px;
+    gap: 30px;
     flex-direction: column;
     margin: 15px;
 }
 
 .profile-header{
-    align-items: center;
+    align-items: baseline;
     display: flex;
     gap: 10px;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .profile-header__icon{
@@ -18,12 +19,12 @@
 
 .profile-header__userName{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
 }
 
 .userName-text{
-    align-self: start;
+    align-self: center;
     color: #FFFFFF;
     font-size: 60px;
     font-weight: 700;
@@ -61,7 +62,6 @@
 }
 
 .profile-logout{
-    border-top: 1px solid #FFFFFF;
     width: 160px;
 }
 

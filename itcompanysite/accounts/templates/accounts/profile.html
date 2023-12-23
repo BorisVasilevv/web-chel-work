@@ -14,14 +14,21 @@
 
     <div class="profile-header">
 
-        <img class="profile-header__icon" src="{% static 'accounts/icons/user.svg'%}">
+
         <div class="profile-header__userName">
+            <img class="profile-header__icon" src="{% static 'accounts/icons/user.svg'%}">
             <span class="userName-text">{{user.username}}</span>
 <!--            <a class="userName-reduction">-->
 <!--                <span>редактировать</span>-->
 <!--                <img class="userName-reduction__icon" src="{% static 'accounts/icons/arrow-right.svg'%}">-->
 <!--            </a>-->
         </div>
+        <form class="profile-logout" action="{%url 'logout'%}">
+            <button class="profile-logout__button button" type="submit">
+                <img class="profile-logout_icon" src="{% static 'accounts/icons/logout.svg'%}">
+                <span>Выйти</span>
+            </button>
+        </form>
     </div>
 
     <div class="profile-header__rect"></div>
@@ -37,9 +44,9 @@
             {% for company in companies %}
                 <div id="company-{{company.id}}" class="companies-item">
                     <div class="companies-item_header">
-                <span class="companies-item_header-title">{{ company.name }}</span>
+                <a class="companies-item_header-title" href="{{company.url}}">{{ company.name }}</a>
                 {% for subcategory in company.subcategories %}
-                    <button class="category-button" onclick="window.location.href = '{%url 'companies_per_subcategory' subcategory.subcategory_name %}'" style="background-color: {{subcategory.color}}">
+                    <button class="subcategory-button" onclick="window.location.href = '{%url 'companies_per_subcategory' subcategory.subcategory_name %}'" style="border-color: {{subcategory.color}}">
                             <span>{{subcategory.subcategory_name}}</span>
                     </button>
                 {% endfor%}
@@ -71,12 +78,7 @@
             {%endfor%}
         </div>
     </div>
-    <form class="profile-logout" action="{%url 'logout'%}">
-        <button class="profile-logout__button button" type="submit">
-            <img class="profile-logout_icon" src="{% static 'accounts/icons/logout.svg'%}">
-            <span>Выйти</span>
-        </button>
-    </form>
+
 </main>
 <script src=" {% static 'companies/js/scripts.js' %}"></script>
 

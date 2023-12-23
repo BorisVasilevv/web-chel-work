@@ -12,7 +12,7 @@
     <section class="section-greeting">
         <div class="section-greeting__description">
             <span class="section-greeting__headline">У НАС ТЫ НАЙДЕШЬ КОМПАНИЮ МЕЧТЫ</span>
-            <span class="section-greeting__sub-headline">Мы собрали информацию о компаниях Челябинска, что бы помочь вам окунуться в мир IT</span>
+            <span class="section-greeting__sub-headline">Мы собрали информацию о компаниях Челябинска, чтобы помочь вам окунуться в мир IT</span>
         </div>
 
     </section>
@@ -46,15 +46,15 @@
     </section>
 
     <section class="section section-categories">
-        <span class="section-title categories_title">Категории</span>
-        <span class="section-subtitle categories_subtitle">Мы привели основные направления в ИТ, чтобы вам было легче ориентироваться в поиске компаний</span>
+        <span class="section-title">Категории</span>
+        <span class="section-subtitle categories_subtitle">Основные направления в ИТ, чтобы вам было легче ориентироваться в поиске компаний</span>
 
         <div class="categories-container">
             {% for category in categories %}
                 <div class="main-category" style="border-color: {{category.color}}">
                     <div class="main-category_header">
                         <div class="main-category_header-upper">
-                            <span class="main-category_header-title">{{category.category_name}}</span>
+                            <a class="main-category_header-title" target="_blank" onclick="window.location.href = 'companies/{{category.category_name}}'">{{category.category_name}}</a>
                             <a class="categories-item_button" onclick="window.location.href = 'companies/{{category.category_name}}'">Перейти</a>
                         </div>
 
@@ -66,12 +66,12 @@
                     <div class="main-category_subcategories">
                         {% for subcategory in category.subcategories %}
                                 <div  class="categories-item" style="border-color: {{subcategory.color}}">
-                                    <h2 class="categories-item_title">{{subcategory.subcategory_name}}</h2>
+                                    <a class="categories-item_title" onclick="window.location.href = 'companies/{{subcategory.subcategory_name}}'">{{subcategory.subcategory_name}}</a>
                                     <details class="categories-item_details">
                                         <summary class="categories-item_summary">Описание</summary>
                                         <span class="categories-item_description">{{subcategory.description}}</span>
                                     </details>
-                                    <a class="categories-item_button"  onclick="window.location.href = 'companies/{{subcategory.subcategory_name}}'">Перейти</a>
+                                        <a class="categories-item_button"  onclick="window.location.href = 'companies/{{subcategory.subcategory_name}}'">Перейти</a>
                                 </div>
                         {% endfor %}
                     </div>
