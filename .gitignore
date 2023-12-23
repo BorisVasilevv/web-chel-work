@@ -23,3 +23,5 @@ itcompanysite/db.sqlite3
 itcompanysite/itcompanysite/.env
 
 itcompanysite/companies/fixtures/
+
+media/companies/logo/img/
