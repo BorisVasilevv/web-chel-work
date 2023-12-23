@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserRegistrationForm
-from companies.models import Category, Subcategory, Company, City, Address, CompanyAddress, CompanyCategory
+from companies.models import Category, Subcategory, Company, City, Address, CompanyAddress, CompanyCategory, City
 from .helpstructure import CategoryWithSubcategories, CompanyWithAddress
 
 def index(request):
@@ -31,7 +31,7 @@ def map(request):
     subcategories = Subcategory.objects.all()
     companies = Company.objects.all()
     # Достаём город пользователя по его геолокации
-    city = City.objects.filter(id=1)
+    city = City.objects.get(id=1)
     result_companies = companies_to_companies_with_address(companies)
 
     context = {
@@ -50,7 +50,8 @@ def companies_to_companies_with_address(companies):
         comp_addresses_elems = CompanyAddress.objects.filter(company_id=comp.id)
         comp_addresses = [comp_addr_elem.address for comp_addr_elem in comp_addresses_elems]
         for address in comp_addresses:
-            address_name = "%s %s" % (address.street, address.home_number)
+            city = address.city
+            address_name = "%s %s %s" % (city.name, address.street, address.home_number)
             company_with_address = CompanyWithAddress(comp.id, comp.name, color, address_name,
                                                       address.coordinate_x, address.coordinate_y)
 
