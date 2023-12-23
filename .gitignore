@@ -21,3 +21,5 @@ itcompanysite/db.sqlite3
 .dbeaver/data-sources.json
 
 itcompanysite/itcompanysite/.env
+
+itcompanysite/companies/fixtures/
