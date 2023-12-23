@@ -21,7 +21,7 @@ def companies(request):
         'subcategories': subcategories,
         'result_companies': result_companies,
     }
-    return render(request, 'companies/companies.html', {'context': context})
+    return render(request, 'companies/companies.html',  context)
 
 
 def companies_per_category_subcategory(request, category_or_subcategory_name):
@@ -47,7 +47,7 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
         "category_or_subcategory_name": category_or_subcategory_name,
         "result_companies": result_companies,
     }
-    return render(request, 'companies/companies.html', {'context': context})
+    return render(request, 'companies/companies.html', context)
 
 
 def search(request):
@@ -66,7 +66,7 @@ def search(request):
     context = {
         "result_companies": result_companies,
     }
-    return render(request, 'companies/companies.html', {'context': context})
+    return render(request, 'companies/companies.html', context)
 
 
 def get_companies_with_favorite_flag_and_category(request, companies_set):

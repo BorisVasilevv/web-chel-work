@@ -8,21 +8,21 @@
 {%block title%}Компании{%endblock%}
 {%block content%}
 
-{% if context.category_or_subcategory_name %}
+{% if category_or_subcategory_name %}
     <section class="section">
-        <span class="section-title">{{context.category_or_subcategory_name}}</span>
+        <span class="section-title">{{category_or_subcategory_name}}</span>
         <span class="section-subtitle">Ниже представлены компании, относящиеся к данной категории</span>
     </section>
     {% endif %}
 
 <div class="subcategory-buttons">
-    {% for subcategory in context.subcategories %}
+    {% for subcategory in subcategories %}
         <button class="subcategory-button" data-category="{{ subcategory.subcategory_name }}" style="border-color: {{ subcategory.color }};">{{ subcategory.subcategory_name }}</button>
     {% endfor %}
 </div>
 
 <main class="companies">
-    {% for company in context.result_companies %}
+    {% for company in result_companies %}
 
         <div class="companies-item" data-category="{{ company.subcategories }}">
 
@@ -98,6 +98,7 @@
     {% endfor%}
 </main>
 
+//modal window
 <div class="register_modal" id="register_modal">
     <div class="register_modal__window" id="register_modal__window">
         <div class="register_modal__header">
@@ -119,94 +120,9 @@
                 Регистрация
             </a>
         </div>
-
-
     </div>
 </div>
 
-
-
-
 <script src=" {% static 'companies/js/scripts.js' %}"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var buttons = document.querySelectorAll('.subcategory-button');
-    var companies = document.querySelectorAll('.companies-item');
-
-    buttons.forEach(function (button) {
-        button.addEventListener('click', function () {
-
-            if(button.classList.contains('active')){
-                button.classList.remove('active');
-            }
-            else {
-                button.classList.add('active');
-            }
-            var selectedSubcategories = [];
-            buttons.forEach(function(btn) {
-                if (btn.classList.contains('active')) {
-                    var selectedCategory = btn.getAttribute('data-category');
-                    selectedSubcategories.push(selectedCategory)
-                }
-            });
-
-            if (selectedSubcategories.length === 0) {
-                companies.forEach(function (company) {
-                    company.style.display = 'flex';
-                });
-            }
-            else {
-                // Перебираем компании и скрываем те, которые не соответствуют выбранной подкатегории
-                companies.forEach(function (company) {
-                    var companyCategory = company.getAttribute('data-category');
-                    companyCategoryList = [];
-                    if (companyCategory.includes(',')){
-                        var regex = /<Subcategory:\s(.*?)>/g;
-                        var subctgr;
-                        while((subctgr = regex.exec(companyCategory)) !== null) {
-                            subctgr[1].trim()
-                            companyCategoryList.push(subctgr[1]);
-                        }
-                    }
-                    else {
-                        companyCategory = companyCategory.substring(companyCategory.indexOf(':')+1, companyCategory.indexOf('>')).trim();
-                        companyCategoryList.push(companyCategory);
-                    }
-
-                    try {
-                        companyCategoryList.forEach(function(companyctgr) {
-                            if (selectedSubcategories.includes(companyctgr)) {
-                                company.style.display = 'flex'; // Показываем компанию
-                                throw 'StopIteration'; // Кидаем исключение, чтобы выйти из цикла и случайно не скрыть компанию, которая состоит в двух категориях
-                            } else {
-                                company.style.display = 'none'; // Скрываем компанию
-                            }
-                        });
-                    } catch (e) {
-                        if (e !== 'StopIteration') {
-                            throw e;
-                        }
-                    }
-                });
-            }
-        });
-    });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    var buttons = document.querySelectorAll('.subcategory-button');
-
-    buttons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            // Toggle background color and border color
-            var currentColor = button.style.backgroundColor;
-            var newColor = button.style.borderColor;
-
-            button.style.backgroundColor = newColor;
-            button.style.borderColor = currentColor;
-        });
-    });
-});
-</script>
+<script src=" {% static 'companies/js/filters.js' %}"></script>
 {%endblock%}
