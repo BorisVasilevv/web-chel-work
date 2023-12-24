@@ -18,7 +18,7 @@
         {% endif %}
         <span class="section-subtitle">{{category_or_subcategory.description}}</span>
     </section>
-    {% endif %}
+{% endif %}
 
 <div class="subcategory-buttons">
     {% for subcategory in subcategories %}
@@ -52,40 +52,42 @@
                         <span class="companies-item-tag">Android</span>
                     </div> -->
                     <span class="companies-item_about-company">{{company.short_description}}</span>
-                    <div class="accreditation">
-                        <img class="accreditation__icon" src="{% static 'companies/icons/check.svg'%}">
-                        <span class="accreditation__text">Акредитация</span>
+                    {% if company.accreditation %}
+                        <div class="accreditation">
+                            <img class="accreditation__icon" src="{% static 'companies/icons/check.svg'%}">
+                            <span class="accreditation__text">Акредитация</span>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if company.phone is not none or company.telegram is not none or company.email is not none %}
+                <div class="contacts-container">
+                    <span class="contacts-title">Способы связи с компанией для стажировки:</span>
+                    <div class="contacts-content">
+                        {% if company.telegram is not none%}
+                            <div class="contact-item">
+                                <img class="contact-item__icon" src="{% static 'companies/icons/telegram.svg'%}">
+                                <span class="contact-item__link">{{company.telegram}}</span>
+                            </div>
+                        {% endif %}
+
+                        {% if company.phone is not none%}
+                            <div class="contact-item">
+                                <img class="contact-item__icon" src="{% static 'companies/icons/phone.svg'%}">
+                                <span class="contact-item__link">{{company.phone}}</span>
+                            </div>
+                        {% endif %}
+
+                        {% if company.email is not none%}
+                            <div class="contact-item">
+                                <img class="contact-item__icon" src="{% static 'companies/icons/email.svg'%}">
+                                <span class="contact-item__link">{{company.email}}</span>
+                            </div>
+                        {% endif %}
                     </div>
-
-
                 </div>
-            </div>
-
-            <div class="contacts-container">
-
-                <span class="contacts-title">Способы связи с компанией для стажировки:</span>
-
-                <div class="contacts-content">
-
-                    <div class="contact-item">
-                            <img class="contact-item__icon" src="{% static 'companies/icons/telegram.svg'%}">
-                            <span class="contact-item__link">Telegram</span>
-                        </div>
-
-                        <div class="contact-item">
-                            <img class="contact-item__icon" src="{% static 'companies/icons/phone.svg'%}">
-                            <span class="contact-item__link">8463920347</span>
-                        </div>
-
-                        <div class="contact-item">
-                            <img class="contact-item__icon" src="{% static 'companies/icons/email.svg'%}">
-                            <span class="contact-item__link">почта@mail.com</span>
-                        </div>
-
-                </div>
-
-<!--                        <span>Акредитация</span>-->
-            </div>
+            {% endif %}
 
             <div class="companies-item_footer">
                 <a class="companies-item_footer-link" href="{{company.url}}">

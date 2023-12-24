@@ -18,7 +18,7 @@
     justify-content: space-between;
     margin: 20px;
     padding: 30px;
-    width: 500px;
+    width: 600px;
 }
 
 .company-item_main{
@@ -402,7 +402,7 @@
     }
 }
 
-@media screen and (min-width: 1200px) and (max-width: 1440px) {
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
 
     .companies-item{
         margin: 20px 10px;

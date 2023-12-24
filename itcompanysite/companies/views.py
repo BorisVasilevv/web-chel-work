@@ -94,9 +94,9 @@ def company_to_company_with_favorite_flag_and_category_data(company, is_favorite
     company_categories = CompanyCategory.objects.filter(company_id=company.id)
     subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
     categories_by_comp = [subcat.company_category for subcat in subcategories_by_comp]
-    return CompanyWithFavoriteFlagAndCategoryData(company.id, company.name, company.logotype,
-                                                  company.short_description, company.url, is_favorite,
-                                                  categories_by_comp, subcategories_by_comp)
+    return CompanyWithFavoriteFlagAndCategoryData(company.id, company.name, company.logotype, company.short_description,
+                                                  company.url, is_favorite, categories_by_comp, subcategories_by_comp,
+                                                  company.phone, company.telegram, company.accreditation, company.email)
 
 
 @login_required

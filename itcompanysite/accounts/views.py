@@ -42,9 +42,9 @@ def profile(request):
         company_categories = CompanyCategory.objects.filter(company_id=comp.id)
         subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
         categories_by_comp = [subcat.company_category for subcat in subcategories_by_comp]
-        result_companies.append(CompanyWithCategoryData(comp.id, comp.name, comp.logotype,
-                                                        comp.short_description, comp.url,
-                                                        categories_by_comp, subcategories_by_comp))
+        result_companies.append(CompanyWithCategoryData(comp.id, comp.name, comp.logotype, comp.short_description,
+                                                        comp.url, categories_by_comp, subcategories_by_comp,
+                                                        comp.phone, comp.telegram, comp.accreditation, comp.email))
     return render(request, 'accounts/profile.html', {'companies': result_companies})
 
 
