@@ -95,6 +95,7 @@ h4{
 
     .profile-container {
         gap: 25px;
+        margin: 70px 15px 15px 15px;
     }
 
     .profile-header__icon {
