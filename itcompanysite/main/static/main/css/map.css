@@ -99,6 +99,7 @@
 @media screen and (max-width: 480px) {
 
     .map-page-container{
+        align-items: center;
         gap: 10px;
         flex-direction: column;
         height: 100vh;
@@ -118,9 +119,6 @@
         font-weight: 700;
         letter-spacing: 0.2px;
     }
-
-
-
 
     .map-logout__button{
         font-size: 14px;
@@ -167,11 +165,12 @@
     }
 
     .map-page-container{
+        align-items: center;
         gap: 10px;
         flex-direction: column;
         height: 100vh;
         width: 100vw;
-        margin-left: unset;
+        margin: auto;
     }
 
     .main-map-section{

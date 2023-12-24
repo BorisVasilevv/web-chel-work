@@ -347,7 +347,7 @@
 @media screen and (max-width: 480px) {
 
     .companies-item {
-        width: 297px;
+        width: 250px;
         padding: 25px;
     }
 
@@ -355,10 +355,15 @@
         flex-wrap: wrap;
         flex-direction: row;
         gap: 15px;
+        height: unset;
     }
 
     .companies-item_header-title {
         font-size: 26px;
+    }
+
+    .companies-item_link {
+        margin: auto;
     }
 
     .company-item_main {
@@ -372,7 +377,7 @@
     }
 
     .companies-item_footer-link {
-        width: 180px;
+        width: 140px;
     }
 
     .subcategory-buttons {
@@ -415,6 +420,7 @@
         flex-wrap: wrap;
         flex-direction: row;
         gap: 15px;
+        height: unset;
     }
 
     .companies-item_header-title {
