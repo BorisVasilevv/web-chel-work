@@ -111,6 +111,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 10px;
+    border-left: solid white 1px;
 }
 
 .contacts-title{
