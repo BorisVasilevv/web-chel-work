@@ -346,6 +346,10 @@
 
 @media screen and (max-width: 480px) {
 
+    .register_modal__window {
+        width: 280px;
+    }
+
     .companies-item {
         max-width: 250px;
         padding: 25px;
@@ -411,6 +415,10 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 800px){
+
+    .register_modal__window {
+        width: 380px;
+    }
 
     .companies-item {
         max-width: 390px;
@@ -478,6 +486,10 @@
 
 
 @media screen and (min-width: 800px) and (max-width: 1199px){
+
+    .register_modal__window {
+        width: 500px;
+    }
 
     .companies-item {
         width: 450px;
