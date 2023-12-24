@@ -21,6 +21,9 @@
     align-items: center;
     border-bottom: 1px solid #faf446;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .map-header__icon{
@@ -46,8 +49,7 @@
 }
 
 .map-logout{
-    border-bottom: 1px solid #FFFFFF;
-    width: 160px;
+    width: 120px;
 }
 
 .map-logout__button{
@@ -73,7 +75,8 @@
     padding:15px;
     display: flex;
     gap: 20px;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
     width: 320px;
 }
 
@@ -120,14 +123,18 @@
         letter-spacing: 0.2px;
     }
 
+    .map-logout {
+        width: 110px;
+    }
+
     .map-logout__button{
         font-size: 14px;
-        gap: 10px;
+        gap: 7px;
         padding: 5px 15px;
     }
 
     .map-logout_icon{
-        height: 25px;
+        height: 20px;
     }
 
     .map-legend-container{
@@ -182,10 +189,8 @@
         align-self: start;
         color: #FFFFFF;
         font-size: 26px;
-        font-weight: 700;
         letter-spacing: 0.2px;
     }
-
 
 
 
@@ -200,9 +205,129 @@
     }
 
     .map-legend-container{
+        justify-content: center;
         padding:10px;
         gap: 15px;
         width: unset;
+    }
+
+    .map-legend-item{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        line-height:17px;
+    }
+
+    .map-legend-item-rect{
+        height: 20px;
+        width: 20px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .map-legend-item-text{
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1200px) {
+
+    .map-page-container{
+        align-items: center;
+        gap: 10px;
+        height: 100vh;
+        width: 85vw;
+        margin: auto;
+        flex-direction: column;
+    }
+
+    .main-map-section{
+        gap: 10px;
+        margin: auto;
+    }
+
+    .map-title{
+        align-self: start;
+        color: #FFFFFF;
+        font-size: 26px;
+        letter-spacing: 0.2px;
+    }
+
+    .map-logout__button{
+        font-size: 14px;
+        gap: 10px;
+        padding: 5px 15px;
+    }
+
+    .map-logout_icon{
+        height: 25px;
+    }
+
+    .map-legend-container{
+        justify-content: center;
+        padding:10px;
+        gap: 15px;
+        width: unset;
+    }
+
+    .map-legend-item{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        line-height:17px;
+    }
+
+    .map-legend-item-rect{
+        height: 20px;
+        width: 20px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .map-legend-item-text{
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+
+    .map-page-container{
+        align-items: center;
+        gap: 10px;
+        height: 100vh;
+        width: 85vw;
+        margin: auto;
+        flex-direction: column;
+    }
+
+    .main-map-section{
+        gap: 10px;
+        margin: auto;
+    }
+
+    .map-title{
+        align-self: start;
+        color: #FFFFFF;
+        font-size: 26px;
+        letter-spacing: 0.2px;
+    }
+
+    .map-logout__button{
+        font-size: 14px;
+        gap: 10px;
+        padding: 5px 15px;
+    }
+
+    .map-logout_icon{
+        height: 25px;
+    }
+
+    .map-legend-container{
+        justify-content: center;
+        padding:10px;
+        gap: 15px;
+        width: unset;
+
     }
 
     .map-legend-item{
