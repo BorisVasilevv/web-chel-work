@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Карта</title>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=d5ab5e3a-1ac2-4343-a58f-b97c6da034b9&lang=ru_RU" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css"  href="{% static 'main/css/reset.css'%}">
     <link rel="stylesheet" type="text/css"  href="{% static 'main/css/font.css'%}">
     <link rel="stylesheet" type="text/css"  href="{% static 'main/css/map.css'%}">
@@ -15,56 +15,66 @@
 
 
 <body>
-    <main class="map-page-container">
+<main class="map-page-container">
 
 
-        <div class="main-map-section">
-            <div class="map-header">
-<!--            <img class="map-header__icon" src="{% static 'accounts/icons/user.svg'%}">-->
-                <span class="map-title">Карта компаний</span>
+    <div class="main-map-section">
+        <div class="map-header">
+            <!--            <img class="map-header__icon" src="{% static 'accounts/icons/user.svg'%}">-->
+            <span class="map-title">Карта компаний</span>
 
-            </div>
-            <form class="map-logout" action="{%url 'home'%}">
-                <button class="map-logout__button button" type="submit">
-                    <img class="map-logout_icon" src="{% static 'accounts/icons/logout.svg'%}">
-                    <span>Главная</span>
-                </button>
-            </form>
-            <div class="map-legend-container">
-                {% for subcategory in subcategories %}
-                    <div class="map-legend-item">
-                        <div class="map-legend-item-rect" style="background-color:{{subcategory.color}}"></div>
-                        <span class="map-legend-item-text">{{subcategory.subcategory_name}}</span>
-                    </div>
-                {% endfor %}
-            </div>
         </div>
-
-        <div class="map-container">
-             <div id="map" style="width: 100%; height: 100%;"></div>
+        <form class="map-logout" action="{%url 'home'%}">
+            <button class="map-logout__button button" type="submit">
+                <img class="map-logout_icon" src="{% static 'accounts/icons/logout.svg'%}">
+                <span>Главная</span>
+            </button>
+        </form>
+        <div class="map-legend-container">
+            {% for subcategory in subcategories %}
+                <div class="map-legend-item">
+                    <div class="map-legend-item-rect" style="background-color:{{subcategory.color}}"></div>
+                    <span class="map-legend-item-text">{{subcategory.subcategory_name}}</span>
+                </div>
+            {% endfor %}
         </div>
+    </div>
 
-    </main>
+    <div class="map-container">
+        <div id="map" style="width: 100%; height: 100%;"></div>
+    </div>
+
+</main>
 </body>
 
 
 <script>
-ymaps.ready(init);
-function init() {
-    var myMap = new ymaps.Map('map', {
-        center: ["{{city.coordinate_x|safe}}", "{{city.coordinate_y|safe}}"],
-        zoom: 12
-    });
-    {% for company_with_address in companies_with_address %}
-        var placemark = new ymaps.Placemark(["{{company_with_address.coordinate_x|safe}}", "{{company_with_address.coordinate_y|safe}}"], {
-            hintContent: "{{company_with_address.name|safe}}",
-            balloonContent: "Компания {{company_with_address.name|safe}}. Адрес: {{company_with_address.address|safe}}"
-        }, {
-            iconColor: "{{company_with_address.color|safe}}"
+    ymaps.ready(init);
+    function init() {
+        var myMap = new ymaps.Map('map', {
+            center: ["{{city.coordinate_x|safe}}", "{{city.coordinate_y|safe}}"],
+            zoom: 12,
+            controls: []
         });
-    myMap.geoObjects.add(placemark);
-    {% endfor %}
-}
+
+        var searchControl = new ymaps.control.SearchControl({
+            options: {
+                provider: 'yandex#search'
+            }
+        });
+        myMap.controls.add(searchControl);
+
+        {% for company_with_address in companies_with_address %}
+            var placemark = new ymaps.Placemark(["{{company_with_address.coordinate_x|safe}}", "{{company_with_address.coordinate_y|safe}}"], {
+                hintContent: "{{company_with_address.name|safe}}",
+                balloonContent: "Компания {{company_with_address.name|safe}}. Адрес: {{company_with_address.address|safe}}"
+            }, {
+                iconColor: "{{company_with_address.color|safe}}"
+            });
+            myMap.geoObjects.add(placemark);
+        {% endfor %}
+
+    }
 </script>
 
 </html>
