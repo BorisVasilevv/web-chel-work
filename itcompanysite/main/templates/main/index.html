@@ -3,7 +3,7 @@
 
 
 {% block head %}
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=d5ab5e3a-1ac2-4343-a58f-b97c6da034b9&lang=ru_RU" type="text/javascript"></script>
 {% endblock %}
 {%block title%}Главная страница{%endblock%}
 
@@ -67,8 +67,18 @@
     function init() {
         var myMap = new ymaps.Map('map', {
             center: ["{{city.coordinate_x|safe}}", "{{city.coordinate_y|safe}}"],
-            zoom: 12
+            zoom: 12,
+            controls: []
         });
+
+        var searchControl = new ymaps.control.SearchControl({
+            options: {
+                provider: 'yandex#search'
+            }
+        });
+        myMap.controls.add(searchControl);
+
+
         {% for company_with_address in companies_with_address %}
             var placemark = new ymaps.Placemark(["{{company_with_address.coordinate_x|safe}}", "{{company_with_address.coordinate_y|safe}}"], {
                 hintContent: "{{company_with_address.name|safe}}",
