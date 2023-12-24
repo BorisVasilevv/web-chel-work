@@ -25,12 +25,17 @@
     display: flex;
     gap: 45px;
     flex-direction: row;
+    //height: 300px;
 }
 
 .companies-item_left{
     display: flex;
     gap: 25px;
     flex-direction: column;
+}
+
+.companies-item_link{
+    max-height: 250px;
 }
 
 .companies-item_link-img{
@@ -97,10 +102,12 @@
     max-width: 22px;
 }
 
-.companies-item_link:hover{
+    .companies-item_link-img:hover{
     transition-duration: 2s;
     transform: scale(1.1);
 }
+
+
 
 .companies-item_link-text{
     color: #FFFFFF;
@@ -148,6 +155,7 @@
     display: flex;
     flex-direction: row;
     gap: 25px;
+    height: 80px;
 }
 
 .subcategory-buttons {
@@ -155,8 +163,9 @@
     gap: 10px;
     justify-content: space-around;
     background-color: #272727;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
+    flex-display: row;
+    flex-wrap: wrap;
 }
 
 .subcategory-button {
@@ -267,7 +276,7 @@
     font-size: 14px;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
     .companies-item {
         width: 297px;
         padding: 25px;
@@ -299,8 +308,6 @@
 
     .subcategory-buttons {
         gap: 5px;
-        flex-display: row;
-        flex-wrap: wrap;
     }
 
     .subcategory-button {
@@ -320,3 +327,23 @@
         padding: 10px;
     }
 }
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+
+    .companies-item{
+        margin: 20px 10px;
+        padding: 20px 5px 20px 20px;
+        width: 540px;
+    }
+
+    .companies-item_link-img:hover{
+        transition-duration: 1.5s;
+        transform: scale(1.05);
+    }
+
+        .company-item_main{
+        gap: 30px;
+        //height: 300px;
+    }
+}
+

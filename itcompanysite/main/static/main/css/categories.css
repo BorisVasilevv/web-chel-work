@@ -67,7 +67,7 @@
 }
 
 .categories-item_description{
-     line-height: 21px;
+     line-height: 1.2;
 }
 
 .section-title{
@@ -118,7 +118,7 @@
 /*--------*/
 
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
 
     .section{
         margin: 25px;
