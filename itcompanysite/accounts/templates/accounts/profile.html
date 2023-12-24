@@ -44,37 +44,76 @@
             {% for company in companies %}
                 <div id="company-{{company.id}}" class="companies-item">
                     <div class="companies-item_header">
-                <a class="companies-item_header-title" href="{{company.url}}">{{ company.name }}</a>
-                {% for subcategory in company.subcategories %}
-                    <button class="subcategory-button" onclick="window.location.href = '{%url 'companies_per_subcategory' subcategory.subcategory_name %}'" style="border-color: {{subcategory.color}}">
+                        <a class="companies-item_header-title" href="{{company.url}}">{{ company.name }}</a>
+
+                        {% for subcategory in company.subcategories %}
+                        <button class="subcategory-button" onclick="window.location.href = '{%url 'companies_per_subcategory' subcategory.subcategory_name %}'" style="border-color: {{subcategory.color}}">
                             <span>{{subcategory.subcategory_name}}</span>
-                    </button>
-                {% endfor%}
-            </div>
+                        </button>
+                        {% endfor%}
+
+
+                    </div>
+
+
                     <div class="company-item_main">
                         <div class="companies-item_left">
                             <a class="companies-item_link" href="{{company.url}}">
-                                 <img class="companies-item_link-img" src="{{ company.logotype.url }}">
+                                <img class="companies-item_link-img" src="{{ company.logotype.url }}">
                             </a>
                         </div>
 
                         <div class="companies-item_description">
                             <span class="companies-item_about-company">{{company.short_description}}</span>
+
+                            <div class="accreditation">
+                                <img class="accreditation__icon" src="{% static 'companies/icons/check.svg'%}">
+                                <span class="accreditation__text">Акредитация</span>
+                            </div>
                         </div>
+
                     </div>
 
+                    <div class="contacts-container">
+
+                        <span class="contacts-title">Способы связи с компанией для стажировки:</span>
+
+                        <div class="contacts-content">
+
+                            <div class="contact-item">
+                                <img class="contact-item__icon" src="{% static 'companies/icons/telegram.svg'%}">
+                                <span class="contact-item__link">Telegram</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <img class="contact-item__icon" src="{% static 'companies/icons/phone.svg'%}">
+                                <span class="contact-item__link">8463920347</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <img class="contact-item__icon" src="{% static 'companies/icons/email.svg'%}">
+                                <span class="contact-item__link">почта@mail.com</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
                     <div class="companies-item_footer">
-                        <a class="companies-item_footer-link" href="{{company.url}}">
+                         <a class="companies-item_footer-link" href="{{company.url}}">
                             <img class="companies-item_link-icon" src="{% static 'companies/icons/url.svg'%}">
                             <span class="companies-item_link-text">{{ company.name }}</span>
-                        </a>
+                         </a>
 
                         <button class="companies-item_fav-button remove-fav" id="remove-from-favorites-{{ company.id }}" data-company-id="{{ company.id }}">
                             <span>Удалить</span>
                             <img class="fav-button_icon" src="{% static 'accounts/icons/trash-bin.svg'%}">
                         </button>
                     </div>
+
                 </div>
+
             {%endfor%}
         </div>
     </div>

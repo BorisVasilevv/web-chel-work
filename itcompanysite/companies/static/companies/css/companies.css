@@ -18,7 +18,7 @@
     justify-content: space-between;
     margin: 20px;
     padding: 30px;
-    width: 500px;
+    width: 600px;
 }
 
 .company-item_main{
@@ -311,8 +311,8 @@
 }
 
 .register_modal__close-button_icon{
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     background:  #272727;
 }
 
@@ -345,6 +345,7 @@
 }
 
 @media screen and (max-width: 480px) {
+
     .companies-item {
         width: 297px;
         padding: 25px;
@@ -376,6 +377,7 @@
 
     .subcategory-buttons {
         gap: 5px;
+        margin: 70px 10px 10px 10px;
     }
 
     .subcategory-button {
@@ -396,6 +398,7 @@
     }
 
     .contacts-content{
+        align-items: flex-start;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -406,8 +409,8 @@
 
     .companies-item{
         margin: 20px 10px;
-        padding: 20px 5px 20px 20px;
-        width: 540px;
+        padding: 30px;
+        width: 500px;
     }
 
     .companies-item_link-img:hover{
