@@ -5,7 +5,7 @@
     gap: 5px;
     justify-content: center;
     max-width: 1960px;
-    margin: auto;
+    margin: auto auto 100px auto;
 }
 
 .companies-item{
@@ -480,9 +480,8 @@
 @media screen and (min-width: 800px) and (max-width: 1199px){
 
     .companies-item {
-        width: 297px;
+        width: 450px;
         padding: 25px;
-
     }
 
     .companies-item_header {
@@ -504,6 +503,13 @@
     .companies-item_footer-link{
         width: 100%;
     }
+
+    .contacts-content{
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 
@@ -522,7 +528,6 @@
 
     .company-item_main{
         gap: 30px;
-        //height: 300px;
     }
 }
 

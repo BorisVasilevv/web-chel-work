@@ -80,20 +80,26 @@
 
                         <div class="contacts-content">
 
+                            {% if company.telegram is not none%}
                             <div class="contact-item">
                                 <img class="contact-item__icon" src="{% static 'companies/icons/telegram.svg'%}">
-                                <span class="contact-item__link">Telegram</span>
+                                <span class="contact-item__link">{{company.telegram}}</span>
                             </div>
+                            {% endif %}
 
-                            <div class="contact-item">
-                                <img class="contact-item__icon" src="{% static 'companies/icons/phone.svg'%}">
-                                <span class="contact-item__link">8463920347</span>
-                            </div>
+                            {% if company.phone is not none%}
+                                <div class="contact-item">
+                                    <img class="contact-item__icon" src="{% static 'companies/icons/phone.svg'%}">
+                                    <span class="contact-item__link">{{company.phone}}</span>
+                                </div>
+                            {% endif %}
 
-                            <div class="contact-item">
-                                <img class="contact-item__icon" src="{% static 'companies/icons/email.svg'%}">
-                                <span class="contact-item__link">почта@mail.com</span>
-                            </div>
+                            {% if company.email is not none%}
+                                <div class="contact-item">
+                                    <img class="contact-item__icon" src="{% static 'companies/icons/email.svg'%}">
+                                    <span class="contact-item__link">{{company.email}}</span>
+                                </div>
+                            {% endif %}
 
                         </div>
 

@@ -23,13 +23,14 @@
 <!--            <img class="map-header__icon" src="{% static 'accounts/icons/user.svg'%}">-->
                 <span class="map-title">Карта компаний</span>
 
+                <form class="map-logout" action="{%url 'home'%}">
+                    <button class="map-logout__button button" type="submit">
+                        <img class="map-logout_icon" src="{% static 'accounts/icons/logout.svg'%}">
+                        <span>Главная</span>
+                    </button>
+                </form>
             </div>
-            <form class="map-logout" action="{%url 'home'%}">
-                <button class="map-logout__button button" type="submit">
-                    <img class="map-logout_icon" src="{% static 'accounts/icons/logout.svg'%}">
-                    <span>Главная</span>
-                </button>
-            </form>
+
             <div class="map-legend-container">
                 {% for subcategory in subcategories %}
                     <div class="map-legend-item">
