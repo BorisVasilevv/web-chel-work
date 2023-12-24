@@ -15,7 +15,10 @@ a{
 }
 
 .navigation-elem-link:hover{
-    text-decoration: underline;
+    transition-duration: 0.15s;
+    transform: scale(1.1);
+    backface-visibility: hidden;
+    transform-origin: center;
 }
 
 .hidden{
@@ -206,7 +209,7 @@ hr{
 
 
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
 
     .site-logo-container {
         gap: 0;
@@ -277,7 +280,7 @@ hr{
         display: flex;
         flex-direction: column;
         gap: 10px;
-        width:  370px;
+        width: 100%;
         left: 0;
         position: absolute;
         padding: 10px;
@@ -290,13 +293,17 @@ hr{
     /*---------greeting----------*/
 
     .section-greeting{
-        background: linear-gradient(270deg, #000 0%, #000 0.14%, rgba(0, 0, 0, 0.00) 40%), url("../../main/img/compik.png");
+        background: linear-gradient(90deg, #000 0%, #000 0.14%, rgba(0, 0, 0, 0.00) 40%), linear-gradient(270deg, #000 0%, #000 0.14%, rgba(0, 0, 0, 0.00) 40%), url("../../main/img/compik.png");
+
         border-radius: 20px;
         height: 100px;
         margin: auto;
         padding: 70px 20px;
         text-align: center;
         width: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 
     .section-greeting__description{
@@ -336,4 +343,13 @@ hr{
         justify-content: center;
         padding: 30px;
     }
+}
+
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+    body{
+        max-width: 1200px;
+
+    }
+
 }

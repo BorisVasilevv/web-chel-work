@@ -26,12 +26,15 @@ def companies(request):
 
 def companies_per_category_subcategory(request, category_or_subcategory_name):
     subcategory_list = []
+    category_or_subcategory = 0
     try:
         category = Category.objects.get(Q(category_name=category_or_subcategory_name))
+        category_or_subcategory = category
         subcategory_list = Subcategory.objects.filter(company_category_id=category.id)
     except ObjectDoesNotExist:
         try:
             subcategory = Subcategory.objects.get(Q(subcategory_name=category_or_subcategory_name))
+            category_or_subcategory = subcategory
             subcategory_list.append(subcategory)
         except ObjectDoesNotExist:
             raise Http404
@@ -44,7 +47,7 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
 
     result_companies = get_companies_with_favorite_flag_and_category(request, requested_companies)
     context = {
-        "category_or_subcategory_name": category_or_subcategory_name,
+        "category_or_subcategory": category_or_subcategory,
         "result_companies": result_companies,
     }
     return render(request, 'companies/companies.html', context)

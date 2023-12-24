@@ -129,7 +129,7 @@ a{
 
 /*----*/
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 480px) {
 
     .extra-button {
         font-size: 26px;
