@@ -184,6 +184,7 @@ a{
     display: flex;
     flex-direction: column;
     margin-top: 100px;
+
 }
 
 hr{
@@ -337,6 +338,10 @@ hr{
 
     .footer{
         margin-top: 70px;
+          position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 
     .footer-content{
@@ -473,6 +478,10 @@ hr{
 
     .footer{
         margin-top: 70px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
     }
 
     .footer-content{

@@ -131,6 +131,10 @@ a{
 
 @media screen and (max-width: 480px) {
 
+    .registration-container {
+        margin: 70px 0 0 0;
+    }
+
     .extra-button {
         font-size: 26px;
         line-height: 26px;
@@ -165,3 +169,42 @@ a{
     }
 }
 
+@media screen and (min-width: 480px) and (max-width: 800px){
+
+    .registration-container {
+        margin: 70px 0 0 0;
+    }
+
+    .extra-button {
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .registration-header_main {
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .registration-form {
+        padding: 20px 0 20px 0;
+        width: 430px;
+
+    }
+
+    .registration-help-info {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 18px;
+
+    }
+
+    .submit-button {
+        font-size: 14px;
+        line-height: 16px;
+        width: 430px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}
