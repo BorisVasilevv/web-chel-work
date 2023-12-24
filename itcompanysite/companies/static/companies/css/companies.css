@@ -9,7 +9,7 @@
 }
 
 .companies-item{
-    align-items: center;
+    align-items: flex-start;
     border: 1px solid #faf446;
     border-radius: 10px;
     display: flex;
@@ -18,12 +18,12 @@
     justify-content: space-between;
     margin: 20px;
     padding: 30px;
-    width: 600px;
+    width: 500px;
 }
 
 .company-item_main{
     display: flex;
-    gap: 45px;
+    gap: 30px;
     flex-direction: row;
 }
 
@@ -60,7 +60,29 @@
     flex-direction: column;
     gap: 20px;
     justify-content: center;
+    letter-spacing: 0.2px;
 }
+
+/*-------------------------*/
+.accreditation{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+}
+
+.accreditation__icon{
+    height: 15px;
+    width: 15px;
+}
+
+.accreditation__text{
+    color: #FFFFFF;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/*-------------------------*/
 
 .companies-item_header-title{
     color:#FFFFFF;
@@ -75,12 +97,56 @@
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     gap: 15px;
-    line-height: 34px;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
 }
 
+/*---------------------------------*/
+
+.contacts-container{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contacts-title{
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+}
+
+.contacts-content{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.contact-item{
+    align-items:center;
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    justify-content: center;
+}
+
+.contact-item__icon{
+    height: 20px;
+    width: 20px;
+}
+
+.contact-item__link{
+    color: #FFFFFF;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+/*---------------------------------*/
 .companies-item_footer-link{
     align-items: center;
     display: flex;
@@ -104,8 +170,7 @@
 
 .companies-item_link-text{
     color: #FFFFFF;
-    font-family: Gilroy;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     line-height: normal;
 }
@@ -120,7 +185,7 @@
     align-self: flex-start;
     display: flex;
     flex-direction: row;
-    gap: 45px;
+    gap: 30px;
 }
 
 .companies-item_fav-button{
@@ -132,8 +197,9 @@
     color: #FFFFFF;
     display: flex;
     flex-direction: row;
+    font-size: 12px;
     gap: 10px;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.5px;
     padding: 12px ;
     cursor: pointer;
 }
@@ -174,7 +240,7 @@
     border: 1px solid transparent;
     border-radius: 20px;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -318,5 +384,11 @@
         line-height: unset;
         height: 40px;
         padding: 10px;
+    }
+
+    .contacts-content{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 }
