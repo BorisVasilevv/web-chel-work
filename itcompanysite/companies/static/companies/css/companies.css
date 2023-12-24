@@ -480,6 +480,7 @@
     .companies-item {
         width: 297px;
         padding: 25px;
+
     }
 
     .companies-item_header {
@@ -489,8 +490,17 @@
         height: unset
     }
 
+    .company-item_main{
+        gap: 30px;
+        flex-direction: column;
+    }
+
     .companies-item_link {
         margin: auto;
+    }
+
+    .companies-item_footer-link{
+        width: 100%;
     }
 }
 
@@ -508,7 +518,7 @@
         transform: scale(1.05);
     }
 
-        .company-item_main{
+    .company-item_main{
         gap: 30px;
         //height: 300px;
     }
