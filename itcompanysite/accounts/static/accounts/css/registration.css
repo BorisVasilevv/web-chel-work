@@ -165,3 +165,12 @@ a{
     }
 }
 
+
+
+@media screen and (min-width: 800px) and (max-width:1199px){
+
+    .registration-container{
+        margin-top: 80px;
+    }
+}
+
