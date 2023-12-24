@@ -1,7 +1,10 @@
 body{
     background-color: #272727;
+    display: flex;
+    flex-direction: column;
     cursor: default;
     font-family: Gilroy;
+    min-height: 100vh;
     max-width: 1440px;
     margin: auto;
 }
@@ -183,8 +186,8 @@ a{
     border-top: solid 1px #FFFFFF;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
-
+    margin-top: auto;
+    width: 100%
 }
 
 hr{
@@ -336,21 +339,13 @@ hr{
         padding: 10px;
     }
 
-    .footer{
-        margin-top: 70px;
-          position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-    }
-
     .footer-content{
         align-items: center;
         display: flex;
         flex-direction: row;
         gap: 15px;
         justify-content: center;
-        padding: 30px;
+        padding: 20px;
     }
 }
 
@@ -474,14 +469,6 @@ hr{
 
     .section-subtitle {
         padding: 10px;
-    }
-
-    .footer{
-        margin-top: 70px;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
     }
 
     .footer-content{
