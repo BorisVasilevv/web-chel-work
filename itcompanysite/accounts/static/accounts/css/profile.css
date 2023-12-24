@@ -167,38 +167,7 @@ h4{
         height: 25px;
     }
 
-     .companies-item {
-        width: 297px;
-        padding: 25px;
 
-    }
-
-    .companies-item_header {
-        flex-wrap: wrap;
-        flex-direction: row;
-        gap: 15px;
-        height: unset;
-    }
-
-    .company-item_main{
-        gap: 30px;
-        flex-direction: column;
-    }
-
-    .companies-item_link {
-        margin: auto;
-    }
-
-    .companies-item_footer-link{
-        width: 100%;
-    }
-
-    .contacts-content{
-        align-items: flex-start;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
 }
 
 @media screen and (min-width: 800px) and (max-width: 1200px) {

@@ -1,10 +1,9 @@
 .map-page-container{
-    margin: 10px;
     display: flex;
     gap: 10px;
     flex-direction: row;
     font-family: Gilroy;
-    margin-left: 7px;
+    margin: 10px 10px 50px 10px
 }
 
 .main-map-section{
@@ -108,6 +107,7 @@
         height: 100vh;
         width: 100vw;
         margin-left: unset;
+        margin-bottom: 30px;
     }
 
     .main-map-section{
@@ -163,21 +163,13 @@
 }
 
 @media screen and (min-width: 480px) and (max-width: 800px) {
-
-    .main-page-map-container {
-        height: 500px;
-        width: 85vw;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
     .map-page-container{
         align-items: center;
         gap: 10px;
         flex-direction: column;
         height: 100vh;
         width: 100vw;
-        margin: auto;
+        margin: auto auto 50px auto;
     }
 
     .main-map-section{
@@ -191,8 +183,6 @@
         font-size: 26px;
         letter-spacing: 0.2px;
     }
-
-
 
     .map-logout__button{
         font-size: 14px;
@@ -232,42 +222,16 @@
 
 @media screen and (min-width: 800px) and (max-width: 1200px) {
 
-    .map-page-container{
-        align-items: center;
-        gap: 10px;
-        height: 100vh;
-        width: 85vw;
-        margin: auto;
-        flex-direction: column;
-    }
-
-    .main-map-section{
-        gap: 10px;
-        margin: auto;
-    }
-
-    .map-title{
-        align-self: start;
+    .map-title {
         color: #FFFFFF;
         font-size: 26px;
-        letter-spacing: 0.2px;
     }
-
-    .map-logout__button{
-        font-size: 14px;
-        gap: 10px;
-        padding: 5px 15px;
-    }
-
-    .map-logout_icon{
-        height: 25px;
-    }
-
     .map-legend-container{
         justify-content: center;
         padding:10px;
-        gap: 15px;
+        gap: 10px;
         width: unset;
+        flex-direction: column;
     }
 
     .map-legend-item{
@@ -278,14 +242,28 @@
     }
 
     .map-legend-item-rect{
-        height: 20px;
-        width: 20px;
+        height: 15px;
+        width: 15px;
         border: none;
         border-radius: 5px;
     }
 
     .map-legend-item-text{
         font-size: 14px;
+    }
+
+    .map-logout {
+        width: 95px;
+    }
+
+    .map-logout__button{
+        font-size: 14px;
+        gap: 7px;
+        padding: 5px 15px;
+    }
+
+    .map-logout_icon{
+        height: 20px;
     }
 }
 
@@ -296,7 +274,7 @@
         gap: 10px;
         height: 100vh;
         width: 85vw;
-        margin: auto;
+        margin: auto auto 50px auto;
         flex-direction: column;
     }
 
