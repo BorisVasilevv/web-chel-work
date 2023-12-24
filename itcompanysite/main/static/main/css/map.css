@@ -156,3 +156,71 @@
         font-size: 14px;
     }
 }
+
+@media screen and (min-width: 480px) and (max-width: 800px) {
+
+    .main-page-map-container {
+        height: 500px;
+        width: 85vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .map-page-container{
+        gap: 10px;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        margin-left: unset;
+    }
+
+    .main-map-section{
+        gap: 10px;
+        margin: auto;
+    }
+
+    .map-title{
+        align-self: start;
+        color: #FFFFFF;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+    }
+
+
+
+
+    .map-logout__button{
+        font-size: 14px;
+        gap: 10px;
+        padding: 5px 15px;
+    }
+
+    .map-logout_icon{
+        height: 25px;
+    }
+
+    .map-legend-container{
+        padding:10px;
+        gap: 15px;
+        width: unset;
+    }
+
+    .map-legend-item{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        line-height:17px;
+    }
+
+    .map-legend-item-rect{
+        height: 20px;
+        width: 20px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .map-legend-item-text{
+        font-size: 14px;
+    }
+}
