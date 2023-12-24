@@ -187,7 +187,8 @@ a{
     display: flex;
     flex-direction: column;
     margin-top: auto;
-    width: 100%
+    width: 100%;
+    margin-top: 20px;
 }
 
 hr{
@@ -201,7 +202,7 @@ hr{
     flex-direction: row;
     gap: 15px;
     justify-content: center;
-    padding: 40px;
+    padding: 15px 0 20px;
 }
 
 .footer-content__text{
