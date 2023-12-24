@@ -215,7 +215,6 @@ hr{
         gap: 0;
     }
 
-
     .main-logo{
         width: 40px;
     }
@@ -243,11 +242,6 @@ hr{
         width:30px;
     }
 
-    .search-button-image{
-        height:20px;
-        width:20px;
-    }
-
     .navigation-elem{
         display: none;
     }
@@ -264,11 +258,6 @@ hr{
     nav label{
         display: block;
         padding-right: 10px;
-    }
-
-    nav ul li a{
-
-        text-decoration: none;
     }
 
     .menu li{
@@ -300,11 +289,8 @@ hr{
 
     .section-greeting{
         background: linear-gradient(90deg, #000 0%, #000 0.14%, rgba(0, 0, 0, 0.00) 40%), linear-gradient(270deg, #000 0%, #000 0.14%, rgba(0, 0, 0, 0.00) 40%), url("../../main/img/compik.png");
-
-        border-radius: 20px;
         height: 100px;
         margin: 70px auto auto auto;
-        padding: 70px 20px;
         text-align: center;
         width: 300px;
         background-size: cover;
@@ -333,8 +319,16 @@ hr{
         line-height: normal;
     }
 
+
     .section-subtitle {
         padding: 10px;
+    }
+
+    .main-page-map-container {
+        height: 400px;
+        width: 85vw;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .footer{
@@ -352,10 +346,139 @@ hr{
 }
 
 
-@media screen and (min-width: 1200px) and (max-width: 1439px) {
+@media screen and (min-width: 800px) and (max-width:1199px){
     body{
-        max-width: 1200px;
+        max-width: 800px;
+    }
+
+    .main-logo{
+        width: 55px;
+    }
+
+    .search-row{
+        font-size: 12px;
+        height:30px;
+        width:400px;
+    }
+
+    .search-button{
+        width:30px;
+    }
+
+    .main-header{
+        background-color: #272727;
+        gap: unset;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding-bottom: 10px;
+        z-index: 2501;
+        box-sizing: border-box;
+    }
+
+    .navigation-elem{
+        display: none;
+    }
+
+    .menu-wrap{
+        display: block;
+        align-self: center;
+    }
+
+    nav input{
+        display: none;
+    }
+
+    nav label{
+        display: block;
+        padding-right: 10px;
+    }
+
+    .menu li{
+        float: none;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    #menu-toggle:checked + .menu{
+        align-items: center;
+        background-color: #272727;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        padding: 10px;
+    }
+
+    .menu-icon{
+        height: 30px;
+    }
+
+    .navigation-elem-link{
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .navigation-elem-icon{
+        height: 28px;
+        width: 28px;
+    }
+
+    .section-greeting{
+        background: linear-gradient(90deg, #000 0%, #000 0.14%, rgba(0, 0, 0, 0.00) 40%), linear-gradient(270deg, #000 0%, #000 0.14%, rgba(0, 0, 0, 0.00) 40%), url("../../main/img/compik.png");
+        height: 400px;
+        margin: auto;
+        text-align: center;
+        width: 700px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-top: 80px;
 
     }
 
+    .section-greeting__description{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 500px;
+    }
+
+    .section-greeting__headline{
+        font-size: 54px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .section-greeting__sub-headline{
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .main-page-map-container {
+        height: 500px;
+        width: 650px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
 }
+
+
+
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    body{
+        max-width: 1200px;
+    }
+}
+
+

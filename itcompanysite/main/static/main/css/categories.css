@@ -82,6 +82,7 @@
     font-size: 18px;
     font-weight: 400;
     letter-spacing: 0.2px;
+    line-height: 1.2;
     padding: 10px;
 }
 
@@ -156,3 +157,8 @@
     }
 }
 
+@media screen and (min-width: 800px) and (max-width:1199px){
+    .categories-item{
+        width: 250px;
+    }
+}

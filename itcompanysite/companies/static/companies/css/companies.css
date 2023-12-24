@@ -232,8 +232,8 @@
     justify-content: space-around;
     background-color: #272727;
     margin: 10px;
-    flex-display: row;
     flex-wrap: wrap;
+
 }
 
 .subcategory-button {
@@ -404,6 +404,12 @@
         gap: 10px;
     }
 }
+
+
+@media screen and (min-width: 800px) and (max-width:1199px){
+
+}
+
 
 @media screen and (min-width: 1200px) and (max-width: 1439px) {
 
