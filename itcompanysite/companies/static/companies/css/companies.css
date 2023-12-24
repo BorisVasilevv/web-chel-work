@@ -347,7 +347,7 @@
 @media screen and (max-width: 480px) {
 
     .companies-item {
-        width: 250px;
+        max-width: 250px;
         padding: 25px;
     }
 
@@ -413,6 +413,7 @@
 @media screen and (min-width: 480px) and (max-width: 800px){
 
     .companies-item {
+        max-width: 390px;
         padding: 25px;
     }
 
@@ -476,7 +477,8 @@
 }
 
 
-@media screen and (min-width: 800px) and (max-width:1199px){
+@media screen and (min-width: 800px) and (max-width: 1199px){
+
     .companies-item {
         width: 297px;
         padding: 25px;
@@ -486,7 +488,7 @@
         flex-wrap: wrap;
         flex-direction: row;
         gap: 15px;
-        height: unset
+        height: unset;
     }
 
     .companies-item_link {

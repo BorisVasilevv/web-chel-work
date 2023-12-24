@@ -612,6 +612,13 @@ hr{
     body{
         max-width: 1200px;
     }
+
+    .main-page-map-container {
+        height: 500px;
+        width: 85vw;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 
