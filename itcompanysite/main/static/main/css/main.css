@@ -540,13 +540,12 @@ hr{
         align-items: center;
         background-color: #272727;
         box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
         width: 100%;
-        left: 0;
         position: absolute;
-        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+        padding-bottom: 15px;
     }
 
     .menu-icon{

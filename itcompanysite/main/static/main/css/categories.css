@@ -199,4 +199,8 @@
     .categories-item{
         width: 250px;
     }
+
+    .section{
+        margin-top: 80px;
+    }
 }
