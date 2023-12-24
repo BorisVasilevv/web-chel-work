@@ -17,7 +17,7 @@ def index(request):
 
     companies = Company.objects.all()
     # Достаём город пользователя по его геолокации
-    city = City.objects.filter(id=1)
+    city = City.objects.get(id=1)
     result_companies = companies_to_companies_with_address(companies)
 
     context = {
