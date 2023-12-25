@@ -28,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     changeDisplayButton(companyId);
                 }
             }
+            else{
+                addBlockingScroll();
+            }
         })
         .catch(error => console.error('Ошибка:', error));
     }
