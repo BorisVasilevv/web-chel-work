@@ -21,11 +21,13 @@
     </section>
 {% endif %}
 
-<div class="subcategory-buttons">
-    {% for subcategory in subcategories %}
-        <button class="subcategory-button" data-category="{{ subcategory.subcategory_name }}" style="border-color: {{ subcategory.color }};">{{ subcategory.subcategory_name }}</button>
-    {% endfor %}
-</div>
+{% if subcategories %}
+    <div class="subcategory-buttons">
+        {% for subcategory in subcategories %}
+            <button class="subcategory-button" data-category="{{ subcategory.subcategory_name }}" style="border-color: {{ subcategory.color }};">{{ subcategory.subcategory_name }}</button>
+        {% endfor %}
+    </div>
+{% endif %}
 
 <main class="companies">
     {% for company in result_companies %}

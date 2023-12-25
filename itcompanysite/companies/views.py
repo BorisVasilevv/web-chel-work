@@ -79,7 +79,7 @@ def get_companies_with_favorite_flag_and_category(request, companies_set):
     if not user.is_anonymous:
         favorite = Favorite.objects.filter(user_id=user.id)
         favorite_companies = [fav.company for fav in favorite]
-        # Code review please
+
         for comp in companies_set:
             is_favorite = favorite_companies.__contains__(comp)
             result_comp.append(company_to_company_with_favorite_flag_and_category_data(comp, is_favorite))
