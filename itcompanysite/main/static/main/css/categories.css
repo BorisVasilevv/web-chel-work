@@ -130,6 +130,10 @@
         gap: 20px;
     }
 
+    .section-category{
+        margin: 70px 15px 20px 15px;
+    }
+
     .section-title {
         font-size: 30px;
         font-weight: 700;
@@ -169,6 +173,10 @@
         gap: 20px;
     }
 
+    .section-category{
+        margin: 70px 15px 20px 15px;
+    }
+
     .section-title {
         font-size: 30px;
         font-weight: 700;
@@ -203,6 +211,10 @@
 @media screen and (min-width: 800px) and (max-width:1199px){
     .categories-item{
         width: 250px;
+    }
+
+    .section-category{
+        margin: 80px 15px 20px 15px;
     }
 
 }
