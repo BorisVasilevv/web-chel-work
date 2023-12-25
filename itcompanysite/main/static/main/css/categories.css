@@ -218,3 +218,17 @@
     }
 
 }
+
+@media screen and (min-width: 1200px) and (max-width:1439px){
+
+    .section-category{
+        margin: 10px 50px 20px 50px;
+    }
+}
+
+@media screen and (min-width: 1400px){
+
+    .section-category{
+        margin: 10px 50px 20px 50px;
+    }
+}
