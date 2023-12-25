@@ -151,6 +151,7 @@
 
     .main-category_header-upper {
         justify-content: space-between;
+        gap: 5px;
     }
 
     .categories-item_button {
