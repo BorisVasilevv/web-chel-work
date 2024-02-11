@@ -135,6 +135,12 @@
                         </div>
                     {% endif %}
                 {% endif %}
+
+                {% if company.tags is not none %}
+                    {% for tag in company.tags %}
+                        {{tag.name}}
+                    {% endfor%}
+                {% endif %}
             </div>
         </div>
     {% endfor%}
