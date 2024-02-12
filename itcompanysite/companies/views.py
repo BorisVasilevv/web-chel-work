@@ -1,13 +1,13 @@
 from django.http import HttpResponseNotFound
 from django.shortcuts import render, redirect
-from .models import Company, Category, Subcategory, Favorite, CompanyCategory
+from .models import Company, Category, Subcategory, Favorite, CompanyCategory, CompanyTag, Tag
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
-from .helpstructure import CompanyWithFavoriteFlagAndCategoryData
+from .helpstructure import CompanyFullData
 from .utils import has_russian_letters
 
 
@@ -15,7 +15,7 @@ from .utils import has_russian_letters
 
 def companies(request):
     all_companies = Company.objects.all()
-    result_companies = get_companies_with_favorite_flag_and_category(request, all_companies)
+    result_companies = get_companies_with_full_data(request, all_companies)
     subcategories = Subcategory.objects.all()
     context = {
         'subcategories': subcategories,
@@ -45,7 +45,7 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
         company_of_subcategory = [company_category.company for company_category in company_categories]
         requested_companies.extend(company_of_subcategory)
 
-    result_companies = get_companies_with_favorite_flag_and_category(request, requested_companies)
+    result_companies = get_companies_with_full_data(request, requested_companies)
     context = {
         "category_or_subcategory": category_or_subcategory,
         "result_companies": result_companies,
@@ -65,14 +65,16 @@ def search(request):
     else:
         requested_companies = Company.objects.filter(name__icontains=query)
 
-    result_companies = get_companies_with_favorite_flag_and_category(request, requested_companies)
+    result_companies = get_companies_with_full_data(request, requested_companies)
+    subcategories = Subcategory.objects.all()
     context = {
+        'subcategories': subcategories,
         "result_companies": result_companies,
     }
     return render(request, 'companies/companies.html', context)
 
 
-def get_companies_with_favorite_flag_and_category(request, companies_set):
+def get_companies_with_full_data(request, companies_set):
     result_comp = []
     user = request.user
 
@@ -82,21 +84,23 @@ def get_companies_with_favorite_flag_and_category(request, companies_set):
 
         for comp in companies_set:
             is_favorite = favorite_companies.__contains__(comp)
-            result_comp.append(company_to_company_with_favorite_flag_and_category_data(comp, is_favorite))
+            result_comp.append(company_to_company_full_data(comp, is_favorite))
 
     else:
         for comp in companies_set:
-            result_comp.append(company_to_company_with_favorite_flag_and_category_data(comp, False))
+            result_comp.append(company_to_company_full_data(comp, False))
     return result_comp
 
 
-def company_to_company_with_favorite_flag_and_category_data(company, is_favorite):
+def company_to_company_full_data(company, is_favorite):
     company_categories = CompanyCategory.objects.filter(company_id=company.id)
+
+    company_tags = CompanyTag.objects.filter(company_id=company.id)
+    tags = [company_tag.tag for company_tag in company_tags]
     subcategories_by_comp = [company_categoty.subcategory for company_categoty in company_categories]
     categories_by_comp = [subcat.company_category for subcat in subcategories_by_comp]
-    return CompanyWithFavoriteFlagAndCategoryData(company.id, company.name, company.logotype, company.short_description,
-                                                  company.url, is_favorite, categories_by_comp, subcategories_by_comp,
-                                                  company.phone, company.telegram, company.accreditation, company.email)
+
+    return CompanyFullData(company, is_favorite,categories_by_comp, subcategories_by_comp, tags)
 
 
 @login_required
