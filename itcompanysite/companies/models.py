@@ -171,6 +171,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
     class Meta:
         verbose_name = 'Tag'
         verbose_name_plural = 'Tags'
@@ -182,6 +183,7 @@ class CompanyTag(models.Model):
 
     def __str__(self):
         return "%s имеет тег %s" % (self.company, self.tag)
+
     class Meta:
         verbose_name = 'CompanyTag'
         verbose_name_plural = 'CompanyTags'

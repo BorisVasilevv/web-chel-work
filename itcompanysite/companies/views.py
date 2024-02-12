@@ -17,9 +17,12 @@ def companies(request):
     all_companies = Company.objects.all()
     result_companies = get_companies_with_full_data(request, all_companies)
     subcategories = Subcategory.objects.all()
+    tags = Tag.objects.all()
+
     context = {
         'subcategories': subcategories,
         'result_companies': result_companies,
+        'tags': tags,
     }
     return render(request, 'companies/companies.html',  context)
 
@@ -46,9 +49,11 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
         requested_companies.extend(company_of_subcategory)
 
     result_companies = get_companies_with_full_data(request, requested_companies)
+    tags = Tag.objects.all()
     context = {
-        "category_or_subcategory": category_or_subcategory,
-        "result_companies": result_companies,
+        'category_or_subcategory': category_or_subcategory,
+        'result_companies': result_companies,
+        'tags': tags,
     }
     return render(request, 'companies/companies.html', context)
 
@@ -56,20 +61,28 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
 def search(request):
     query = request.GET.get("q")
 
-    if has_russian_letters(query):
+    tags = dict(request.GET.lists())
+
+    if query is None or query == "":
+        result_companies = Company.objects.all()
+    elif has_russian_letters(query):
         query = query.lower()
         requested_companies_lower = Company.objects.filter(name__icontains=query)
         query = query.title()
         requested_companies_title = Company.objects.filter(name__icontains=query)
         requested_companies = requested_companies_lower.union(requested_companies_title)
+        result_companies = get_companies_with_full_data(request, requested_companies)
     else:
         requested_companies = Company.objects.filter(name__icontains=query)
+        result_companies = get_companies_with_full_data(request, requested_companies)
 
-    result_companies = get_companies_with_full_data(request, requested_companies)
+
     subcategories = Subcategory.objects.all()
+    tags = Tag.objects.all()
     context = {
         'subcategories': subcategories,
-        "result_companies": result_companies,
+        'result_companies': result_companies,
+        'tags': tags,
     }
     return render(request, 'companies/companies.html', context)
 

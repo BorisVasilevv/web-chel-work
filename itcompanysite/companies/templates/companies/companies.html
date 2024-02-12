@@ -29,6 +29,18 @@
     </div>
 {% endif %}
 
+{% if tags is not none %}
+    <form action="{% url 'search'%}" method="get">
+        {% for tag in tags %}
+
+            <input type="checkbox" value="{{tag.id}}" name="tags">
+            <label>{{tag.name}}</label>
+
+        {% endfor%}
+        <button class="search-button" type="submit"> Test</button>
+    </form>
+{% endif %}
+
 <main class="companies">
     {% for company in result_companies %}
 
