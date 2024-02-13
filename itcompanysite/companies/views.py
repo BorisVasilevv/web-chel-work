@@ -15,7 +15,7 @@ from .utils import has_russian_letters
 
 def companies(request):
     all_companies = Company.objects.all()
-    result_companies = get_companies_with_full_data(request, all_companies)
+    result_companies = get_companies_with_full_data(request.user, all_companies)
     subcategories = Subcategory.objects.all()
     tags = Tag.objects.all()
 
@@ -48,7 +48,7 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
         company_of_subcategory = [company_category.company for company_category in company_categories]
         requested_companies.extend(company_of_subcategory)
 
-    result_companies = get_companies_with_full_data(request, requested_companies)
+    result_companies = get_companies_with_full_data(request.user, requested_companies)
     tags = Tag.objects.all()
     context = {
         'category_or_subcategory': category_or_subcategory,
@@ -60,22 +60,40 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
 
 def search(request):
     query = request.GET.get("q")
+    no_tag_flag = no_query_flag = False
+    search_companies_set = tag_filter_companies_set = set()
+    tags = dict(request.GET.lists()).get('tags')
 
-    tags = dict(request.GET.lists())
+    if tags is None or len(tags) == 0:
+        no_tag_flag = True
+    else:
+        comp_tags = CompanyTag.objects.filter(tag_id__in=tags)
+        tag_filter_companies = [comp_tag.company for comp_tag in comp_tags]
+        tag_filter_companies_set = set(tag_filter_companies)
 
     if query is None or query == "":
-        result_companies = Company.objects.all()
+        no_query_flag = True
     elif has_russian_letters(query):
         query = query.lower()
         requested_companies_lower = Company.objects.filter(name__icontains=query)
         query = query.title()
         requested_companies_title = Company.objects.filter(name__icontains=query)
-        requested_companies = requested_companies_lower.union(requested_companies_title)
-        result_companies = get_companies_with_full_data(request, requested_companies)
+        search_companies = requested_companies_lower.union(requested_companies_title)
+        search_companies_set = set(search_companies)
     else:
-        requested_companies = Company.objects.filter(name__icontains=query)
-        result_companies = get_companies_with_full_data(request, requested_companies)
+        search_companies = Company.objects.filter(name__icontains=query)
+        search_companies_set = set(search_companies)
 
+    if not (no_tag_flag or no_query_flag):
+        result_companies_set = Company.objects.all()
+    elif no_tag_flag:
+        result_companies_set = search_companies_set
+    elif no_query_flag:
+        result_companies_set = tag_filter_companies_set
+    else:
+        result_companies_set = search_companies_set.intersection(tag_filter_companies_set)
+
+    result_companies = get_companies_with_full_data(request.user, result_companies_set)
 
     subcategories = Subcategory.objects.all()
     tags = Tag.objects.all()
@@ -87,9 +105,8 @@ def search(request):
     return render(request, 'companies/companies.html', context)
 
 
-def get_companies_with_full_data(request, companies_set):
+def get_companies_with_full_data(user, companies_set):
     result_comp = []
-    user = request.user
 
     if not user.is_anonymous:
         favorite = Favorite.objects.filter(user_id=user.id)
