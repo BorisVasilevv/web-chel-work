@@ -59,6 +59,18 @@
                 {% endfor%}
             </div>
 
+
+            <div class="companies-item_tags">
+                 {% if company.tags is not none %}
+                    {% for tag in company.tags %}
+                        <div class="tag-container">
+                            <img class="hashtag_icon" src="{% static 'companies/icons/hashtag.svg'%}">
+                            <h5>{{tag.name}}</h5>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+
             <div class="company-item_main">
                 <a class="companies-item_link" href="{{company.url}}">
                     <img class="companies-item_link-img" src="{{ company.logotype.url }}">
@@ -152,11 +164,7 @@
                     {% endif %}
                 {% endif %}
 
-                {% if company.tags is not none %}
-                    {% for tag in company.tags %}
-                        {{tag.name}}
-                    {% endfor%}
-                {% endif %}
+
             </div>
         </div>
     {% endfor%}
