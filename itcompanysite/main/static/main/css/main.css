@@ -97,13 +97,14 @@ a{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .search-container{
     align-items: center;
     display: flex;
-    margin-right: auto;
-    margin-left: auto;
+
 }
 
 .search-row{
