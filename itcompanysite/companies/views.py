@@ -59,10 +59,13 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
 
 
 def search(request):
-    query = request.GET.get("q")
     no_tag_flag = no_query_flag = False
     search_companies_set = tag_filter_companies_set = set()
+    query = request.GET.get("q")
     tags = dict(request.GET.lists()).get('tags')
+
+    # no_tag_flag = tags is None or len(tags) == 0
+    # no_query_flag = query is None or query == ""
 
     if tags is None or len(tags) == 0:
         no_tag_flag = True
@@ -84,7 +87,7 @@ def search(request):
         search_companies = Company.objects.filter(name__icontains=query)
         search_companies_set = set(search_companies)
 
-    if not (no_tag_flag or no_query_flag):
+    if no_tag_flag and no_query_flag:
         result_companies_set = Company.objects.all()
     elif no_tag_flag:
         result_companies_set = search_companies_set
