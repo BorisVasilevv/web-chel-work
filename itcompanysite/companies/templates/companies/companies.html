@@ -13,7 +13,7 @@
     {% if tags is not none %}
         <div class="tags">
             {% for tag in tags %}
-                <label class="tag-container">
+                <div class="tag-container">
                     {% if tag.is_checked%}
                         <input class="checkbox" type="checkbox" value="{{tag.id}}" name="tags" checked="checked">
                     {% else %}
@@ -21,8 +21,8 @@
                     {% endif %}
 
                     <span class="checkmark" ></span>
-                    <span>{{tag.name}}</span>
-                </label>
+                    <h5>{{tag.name}}</h5>
+                </div>
             {% endfor%}
         </div>
     {% endif %}

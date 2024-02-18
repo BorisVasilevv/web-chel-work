@@ -93,6 +93,12 @@ a{
 
 /*----------*/
 
+.search-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .search-container{
     align-items: center;
     display: flex;
