@@ -7,8 +7,25 @@
 {% endblock %}
 
 {%block title%}Компании{%endblock%}
+
+<!--Фильтры по тегам-->
+{% block filters %}
+    {% if tags is not none %}
+        <div class="tags">
+            {% for tag in tags %}
+                <label class="tag-container">
+                    <input class="checkbox" type="checkbox" value="{{tag.id}}" name="tags">
+                    <span class="checkmark"></span>
+                    <span>{{tag.name}}</span>
+                </label>
+            {% endfor%}
+        </div>
+    {% endif %}
+{% endblock %}
+
 {%block content%}
 
+<!--В случае если пользователь перешёл в конкретную категорию/подкатегорию её название и описание пишется сверху-->
 {% if category_or_subcategory %}
     <section class="section section-category">
         {% if category_or_subcategory.subcategory_name %}
@@ -21,6 +38,12 @@
     </section>
 {% endif %}
 
+<!--Query result-->
+{% if query %}
+    <span class="section-subtitle">Выданы результаты по запросу {{query}}</span>
+{% endif %}
+
+<!--Фильтры по подкатегориям-->
 {% if subcategories %}
     <div class="subcategory-buttons">
         {% for subcategory in subcategories %}

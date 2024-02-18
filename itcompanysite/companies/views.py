@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
-from .helpstructure import CompanyFullData
+from .helpstructure import CompanyFullData, TagWithCheckFlag
 from .utils import has_russian_letters
 
 
@@ -15,11 +15,14 @@ from .utils import has_russian_letters
 
 def companies(request):
     all_companies = Company.objects.all()
-    result_companies = get_companies_with_full_data(request, all_companies)
+    result_companies = get_companies_with_full_data(request.user, all_companies)
     subcategories = Subcategory.objects.all()
+    tags = Tag.objects.all()
+
     context = {
         'subcategories': subcategories,
         'result_companies': result_companies,
+        'tags': tags,
     }
     return render(request, 'companies/companies.html',  context)
 
@@ -45,38 +48,79 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
         company_of_subcategory = [company_category.company for company_category in company_categories]
         requested_companies.extend(company_of_subcategory)
 
-    result_companies = get_companies_with_full_data(request, requested_companies)
+    result_companies = get_companies_with_full_data(request.user, requested_companies)
+    tags = Tag.objects.all()
     context = {
-        "category_or_subcategory": category_or_subcategory,
-        "result_companies": result_companies,
+        'category_or_subcategory': category_or_subcategory,
+        'result_companies': result_companies,
+        'tags': tags,
     }
     return render(request, 'companies/companies.html', context)
 
 
 def search(request):
     query = request.GET.get("q")
+    tags = dict(request.GET.lists()).get('tags')
 
+    no_tag_flag = tags is None or len(tags) == 0
+    no_query_flag = query is None or query == ""
+
+    if no_tag_flag and no_query_flag:
+        result_companies_set = Company.objects.all()
+    elif no_tag_flag:
+        result_companies_set = get_sorted_by_query_word(query)
+    elif no_query_flag:
+        result_companies_set = get_sorted_by_tag_companies(tags)
+    else:
+        search_companies_set = get_sorted_by_query_word(query)
+        tag_filter_companies_set = get_sorted_by_tag_companies(tags)
+        result_companies_set = search_companies_set.intersection(tag_filter_companies_set)
+
+    result_companies = get_companies_with_full_data(request.user, result_companies_set)
+
+    subcategories = Subcategory.objects.all()
+    all_tags = get_filters_with_check_flag(tags)
+    context = {
+        'subcategories': subcategories,
+        'result_companies': result_companies,
+        'tags': all_tags,
+        'query': query,
+    }
+    return render(request, 'companies/companies.html', context)
+
+
+def get_sorted_by_tag_companies(tags):
+    comp_tags = CompanyTag.objects.filter(tag_id__in=tags)
+    tag_filter_companies = [comp_tag.company for comp_tag in comp_tags]
+    tag_filter_companies_set = set(tag_filter_companies)
+    return tag_filter_companies_set
+
+
+def get_sorted_by_query_word(query):
     if has_russian_letters(query):
         query = query.lower()
         requested_companies_lower = Company.objects.filter(name__icontains=query)
         query = query.title()
         requested_companies_title = Company.objects.filter(name__icontains=query)
-        requested_companies = requested_companies_lower.union(requested_companies_title)
+        search_companies = requested_companies_lower.union(requested_companies_title)
+        search_companies_set = set(search_companies)
     else:
-        requested_companies = Company.objects.filter(name__icontains=query)
+        search_companies = Company.objects.filter(name__icontains=query)
+        search_companies_set = set(search_companies)
+    return search_companies_set
 
-    result_companies = get_companies_with_full_data(request, requested_companies)
-    subcategories = Subcategory.objects.all()
-    context = {
-        'subcategories': subcategories,
-        "result_companies": result_companies,
-    }
-    return render(request, 'companies/companies.html', context)
+def get_filters_with_check_flag(checked_tag):
+    result = []
+    all_tag = Tag.objects.all()
+    is_checked_tag_not_none = checked_tag is not None
+    for tag in all_tag:
+        tagWithFlag = TagWithCheckFlag(tag, is_checked_tag_not_none and tag in checked_tag)
+        result.append(tagWithFlag)
+    return result
 
 
-def get_companies_with_full_data(request, companies_set):
+def get_companies_with_full_data(user, companies_set):
     result_comp = []
-    user = request.user
 
     if not user.is_anonymous:
         favorite = Favorite.objects.filter(user_id=user.id)
