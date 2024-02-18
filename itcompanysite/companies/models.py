@@ -59,29 +59,29 @@ class Subcategory(models.Model):
     def __str__(self):
         return self.subcategory_name
 
-    def save(self, *args, **kwargs):
-        match self.subcategory_name:
-            case CompanyName.CONST_SELF_PRODUCT:
-                self.style_name = 'self_product'
-            case CompanyName.CONST_STARTUP:
-                self.style_name = 'startup'
-            case CompanyName.CONST_PROJECT_SUPPORT:
-                self.style_name = 'project_support'
-
-            case CompanyName.CONST_CUSTOM_DEV:
-                self.style_name = 'custom_dev'
-            case CompanyName.CONST_WEB_STUDIO:
-                self.style_name = 'web_studio'
-            case CompanyName.CONST_IT_COMPANY:
-                self.style_name = 'big_it_company'
-            case CompanyName.CONST_B2G:
-                self.style_name = 'b2g'
-
-            case CompanyName.CONST_GAME_DEV:
-                self.style_name = 'game_dev'
-            case CompanyName.CONST_NONE_TYPE:
-                self.style_name = 'none_type'
-        super(Subcategory, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     # match self.subcategory_name:
+    #     #     case CompanyName.CONST_SELF_PRODUCT:
+    #     #         self.style_name = 'self_product'
+    #     #     case CompanyName.CONST_STARTUP:
+    #     #         self.style_name = 'startup'
+    #     #     case CompanyName.CONST_PROJECT_SUPPORT:
+    #     #         self.style_name = 'project_support'
+    #     #
+    #     #     case CompanyName.CONST_CUSTOM_DEV:
+    #     #         self.style_name = 'custom_dev'
+    #     #     case CompanyName.CONST_WEB_STUDIO:
+    #     #         self.style_name = 'web_studio'
+    #     #     case CompanyName.CONST_IT_COMPANY:
+    #     #         self.style_name = 'big_it_company'
+    #     #     case CompanyName.CONST_B2G:
+    #     #         self.style_name = 'b2g'
+    #     #
+    #     #     case CompanyName.CONST_GAME_DEV:
+    #     #         self.style_name = 'game_dev'
+    #     #     case CompanyName.CONST_NONE_TYPE:
+    #     #         self.style_name = 'none_type'
+    #     super(Subcategory, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'CompanySubcategory'
@@ -171,6 +171,7 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
     class Meta:
         verbose_name = 'Tag'
         verbose_name_plural = 'Tags'
@@ -182,6 +183,7 @@ class CompanyTag(models.Model):
 
     def __str__(self):
         return "%s имеет тег %s" % (self.company, self.tag)
+
     class Meta:
         verbose_name = 'CompanyTag'
         verbose_name_plural = 'CompanyTags'

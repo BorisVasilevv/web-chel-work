@@ -27,6 +27,7 @@
             <button class="search-button" type="submit">
                 <img class="search-button-image" src="{% static 'main/icons/search.svg' %}">
             </button>
+            {% block filters %} {% endblock %}
         </form>
 
         <div class="navigation-elem">
