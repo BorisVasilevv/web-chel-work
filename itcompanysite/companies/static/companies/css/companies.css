@@ -52,6 +52,18 @@
     flex-direction: row;
 }
 
+.tag-container{
+    align-items: center;
+    display: flex;
+    gap: 2px;
+    flex-direction: row;
+}
+
+.hashtag_icon{
+    width:13px;
+    height:13px;
+}
+
 /*.companies-item-tag{
     font-family: Gilroy;
     color:#FCD54C;
@@ -98,6 +110,14 @@
     text-decoration: none;
 }
 
+.companies-item_tags{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+
 .companies-item_about-company{
     color: #FFFFFF;
     display: flex;
@@ -124,7 +144,7 @@
     color: #FFFFFF;
     font-size: 13px;
     line-height: 1.2;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.7px;
 }
 
 .contacts-content{
@@ -208,7 +228,7 @@
     flex-direction: row;
     font-size: 12px;
     gap: 10px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
     padding: 12px ;
     cursor: pointer;
 }
@@ -311,8 +331,8 @@
 }
 
 .register_modal__close-button_icon{
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     background:  #272727;
 }
 
@@ -324,7 +344,7 @@
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.7px;
 }
 
 .register_modal-text{
@@ -332,7 +352,7 @@
     font-size: 14px;
     width: 100%;
     text-align: center;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.7px;
 }
 
 .register_modal__content{

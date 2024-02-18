@@ -13,6 +13,29 @@ ul{
     list-style: none;
 }
 
+h1{
+    align-self: center;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35px;
+    letter-spacing: 0.2px;
+    padding: 0 15px;
+}
+
+h2{
+    color: #FFFFFF;
+    font-size: 26px;
+}
+
+h5{
+    align-self: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.7px;
+}
+
 a{
     cursor:pointer;
 }
@@ -182,7 +205,6 @@ a{
      display: none;
 
 }
-
 
 
 .footer{
