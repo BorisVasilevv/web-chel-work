@@ -15,11 +15,8 @@
             <input type="checkbox" value="{{tag.id}}" name="tags">
             <label>{{tag.name}}</label>
         {% endfor%}
-        <button class="search-button" type="submit"> Test</button>
     {% endif %}
 {% endblock %}
-
-
 
 {%block content%}
 
@@ -34,6 +31,11 @@
         {% endif %}
         <span class="section-subtitle">{{category_or_subcategory.description}}</span>
     </section>
+{% endif %}
+
+<!--Query result-->
+{% if query %}
+    <span class="section-subtitle">Выданы результаты по запросу {{query}}</span>
 {% endif %}
 
 <!--Фильтры по подкатегориям-->

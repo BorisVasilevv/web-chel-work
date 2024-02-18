@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
-from .helpstructure import CompanyFullData
+from .helpstructure import CompanyFullData, TagWithCheckFlag
 from .utils import has_russian_letters
 
 
@@ -59,24 +59,45 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
 
 
 def search(request):
-    no_tag_flag = no_query_flag = False
-    search_companies_set = tag_filter_companies_set = set()
     query = request.GET.get("q")
     tags = dict(request.GET.lists()).get('tags')
 
-    # no_tag_flag = tags is None or len(tags) == 0
-    # no_query_flag = query is None or query == ""
+    no_tag_flag = tags is None or len(tags) == 0
+    no_query_flag = query is None or query == ""
 
-    if tags is None or len(tags) == 0:
-        no_tag_flag = True
+    if no_tag_flag and no_query_flag:
+        result_companies_set = Company.objects.all()
+    elif no_tag_flag:
+        result_companies_set = get_sorted_by_query_word(query)
+    elif no_query_flag:
+        result_companies_set = get_sorted_by_tag_companies(tags)
     else:
-        comp_tags = CompanyTag.objects.filter(tag_id__in=tags)
-        tag_filter_companies = [comp_tag.company for comp_tag in comp_tags]
-        tag_filter_companies_set = set(tag_filter_companies)
+        search_companies_set = get_sorted_by_query_word(query)
+        tag_filter_companies_set = get_sorted_by_tag_companies(tags)
+        result_companies_set = search_companies_set.intersection(tag_filter_companies_set)
 
-    if query is None or query == "":
-        no_query_flag = True
-    elif has_russian_letters(query):
+    result_companies = get_companies_with_full_data(request.user, result_companies_set)
+
+    subcategories = Subcategory.objects.all()
+    all_tags = get_filters_with_check_flag(tags)
+    context = {
+        'subcategories': subcategories,
+        'result_companies': result_companies,
+        'tags': all_tags,
+        'query': query,
+    }
+    return render(request, 'companies/companies.html', context)
+
+
+def get_sorted_by_tag_companies(tags):
+    comp_tags = CompanyTag.objects.filter(tag_id__in=tags)
+    tag_filter_companies = [comp_tag.company for comp_tag in comp_tags]
+    tag_filter_companies_set = set(tag_filter_companies)
+    return tag_filter_companies_set
+
+
+def get_sorted_by_query_word(query):
+    if has_russian_letters(query):
         query = query.lower()
         requested_companies_lower = Company.objects.filter(name__icontains=query)
         query = query.title()
@@ -86,26 +107,16 @@ def search(request):
     else:
         search_companies = Company.objects.filter(name__icontains=query)
         search_companies_set = set(search_companies)
+    return search_companies_set
 
-    if no_tag_flag and no_query_flag:
-        result_companies_set = Company.objects.all()
-    elif no_tag_flag:
-        result_companies_set = search_companies_set
-    elif no_query_flag:
-        result_companies_set = tag_filter_companies_set
-    else:
-        result_companies_set = search_companies_set.intersection(tag_filter_companies_set)
-
-    result_companies = get_companies_with_full_data(request.user, result_companies_set)
-
-    subcategories = Subcategory.objects.all()
-    tags = Tag.objects.all()
-    context = {
-        'subcategories': subcategories,
-        'result_companies': result_companies,
-        'tags': tags,
-    }
-    return render(request, 'companies/companies.html', context)
+def get_filters_with_check_flag(checked_tag):
+    result = []
+    all_tag = Tag.objects.all()
+    is_checked_tag_not_none = checked_tag is not None
+    for tag in all_tag:
+        tagWithFlag = TagWithCheckFlag(tag, is_checked_tag_not_none and tag in checked_tag)
+        result.append(tagWithFlag)
+    return result
 
 
 def get_companies_with_full_data(user, companies_set):

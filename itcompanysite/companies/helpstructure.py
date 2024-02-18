@@ -1,4 +1,5 @@
-from .models import Company
+from .models import Company, Tag
+
 
 class CompanyFullData:
     id: int
@@ -30,19 +31,13 @@ class CompanyFullData:
         self.subcategories = subcategories
         self.tags = tags
 
-    # def __init__(self, company_id, company_name, company_logotype,
-    #              company_short_description, company_url, company_is_favorite, categories, subcategories,
-    #              phone, telegram, accreditation, email):
-    #     self.id = company_id
-    #     self.name = company_name
-    #     self.logotype = company_logotype
-    #     self.short_description = company_short_description
-    #     self.url = company_url
-    #     self.is_favorite = company_is_favorite
-    #     self.categories = categories
-    #     self.subcategories = subcategories
-    #     self.phone = phone
-    #     self.telegram = telegram
-    #     self.accreditation = accreditation
-    #     self.email = email
 
+class TagWithCheckFlag:
+    id: int
+    name: str
+    is_checked: bool
+
+    def __init__(self, tag: Tag, is_checked: bool):
+        self.id = tag.id
+        self.name = tag.name
+        self.is_checked = is_checked
