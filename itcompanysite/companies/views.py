@@ -60,9 +60,9 @@ def companies_per_category_subcategory(request, category_or_subcategory_name):
 
 def search(request):
     query = request.GET.get("q")
-    tags = dict(request.GET.lists()).get('tags')
+    checked_tag_ids = dict(request.GET.lists()).get('tags')
 
-    no_tag_flag = tags is None or len(tags) == 0
+    no_tag_flag = checked_tag_ids is None or len(checked_tag_ids) == 0
     no_query_flag = query is None or query == ""
 
     if no_tag_flag and no_query_flag:
@@ -70,16 +70,16 @@ def search(request):
     elif no_tag_flag:
         result_companies_set = get_sorted_by_query_word(query)
     elif no_query_flag:
-        result_companies_set = get_sorted_by_tag_companies(tags)
+        result_companies_set = get_sorted_by_tag_companies(checked_tag_ids)
     else:
         search_companies_set = get_sorted_by_query_word(query)
-        tag_filter_companies_set = get_sorted_by_tag_companies(tags)
+        tag_filter_companies_set = get_sorted_by_tag_companies(checked_tag_ids)
         result_companies_set = search_companies_set.intersection(tag_filter_companies_set)
 
     result_companies = get_companies_with_full_data(request.user, result_companies_set)
 
     subcategories = Subcategory.objects.all()
-    all_tags = get_filters_with_check_flag(tags)
+    all_tags = get_filters_with_check_flag(checked_tag_ids)
     context = {
         'subcategories': subcategories,
         'result_companies': result_companies,
@@ -109,12 +109,13 @@ def get_sorted_by_query_word(query):
         search_companies_set = set(search_companies)
     return search_companies_set
 
-def get_filters_with_check_flag(checked_tag):
+def get_filters_with_check_flag(checked_tag_ids):
     result = []
     all_tag = Tag.objects.all()
-    is_checked_tag_not_none = checked_tag is not None
+    is_checked_tag_not_none = checked_tag_ids is not None
     for tag in all_tag:
-        tagWithFlag = TagWithCheckFlag(tag, is_checked_tag_not_none and tag in checked_tag)
+        str_tag_id = str(tag.id)
+        tagWithFlag = TagWithCheckFlag(tag, is_checked_tag_not_none and str_tag_id in checked_tag_ids)
         result.append(tagWithFlag)
     return result
 

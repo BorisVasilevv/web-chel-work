@@ -14,8 +14,13 @@
         <div class="tags">
             {% for tag in tags %}
                 <label class="tag-container">
-                    <input class="checkbox" type="checkbox" value="{{tag.id}}" name="tags">
-                    <span class="checkmark"></span>
+                    {% if tag.is_checked%}
+                        <input class="checkbox" type="checkbox" value="{{tag.id}}" name="tags" checked="checked">
+                    {% else %}
+                        <input class="checkbox" type="checkbox" value="{{tag.id}}" name="tags">
+                    {% endif %}
+
+                    <span class="checkmark" ></span>
                     <span>{{tag.name}}</span>
                 </label>
             {% endfor%}
