@@ -394,8 +394,8 @@
 
 /* Create a custom checkbox */
 .checkmark {
-    height: 20px;
-    width: 20px;
+    height: 12px;
+    width: 12px;
     background-color: #272727;
     border: solid 1px #faf446;
 }
@@ -424,8 +424,8 @@
 
 /* Style the checkmark/indicator */
 .tag-container .checkmark:after {
-    width: 5px;
-    height: 13px;
+    width: 4px;
+    height: 9px;
     border: solid white;
     border-width: 0 1px 1px 0;
     -webkit-transform: rotate(45deg);
