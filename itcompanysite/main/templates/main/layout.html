@@ -22,11 +22,15 @@
                 <img class="main-logo" src="{% static 'main/img/logoCSU.png'%}">
             </a>
         </div>
-        <form action="{% url 'search'%}" method="get" class="search-container">
-            <input class="search-row" placeholder="Введите название компании..."  autocomplete="off" type="search" name="q" required="">
-            <button class="search-button" type="submit">
+        <form action="{% url 'search'%}" method="get" class="search-form">
+            <div class="search-container">
+                <input class="search-row" placeholder="Введите название компании..."  autocomplete="off" type="search" name="q" required="">
+                <button class="search-button" type="submit">
                 <img class="search-button-image" src="{% static 'main/icons/search.svg' %}">
             </button>
+            </div>
+
+
             {% block filters %} {% endblock %}
         </form>
 
