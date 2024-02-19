@@ -52,6 +52,7 @@ a{
 }
 
 .main-header{
+    height:57px;
     align-items: center;
     display: flex;
     gap:15px;
@@ -98,7 +99,7 @@ a{
     flex-direction: column;
     gap: 10px;
     margin-right: auto;
-    margin-left: auto;
+    margin-left: auto;I
 }
 
 .search-container{
