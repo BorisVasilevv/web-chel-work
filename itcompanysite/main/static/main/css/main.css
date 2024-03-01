@@ -115,8 +115,8 @@ a{
     color: #FFFFFF;
     font-size: 12px;
     padding: 10px;
-    height:30px;
-    width:500px;
+    height: 33px;
+    width: 500px;
     letter-spacing: 0.2px;
 }
 
@@ -126,7 +126,7 @@ a{
     border: 1px solid #faf446;
     border-radius: 0 5px 5px 0;
     display: flex;
-    height:30px;
+    height:33px;
     justify-content: center;
     width:38px;
 }
@@ -268,12 +268,10 @@ hr{
 
     .search-row{
         font-size: 12px;
-        height:30px;
         width:190px;
     }
 
     .search-button{
-        height:30px;
         width:30px;
     }
 
@@ -404,12 +402,10 @@ hr{
 
     .search-row{
         font-size: 12px;
-        height:30px;
         width:290px;
     }
 
     .search-button{
-        height:30px;
         width:30px;
     }
 
@@ -519,7 +515,6 @@ hr{
 
     .search-row{
         font-size: 12px;
-        height:30px;
         width:400px;
     }
 

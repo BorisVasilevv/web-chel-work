@@ -234,6 +234,7 @@
 }
 
 .companies-item_fav-button:hover{
+    background-color: #ffffff0f;
     transform: scale(1.015);
 }
 
@@ -266,6 +267,10 @@
     cursor: pointer;
 }
 
+.subcategory-button:hover {
+    background-color: #ffffff0f;
+}
+
 .header_category-button {
     background-color: #272727;
     border: 1px solid transparent;
@@ -274,6 +279,10 @@
     font-size: 14px;
     padding: 10px 20px;
     cursor: pointer;
+}
+
+.header_category-button:hover {
+    background-color: #ffffff0f;
 }
 
 
