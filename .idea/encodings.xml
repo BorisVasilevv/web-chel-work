@@ -3,11 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/itcompanysite/address_data.json" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/itcompanysite/cities_data.json" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/itcompanysite/companies/fixtures/address_data.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/itcompanysite/companies/fixtures/categories_data.json" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/itcompanysite/companies/fixtures/cities_data.json" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/itcompanysite/companies/fixtures/companies_data.json" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/itcompanysite/companies/fixtures/subcategories_data.json" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/itcompanysite/output.json" charset="windows-1251" />
   </component>
 </project>
