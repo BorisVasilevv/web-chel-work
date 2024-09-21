@@ -1,6 +1,7 @@
 from django.db import models
 from .namehelper import CompanyName
 from django.contrib.auth import get_user_model
+from .utils import geocoder
 
 
 User = get_user_model()
@@ -145,8 +146,8 @@ class Address(models.Model):
     city = models.ForeignKey(City, on_delete=models.DO_NOTHING, default='')
     street = models.CharField('street', max_length=150)
     home_number = models.CharField('home_number', max_length=15)
-    coordinate_x = models.FloatField()
-    coordinate_y = models.FloatField()
+    coordinate_x = models.FloatField(blank=True, null=True)
+    coordinate_y = models.FloatField(blank=True, null=True)
 
     def __str__(self):
         return "%s %s %s" % (self.city, self.street, self.home_number)
@@ -154,6 +155,16 @@ class Address(models.Model):
     class Meta:
         verbose_name = 'Address'
         verbose_name_plural = 'Addresses'
+
+    def save(self, *args, **kwargs):
+        if not self.coordinate_x or not self.coordinate_y:
+            location = geocoder(f"{self.city} {self.street} {self.home_number}")
+
+            if location:
+                self.coordinate_x = location[0]
+                self.coordinate_y = location[1]
+
+        super().save(*args, **kwargs)
 
 class CompanyAddress(models.Model):
     company = models.ForeignKey(Company, on_delete=models.DO_NOTHING, default='')
